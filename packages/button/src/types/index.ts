@@ -1,10 +1,10 @@
-import { variants } from './props/variants'
-import { sizes } from './props/sizes'
+import { colors } from '../props/colors'
+import { sizes } from '../props/sizes'
 
 export type ButtonProps = {
   children: React.ReactNode | string
   onClick: () => void
   className?: string
-  variant?: keyof typeof variants
+  color?: keyof typeof colors
   size?: keyof typeof sizes
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
