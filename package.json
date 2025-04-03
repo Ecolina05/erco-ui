@@ -1,11 +1,11 @@
 {
-  "name": "@erco-ui",
+  "name": "erco-ui",
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf node_modules package-lock.json",
     "reset": "npm run clean && npm install",
-    "build": "npx lerna run build",
+    "build": "lerna run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.1",
-    "clsx": "^2.1.1"
+    "clsx": "^2.1.1",
+    "react": "^19.1.0"
   }
 }

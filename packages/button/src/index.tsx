@@ -1,5 +1,3 @@
-import React from 'react'
-
 import type { ButtonProps } from './types'
 import clsx from 'clsx'
 

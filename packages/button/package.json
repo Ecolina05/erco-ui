@@ -1,9 +1,15 @@
 {
   "name": "@erco-ui/button",
   "version": "1.0.0",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
-  "scripts": {},
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "NODE_ENV=development tsc"
+  },
+  "files": [
+    "dist",
+    "styles/**/*.scss"
+  ],
   "keywords": [],
   "author": "",
   "description": "",
@@ -11,5 +17,9 @@
     "./src/styles/index.css"
   ],
   "style": "src/index.css",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "react": "^19.1.0"
+  }
 }
