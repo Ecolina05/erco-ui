@@ -1,0 +1,22 @@
+{
+  "name": "@erco-ui/accordion",
+  "version": "1.0.0",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "scripts": {
+    "build": "NODE_ENV=development tsc"
+  },
+  "files": [
+    "dist",
+    "styles/**/*.scss"
+  ],
+  "sideEffects": [
+    "./src/styles/index.css"
+  ],
+  "style": "./src/styles/index.css",
+  "license": "ISC",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "react": "^19.1.0"
+  }
+}
