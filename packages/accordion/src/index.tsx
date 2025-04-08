@@ -16,7 +16,7 @@ export default function Accordion({ children, title, isOpen = false }: Accordion
   }, [isOpen])
 
   return (
-    <section className=''>
+    <section>
       <header
         className='flex items-center justify-between border-b border-gray-300 cursor-pointer w-full p-2'
         onClick={handleExpand}

@@ -4,12 +4,14 @@ A button component.
 
 ## Props
 
-| Name      | Type   | Description                   |
-| --------- | ------ | ----------------------------- |
-| children  | node   | Node to display on the button |
-| className | string | Additional class names        |
-| color     | string | Button color                  |
-| size      | string | Button size                   |
+| Name      | Type    | Description                   |
+| --------- | ------- | ----------------------------- |
+| ariaLabel | string  | Aria label for the button     |
+| children  | node    | Node to display on the button |
+| className | string  | Additional class names        |
+| color     | string  | Button color                  |
+| isLoading | boolean | Button loading state          |
+| size      | string  | Button size                   |
 
 ## Events
 
@@ -21,8 +23,10 @@ A button component.
 
 ```jsx
 <Button
+  ariaLabel='Click me'
   color='primary'
   className='my-button'
+  isLoading={false}
   onClick={() => {}}
   size='xs'
 >

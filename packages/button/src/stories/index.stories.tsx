@@ -12,13 +12,19 @@ type Story = StoryObj<typeof Button>
 
 export const Default: Story = {
   args: {
+    ariaLabel: 'Button',
     className: '',
     children: 'Button',
     color: 'purple',
+    isLoading: false,
     size: 'xs',
     onClick: () => alert('Button clicked')
   },
   argTypes: {
+    ariaLabel: {
+      control: 'text',
+      description: 'Aria label for the button'
+    },
     color: {
       control: 'select',
       defaultValue: 'purple',
@@ -37,6 +43,10 @@ export const Default: Story = {
       defaultValue: 'xs',
       description: 'Button size',
       options: ['xs', 'sm', 'md', 'lg']
+    },
+    isLoading: {
+      control: 'boolean',
+      description: 'Button loading state'
     },
     onClick: {
       action: 'clicked',
