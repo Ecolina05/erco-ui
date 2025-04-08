@@ -13,6 +13,43 @@ export default meta
 type Story = StoryObj<typeof Avatar>
 
 export const Default: Story = {
-  args: {},
-  argTypes: {}
+  args: {
+    alt: 'Avatar',
+    classNames: '',
+    color: 'purple',
+    isBordered: false,
+    radius: 'sm',
+    size: 'sm',
+    src: 'https://i.pravatar.cc/150?u=a04258114e29026708c'
+    // text: 'John Doe'
+  },
+  argTypes: {
+    alt: {
+      control: 'text'
+    },
+    classNames: {
+      control: 'text'
+    },
+    color: {
+      control: 'select',
+      options: ['purple', 'default', 'green', 'red', 'yellow', 'blue']
+    },
+    isBordered: {
+      control: 'boolean'
+    },
+    size: {
+      control: 'select',
+      options: ['sm', 'md', 'lg']
+    },
+    radius: {
+      control: 'select',
+      options: ['sm', 'md', 'lg', 'full']
+    },
+    src: {
+      control: 'text'
+    },
+    text: {
+      control: 'text'
+    }
+  }
 }
