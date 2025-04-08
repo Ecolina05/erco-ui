@@ -7,8 +7,7 @@
     "build": "NODE_ENV=development tsc"
   },
   "files": [
-    "dist",
-    "styles/**/*.scss"
+    "dist"
   ],
   "sideEffects": [
     "./src/styles/index.css"

@@ -2,13 +2,12 @@
   "name": "@erco-ui/accordion",
   "version": "1.0.0",
   "main": "dist/src/index.js",
-  "types": "dist/src/index.d.ts",
+  "types": "dist/types/index.js",
   "scripts": {
     "build": "NODE_ENV=development tsc"
   },
   "files": [
-    "dist",
-    "styles/**/*.scss"
+    "dist"
   ],
   "sideEffects": [
     "./src/styles/index.css"
