@@ -47,19 +47,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = Input;
+exports.default = Radio;
 const react_1 = __importStar(require("react"));
 const clsx_1 = __importDefault(require("clsx"));
-const radius_1 = require("./props/radius");
-const border_colors_1 = require("./props/border-colors");
+const colors_1 = require("./props/colors");
 require("./styles/index.css");
-function Input(_a) {
-    var { borderColor = 'purple', description, id, inputClassNames, isRequired, label, labelClassNames, placeholder, radius = 'lg', type = 'text' } = _a, rest = __rest(_a, ["borderColor", "description", "id", "inputClassNames", "isRequired", "label", "labelClassNames", "placeholder", "radius", "type"]);
-    const [isFocused, setIsFocused] = (0, react_1.useState)(false);
-    const inputClassName = (0, clsx_1.default)('input', radius_1.radius[radius], isFocused && border_colors_1.borderColor[borderColor], inputClassNames);
-    const labelClassName = (0, clsx_1.default)('block mb-1 text-xs text-gray-900', labelClassNames);
-    return (react_1.default.createElement("div", null,
-        label && (react_1.default.createElement("label", { htmlFor: id, className: labelClassName }, label)),
-        react_1.default.createElement("input", Object.assign({ className: inputClassName, id: id, onBlur: () => setIsFocused(false), onFocus: () => setIsFocused(true), placeholder: placeholder, required: isRequired, type: type }, rest)),
-        description && react_1.default.createElement("p", { className: 'text-xs font-light text-gray-500 mt-1 italic' }, description)));
+function Radio(_a) {
+    var { id, checked = false, color = 'primary', disabled = false, label, onChange, name } = _a, rest = __rest(_a, ["id", "checked", "color", "disabled", "label", "onChange", "name"]);
+    const [isChecked, setIsChecked] = (0, react_1.useState)(checked);
+    (0, react_1.useEffect)(() => {
+        setIsChecked(checked);
+    }, [checked]);
+    const handleRadioChange = (event) => {
+        setIsChecked(event.target.checked);
+        onChange === null || onChange === void 0 ? void 0 : onChange(event);
+    };
+    const radioCircleClassName = (0, clsx_1.default)('w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all', isChecked ? colors_1.bgColors[color] : 'border-gray-400');
+    return (react_1.default.createElement("label", { className: 'flex items-center cursor-pointer' },
+        react_1.default.createElement("input", Object.assign({ checked: isChecked, className: 'hidden', disabled: disabled, id: id, name: name, onChange: handleRadioChange, type: 'radio' }, rest)),
+        react_1.default.createElement("div", { className: radioCircleClassName }, isChecked && (react_1.default.createElement("div", { className: `w-1 h-1 rounded-full ${color === 'yellow' ? 'bg-gray-700' : 'bg-white'}` }))),
+        label && react_1.default.createElement("span", { className: 'ml-2 text-sm text-gray-700' }, label)));
 }

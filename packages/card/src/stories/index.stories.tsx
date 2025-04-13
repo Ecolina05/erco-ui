@@ -14,7 +14,7 @@ export const Default: Story = {
   args: {
     classNames: '',
     children: 'Card',
-    radius: 'sm',
+    radius: 'md',
     shadow: 'sm',
     isBordered: false
   },
@@ -28,7 +28,7 @@ export const Default: Story = {
     },
     radius: {
       control: 'select',
-      options: ['sm', 'xs', 'md', 'lg']
+      options: ['xs', 'sm', 'md', 'lg']
     },
     shadow: {
       control: 'select',

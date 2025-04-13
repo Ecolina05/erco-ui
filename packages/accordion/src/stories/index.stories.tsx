@@ -14,7 +14,7 @@ type Story = StoryObj<typeof Accordion>
 
 export const Default: Story = {
   args: {
-    title: 'Accordion Title',
+    title: 'TITLE',
     children: <p>Accordion Content</p>
   },
   argTypes: {

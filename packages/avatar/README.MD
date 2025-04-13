@@ -26,7 +26,7 @@ An avatar component.
   radius='sm'
   size='sm'
   src='https://example.com/avatar.jpg'
-  text='John Doe'
+  text='Ernesto Colina Doe'
 >
 ```
 

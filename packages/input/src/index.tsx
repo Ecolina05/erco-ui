@@ -9,44 +9,51 @@ import './styles/index.css'
 
 export default function Input({
   borderColor = 'purple',
-  classNames,
+  description,
   id,
+  inputClassNames,
   isRequired,
   label,
+  labelClassNames,
   placeholder,
   radius = 'lg',
+  type = 'text',
   ...rest
 }: InputProps) {
   const [isFocused, setIsFocused] = useState(false)
 
-  const inputClassNames = clsx(
+  const inputClassName = clsx(
     'input',
     InputRadius[radius],
     isFocused && InputBorderColor[borderColor],
-    classNames
+    inputClassNames
   )
+
+  const labelClassName = clsx('block mb-1 text-xs text-gray-900', labelClassNames)
 
   return (
     <div>
       {label && (
         <label
           htmlFor={id}
-          className='block mb-1 text-xs text-gray-900'
+          className={labelClassName}
         >
           {label}
         </label>
       )}
 
       <input
-        type='text'
+        className={inputClassName}
         id={id}
-        className={inputClassNames}
+        onBlur={() => setIsFocused(false)}
+        onFocus={() => setIsFocused(true)}
         placeholder={placeholder}
         required={isRequired}
-        onFocus={() => setIsFocused(true)}
-        onBlur={() => setIsFocused(false)}
+        type={type}
         {...rest}
       />
+
+      {description && <p className='text-xs font-light text-gray-500 mt-1 italic'>{description}</p>}
     </div>
   )
 }

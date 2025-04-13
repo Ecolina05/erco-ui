@@ -21,7 +21,7 @@ export const Default: Story = {
     radius: 'full',
     size: 'md',
     src: 'https://i.pravatar.cc/150?u=a04258114e29026708c'
-    // text: 'John Doe'
+    // text: 'Ernesto Colina Doe'
   },
   argTypes: {
     alt: {

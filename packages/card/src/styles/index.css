@@ -2,5 +2,5 @@
 @import '../../../../globals.css';
 
 .card {
-  @apply relative flex w-full p-3 flex-auto flex-col h-auto break-words text-left overflow-y-auto;
+  @apply relative flex w-full p-3 flex-auto flex-col h-auto break-words text-xs text-left overflow-y-auto;
 }

@@ -13,25 +13,32 @@ type Story = StoryObj<typeof Input>
 export const Default: Story = {
   args: {
     borderColor: 'purple',
-    classNames: '',
+    description: '',
     id: 'first_name',
+    inputClassNames: '',
     isRequired: true,
     label: 'First Name',
-    placeholder: 'John',
-    radius: 'lg'
+    labelClassNames: '',
+    placeholder: 'Ernesto Colina',
+    radius: 'lg',
+    type: 'text'
   },
   argTypes: {
     borderColor: {
       control: 'select',
       options: ['purple', 'default', 'green', 'red', 'yellow', 'blue']
     },
-    classNames: {
+    description: {
       control: 'text',
-      description: 'Custom card class name'
+      description: 'Input description'
     },
     id: {
       control: 'text',
       description: 'Input id'
+    },
+    inputClassNames: {
+      control: 'text',
+      description: 'Custom input class name'
     },
     isRequired: {
       control: 'boolean',
@@ -41,6 +48,10 @@ export const Default: Story = {
       control: 'text',
       description: 'Input label'
     },
+    labelClassNames: {
+      control: 'text',
+      description: 'Custom label class name'
+    },
     placeholder: {
       control: 'text',
       description: 'Input placeholder'
@@ -48,6 +59,10 @@ export const Default: Story = {
     radius: {
       control: 'select',
       options: ['xs', 'sm', 'md', 'lg', 'full']
+    },
+    type: {
+      control: 'select',
+      options: ['text', 'email', 'password', 'number', 'time', 'date', 'datetime-local']
     }
   }
 }
