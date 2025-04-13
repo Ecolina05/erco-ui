@@ -18,7 +18,7 @@ export default function Button({
   isLoading = false,
   size = 'xs',
   onClick = () => {},
-  ...props
+  ...rest
 }: ButtonProps) {
   const buttonClassName = clsx('button', colors[color], sizes[size], className)
   const spinnerColor = ['purple', 'green', 'red', 'yellow', 'blue'].includes(color)
@@ -31,7 +31,7 @@ export default function Button({
       className={buttonClassName}
       disabled={isLoading}
       onClick={onClick}
-      {...props}
+      {...rest}
     >
       {isLoading ? (
         <div className='flex items-center gap-2'>

@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@import '../../../../globals.css';
+
+.card {
+  @apply relative flex w-full p-3 flex-auto flex-col h-auto break-words text-left overflow-y-auto;
+}

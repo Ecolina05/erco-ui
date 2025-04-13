@@ -1,0 +1,6 @@
+@import 'tailwindcss';
+@import '../../../../globals.css';
+
+.input {
+  @apply border-2 border-gray-300 text-gray-900 text-xs block w-full p-2.5 focus:outline-none focus:ring-0;
+}
