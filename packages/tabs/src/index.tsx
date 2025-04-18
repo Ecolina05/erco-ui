@@ -3,12 +3,15 @@ import type { TabsProps } from './types'
 import React, { useState, useEffect, useId } from 'react'
 import clsx from 'clsx'
 
+import { colors, textColors } from './props/colors'
+
 import './styles/index.css'
 
 export default function Tabs({
   tabs,
   content,
   className,
+  color,
   defaultValue,
   orientation = 'horizontal',
   value: controlledValue,
@@ -50,7 +53,7 @@ export default function Tabs({
             aria-selected={selectedTab === tab.value}
             className={clsx(
               'tab px-4 py-2 focus:outline-none',
-              selectedTab === tab.value && 'active',
+              selectedTab === tab.value ? ['active', colors[color], textColors[color]] : null,
               tab.disabled && 'opacity-50 cursor-not-allowed'
             )}
             disabled={tab.disabled}
@@ -65,12 +68,12 @@ export default function Tabs({
         ))}
       </div>
 
-      <div className={clsx('tab-content-container flex-1', isVertical ? 'pl-2' : 'pt-2')}>
+      <div className={clsx('tab-content-container flex-1', isVertical ? 'pl-1 pt-1' : 'pt-2')}>
         {tabs.map((tab, index) =>
           content[index] ? (
             <div
               aria-labelledby={`${tabsId}-tab-${tab.value}`}
-              className={clsx('text-xs', selectedTab === tab.value ? 'block' : 'hidden')}
+              className={clsx('text-xs px-1', selectedTab === tab.value ? 'block' : 'hidden')}
               hidden={selectedTab !== tab.value}
               id={`${tabsId}-panel-${tab.value}`}
               key={tab.value}

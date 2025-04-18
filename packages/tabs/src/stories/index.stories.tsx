@@ -24,6 +24,7 @@ export const Default: Story = {
       <div key='tab3'>Content 3</div>
     ],
     className: '',
+    color: 'purple',
     defaultValue: 'tab1',
     orientation: 'horizontal',
     value: undefined,
@@ -48,6 +49,10 @@ export const Default: Story = {
     },
     className: {
       control: 'text'
+    },
+    color: {
+      control: 'select',
+      options: ['purple', 'default', 'green', 'red', 'yellow', 'blue']
     },
     defaultValue: {
       control: 'text'

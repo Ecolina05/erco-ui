@@ -18,9 +18,9 @@
 }
 
 .tab {
-  @apply cursor-pointer rounded-lg text-gray-600 outline-none;
+  @apply cursor-pointer rounded-lg text-gray-900 outline-none;
 }
 
 .tab.active {
-  @apply bg-primary/10 text-primary font-medium;
+  @apply font-medium;
 }

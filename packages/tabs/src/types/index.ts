@@ -1,3 +1,5 @@
+import { colors } from '../props/colors'
+
 export type TabOption = {
   label: string
   value: string
@@ -9,6 +11,7 @@ export type TabsProps = {
   tabs: TabOption[]
   content: React.ReactNode[]
   className?: string
+  color: keyof typeof colors
   defaultValue?: string
   orientation?: 'horizontal' | 'vertical'
   value?: string
