@@ -2,5 +2,20 @@
 @import '../../../../globals.css';
 
 .card {
-  @apply relative flex w-full p-3 flex-auto flex-col h-auto break-words text-xs text-left overflow-y-auto;
+  @apply relative flex w-full p-4 flex-auto flex-col h-auto break-words text-xs text-left overflow-y-auto;
+}
+
+/* Estilos para Cards focusables (interactivas) */
+.card:focus-visible {
+  @apply outline-none ring-2 ring-primary/50 ring-offset-2;
+}
+
+/* Card con efecto hover */
+.card.hover\:shadow-lg {
+  @apply transition-all duration-200 ease-in-out;
+}
+
+/* Card con efecto de presión */
+.card.active\:scale-95:active {
+  @apply transform scale-95 transition-transform;
 }

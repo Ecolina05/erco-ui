@@ -14,14 +14,19 @@ type Story = StoryObj<typeof Accordion>
 
 export const Default: Story = {
   args: {
-    title: 'TITLE',
-    children: <p>Accordion Content</p>
+    title: 'Accordion Title',
+    children: <p>Accordion Content</p>,
+    id: 'accordion-1',
+    isOpen: false
   },
   argTypes: {
     title: {
       control: 'text'
     },
     children: {
+      control: 'text'
+    },
+    id: {
       control: 'text'
     },
     isOpen: {

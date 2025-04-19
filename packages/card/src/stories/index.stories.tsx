@@ -12,19 +12,39 @@ type Story = StoryObj<typeof Card>
 
 export const Default: Story = {
   args: {
+    children: 'Card Content',
     classNames: '',
-    children: 'Card',
+    isBordered: false,
+    isClickable: false,
+    isHoverable: false,
+    isPressable: false,
     radius: 'md',
     shadow: 'sm',
-    isBordered: false
+    onClick: () => {}
   },
   argTypes: {
+    children: {
+      description: 'Card children'
+    },
     classNames: {
       control: 'text',
       description: 'Custom card class name'
     },
-    children: {
-      description: 'Card children'
+    isBordered: {
+      control: 'boolean',
+      description: 'Add border to the card'
+    },
+    isClickable: {
+      control: 'boolean',
+      description: 'Make the card clickable (adds cursor pointer)'
+    },
+    isHoverable: {
+      control: 'boolean',
+      description: 'Add hover effect to the card'
+    },
+    isPressable: {
+      control: 'boolean',
+      description: 'Add press effect to the card (slight scale animation)'
     },
     radius: {
       control: 'select',
@@ -34,9 +54,9 @@ export const Default: Story = {
       control: 'select',
       options: ['none', 'xs', 'sm', 'md', 'lg']
     },
-    isBordered: {
-      control: 'boolean',
-      description: 'Add border to the card'
+    onClick: {
+      action: 'clicked',
+      description: 'Function called when card is clicked'
     }
   }
 }

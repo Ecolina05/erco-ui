@@ -22,7 +22,7 @@ const sizes_1 = require("./props/sizes");
 const index_1 = __importDefault(require("../../spinner/src/index"));
 require("./styles/index.css");
 function Button(_a) {
-    var { ariaLabel, color = 'purple', className = '', children, isLoading = false, size = 'xs', onClick = () => { } } = _a, rest = __rest(_a, ["ariaLabel", "color", "className", "children", "isLoading", "size", "onClick"]);
+    var { ariaLabel, color = 'purple', className = '', children, isLoading = false, size = 'sm', onClick = () => { } } = _a, rest = __rest(_a, ["ariaLabel", "color", "className", "children", "isLoading", "size", "onClick"]);
     const buttonClassName = (0, clsx_1.default)('button', colors_1.colors[color], sizes_1.sizes[size], className);
     const spinnerColor = ['purple', 'green', 'red', 'yellow', 'blue'].includes(color)
         ? 'white'

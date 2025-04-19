@@ -2,7 +2,7 @@
 @import '../../../../globals.css';
 
 .avatar {
-  @apply flex relative justify-center items-center box-border overflow-hidden align-middle outline-none bg-gray-600;
+  @apply flex relative justify-center items-center box-border overflow-hidden align-middle outline-none;
 
   & .image {
     @apply flex object-cover;

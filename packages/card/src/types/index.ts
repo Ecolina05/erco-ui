@@ -4,7 +4,11 @@ import { shadow } from '../props/shadow'
 export type CardProps = {
   children: React.ReactNode
   classNames?: string
-  shadow?: keyof typeof shadow
-  radius?: keyof typeof radius
   isBordered?: boolean
+  isClickable?: boolean
+  isHoverable?: boolean
+  isPressable?: boolean
+  radius?: keyof typeof radius
+  shadow?: keyof typeof shadow
+  onClick?: (event: React.MouseEvent<HTMLDivElement> | React.KeyboardEvent<HTMLDivElement>) => void
 } & React.HTMLAttributes<HTMLDivElement>

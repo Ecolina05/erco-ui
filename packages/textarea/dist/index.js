@@ -47,25 +47,19 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.default = Textarea;
 const react_1 = __importStar(require("react"));
 const clsx_1 = __importDefault(require("clsx"));
 const radius_1 = require("./props/radius");
-const shadow_1 = require("./props/shadow");
+const border_colors_1 = require("./props/border-colors");
 require("./styles/index.css");
-const Card = (0, react_1.forwardRef)((_a, ref) => {
-    var { children, classNames, shadow = 'md', radius = 'md', isBordered = false, isHoverable = false, isClickable = false, isPressable = false, onClick, role, tabIndex } = _a, rest = __rest(_a, ["children", "classNames", "shadow", "radius", "isBordered", "isHoverable", "isClickable", "isPressable", "onClick", "role", "tabIndex"]);
-    const needsInteractiveRole = isClickable || isPressable || onClick;
-    const needsTabIndex = needsInteractiveRole && tabIndex === undefined;
-    const cardClassNames = (0, clsx_1.default)('card', radius_1.radius[radius], shadow_1.shadow[shadow], isBordered && 'border border-gray-200', isHoverable && 'hover:shadow-lg transition-shadow duration-200', isClickable && 'cursor-pointer', isPressable && 'active:scale-95 transition-transform duration-200', classNames);
-    return (react_1.default.createElement("div", Object.assign({ className: cardClassNames, onClick: onClick, ref: ref, role: role || (needsInteractiveRole ? 'button' : undefined), tabIndex: needsTabIndex ? 0 : tabIndex }, (needsInteractiveRole && {
-        onKeyDown: (e) => {
-            if ((e.key === 'Enter' || e.key === ' ') && onClick) {
-                e.preventDefault();
-                onClick(e);
-            }
-        },
-        'aria-pressed': isPressable ? 'false' : undefined
-    }), rest), children));
-});
-Card.displayName = 'Card';
-exports.default = Card;
+function Textarea(_a) {
+    var { borderColor = 'purple', description, id, textareaClassNames, isRequired, label, labelClassNames, placeholder, radius = 'lg' } = _a, rest = __rest(_a, ["borderColor", "description", "id", "textareaClassNames", "isRequired", "label", "labelClassNames", "placeholder", "radius"]);
+    const [isFocused, setIsFocused] = (0, react_1.useState)(false);
+    const textareaClassName = (0, clsx_1.default)('textarea', radius_1.radius[radius], isFocused && border_colors_1.borderColor[borderColor], textareaClassNames);
+    const labelClassName = (0, clsx_1.default)('block mb-1 text-xs text-gray-900', labelClassNames);
+    return (react_1.default.createElement("div", null,
+        label && (react_1.default.createElement("label", { htmlFor: id, className: labelClassName }, label)),
+        react_1.default.createElement("textarea", Object.assign({ className: textareaClassName, id: id, onBlur: () => setIsFocused(false), onFocus: () => setIsFocused(true), placeholder: placeholder, required: isRequired }, rest)),
+        description && react_1.default.createElement("p", { className: 'text-xs font-light text-gray-500 mt-1 italic' }, description)));
+}

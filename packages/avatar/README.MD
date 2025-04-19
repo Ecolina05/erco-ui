@@ -1,33 +1,35 @@
 # Avatar
 
-An avatar component.
+An accessible avatar component with fallback support and customization options.
 
 ## Props
 
-| Name       | Type    | Description                    |
-| ---------- | ------- | ------------------------------ |
-| alt        | string  | Alt text for the image         |
-| classNames | string  | Additional class names         |
-| color      | string  | Avatar color                   |
-| isBordered | boolean | Whether the avatar is bordered |
-| radius     | string  | Avatar radius                  |
-| size       | string  | Avatar size                    |
-| src        | string  | Image source                   |
-| text       | string  | Text content                   |
+| Name       | Type    | Description                                       |
+| ---------- | ------- | ------------------------------------------------- |
+| alt        | string  | Alt text for the image (accessibility)            |
+| classNames | string  | Additional class names                            |
+| color      | string  | Avatar background color                           |
+| isBordered | boolean | Whether the avatar has a border                   |
+| name       | string  | Full name (generates initials if no image/text)   |
+| radius     | string  | Border radius style (sm, md, lg, full)            |
+| size       | string  | Avatar size (sm, md, lg)                          |
+| src        | string  | Image source URL                                  |
+| text       | string  | Text to display (limited to 2 chars)              |
 
 ## Example
 
 ```jsx
 <Avatar
-  alt='Avatar'
+  alt='Ernesto Colina'
   color='purple'
-  className='my-avatar'
+  classNames='my-avatar'
   isBordered={false}
-  radius='sm'
-  size='sm'
+  name='Ernesto Colina'
+  radius='lg'
+  size='md'
   src='https://example.com/avatar.jpg'
-  text='Ernesto Colina Doe'
->
+  text='EC'
+/>
 ```
 
 ## License

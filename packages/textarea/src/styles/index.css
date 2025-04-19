@@ -1,0 +1,9 @@
+@import 'tailwindcss';
+@import '../../../../globals.css';
+
+.textarea {
+  @apply border-2 border-gray-300 text-gray-900 text-xs block w-full p-2.5 focus:outline-none focus:ring-0;
+
+  height: 70px;
+  resize: none;
+}

@@ -16,7 +16,7 @@ export default function Button({
   className = '',
   children,
   isLoading = false,
-  size = 'xs',
+  size = 'sm',
   onClick = () => {},
   ...rest
 }: ButtonProps) {

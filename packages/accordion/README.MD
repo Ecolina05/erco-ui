@@ -8,6 +8,7 @@ An accordion component.
 | -------- | --------------- | -------------------- |
 | children | React.ReactNode | Accordion content    |
 | title    | string          | Accordion title      |
+| id       | string          | Accordion id         |
 | isOpen   | boolean         | Accordion open state |
 
 ## Example
@@ -15,6 +16,7 @@ An accordion component.
 ```jsx
 <Accordion
   title='Accordion Title'
+  id='accordion-1'
   isOpen={true}
 >
   <p>Accordion Content</p>

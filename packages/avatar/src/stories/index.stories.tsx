@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
-import React from 'react'
-
 import Avatar from '../index'
 
 const meta: Meta<typeof Avatar> = {
@@ -18,10 +16,11 @@ export const Default: Story = {
     classNames: '',
     color: 'purple',
     isBordered: false,
+    name: 'Ernesto Colina',
     radius: 'full',
     size: 'md',
-    src: 'https://i.pravatar.cc/150?u=a04258114e29026708c'
-    // text: 'Ernesto Colina Doe'
+    src: 'https://i.pravatar.cc/150?u=a04258114e29026708c',
+    text: ''
   },
   argTypes: {
     alt: {
@@ -36,6 +35,10 @@ export const Default: Story = {
     },
     isBordered: {
       control: 'boolean'
+    },
+    name: {
+      control: 'text',
+      description: 'Full name (generates initials if no image/text)'
     },
     size: {
       control: 'select',
