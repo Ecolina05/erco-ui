@@ -13,7 +13,7 @@
     "./src/styles/index.css"
   ],
   "style": "./src/styles/index.css",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "dependencies": {
     "clsx": "^2.1.1",
     "react": "^19.1.0"

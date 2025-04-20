@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "Ernesto Colina",
-  "license": "ISC",
+  "license": "UNLICENSED",
   "description": "",
   "workspaces": [
     "packages/*"

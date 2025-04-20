@@ -9,7 +9,7 @@
   "files": [
     "dist"
   ],
-  "license": "ISC",
+  "license": "UNLICENSED",
   "dependencies": {
     "@erco-ui/spinner": "^1.0.0-alpha.0",
     "clsx": "^2.1.1",
