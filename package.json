@@ -9,7 +9,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "lerna-version": "lerna version --no-git-tag-version --no-push",
-    "publish": "lerna publish --no-private --access public"
+    "publish": "lerna publish"
   },
   "keywords": [],
   "author": "",
