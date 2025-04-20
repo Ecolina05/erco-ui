@@ -19,7 +19,7 @@ const react_1 = __importDefault(require("react"));
 const clsx_1 = __importDefault(require("clsx"));
 const colors_1 = require("./props/colors");
 const sizes_1 = require("./props/sizes");
-const spinner_1 = __importDefault(require("@erco-ui/spinner"));
+// import Spinner from '@erco-ui/spinner'
 require("./styles/index.css");
 function Button(_a) {
     var { ariaLabel, color = 'purple', className = '', children, isLoading = false, size = 'sm', onClick = () => { } } = _a, rest = __rest(_a, ["ariaLabel", "color", "className", "children", "isLoading", "size", "onClick"]);
@@ -27,7 +27,5 @@ function Button(_a) {
     const spinnerColor = ['purple', 'green', 'red', 'yellow', 'blue'].includes(color)
         ? 'white'
         : color;
-    return (react_1.default.createElement("button", Object.assign({ "aria-label": ariaLabel, className: buttonClassName, disabled: isLoading, onClick: onClick }, rest), isLoading ? (react_1.default.createElement("div", { className: 'flex items-center gap-2' },
-        react_1.default.createElement(spinner_1.default, { color: spinnerColor, size: size }),
-        children)) : (children)));
+    return (react_1.default.createElement("button", Object.assign({ "aria-label": ariaLabel, className: buttonClassName, disabled: isLoading, onClick: onClick }, rest), isLoading ? (react_1.default.createElement("div", { className: 'flex items-center gap-2' }, children)) : (children)));
 }

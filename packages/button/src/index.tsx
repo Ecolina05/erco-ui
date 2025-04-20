@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import { colors } from './props/colors'
 import { sizes } from './props/sizes'
 
-import Spinner from '@erco-ui/spinner'
+// import Spinner from '@erco-ui/spinner'
 
 import './styles/index.css'
 
@@ -35,10 +35,10 @@ export default function Button({
     >
       {isLoading ? (
         <div className='flex items-center gap-2'>
-          <Spinner
+          {/* <Spinner
             color={spinnerColor as any}
             size={size}
-          />
+          /> */}
 
           {children}
         </div>
