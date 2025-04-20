@@ -8,16 +8,20 @@
     "build": "lerna run build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "lerna:version": "lerna version --no-git-tag-version --no-push",
+    "lerna:version": "lerna version --no-git-tag-version",
     "lerna:publish": "lerna publish"
   },
   "keywords": [],
-  "author": "",
+  "author": "Ernesto Colina",
   "license": "ISC",
   "description": "",
   "workspaces": [
     "packages/*"
   ],
+  "homepage": "https://github.com/Ecolina05/erco-ui",
+  "directories": {
+    "lib": "dist"
+  },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
     "@storybook/addon-essentials": "^8.6.12",
