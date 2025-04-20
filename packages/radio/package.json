@@ -9,7 +9,7 @@
   "files": [
     "dist"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "dependencies": {
     "clsx": "^2.1.1",
     "react": "^19.1.0"

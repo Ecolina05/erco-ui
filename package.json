@@ -13,7 +13,7 @@
   },
   "keywords": [],
   "author": "Ernesto Colina",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "description": "",
   "workspaces": [
     "packages/*"
