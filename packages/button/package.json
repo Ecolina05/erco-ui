@@ -15,6 +15,7 @@
   "style": "./src/styles/index.css",
   "license": "ISC",
   "dependencies": {
+    "@erco-ui/spinner": "^0.0.1-alpha.0",
     "clsx": "^2.1.1",
     "react": "^19.1.0"
   }

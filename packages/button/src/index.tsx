@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import { colors } from './props/colors'
 import { sizes } from './props/sizes'
 
-import Spinner from '../../spinner/src/index'
+import Spinner from '@erco-ui/spinner'
 
 import './styles/index.css'
 
