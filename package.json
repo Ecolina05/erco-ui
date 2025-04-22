@@ -1,6 +1,6 @@
 {
   "name": "erco-ui",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0-alpha.1",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf node_modules package-lock.json",
