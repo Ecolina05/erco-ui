@@ -13,5 +13,7 @@
   "dependencies": {
     "react": "^19.1.0"
   },
-  "gitHead": "543161a46e1b72dee807ddf9d122681453f2ca7f"
+  "publishConfig": {
+    "access": "public"
+  }
 }
