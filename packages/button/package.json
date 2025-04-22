@@ -14,5 +14,9 @@
     "@erco-ui/spinner": "^1.0.0-alpha.0",
     "clsx": "^2.1.1",
     "react": "^19.1.0"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "543161a46e1b72dee807ddf9d122681453f2ca7f"
 }

@@ -12,5 +12,9 @@
   "license": "MIT",
   "dependencies": {
     "react": "^19.1.0"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "543161a46e1b72dee807ddf9d122681453f2ca7f"
 }
