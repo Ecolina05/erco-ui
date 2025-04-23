@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
@@ -10,5 +9,5 @@
     "strict": true,
     "target": "es2022"
   },
-  "include": ["src/index.tsx", "src/types/index.ts"]
+  "include": ["src/index.ts"]
 }

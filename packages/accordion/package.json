@@ -1,13 +1,14 @@
 {
   "name": "@erco-ui/accordion",
   "version": "1.0.0-alpha.1",
-  "main": "dist/index.js",
-  "types": "dist/types/index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/types/index.js",
   "scripts": {
-    "build": "NODE_ENV=development tsc"
+    "build": "NODE_ENV=development tsc",
+    "dist": "NODE_ENV=production tsc"
   },
   "files": [
-    "dist"
+    "lib"
   ],
   "license": "MIT",
   "dependencies": {

@@ -2,3 +2,5 @@ node_modules/
 *storybook.log
 
 lerna-debug.log
+
+packages/**/lib

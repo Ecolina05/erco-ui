@@ -3,11 +3,12 @@
   "version": "1.0.0-alpha.1",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf node_modules package-lock.json",
+    "clean-lib": "rm -rf packages/**/lib",
+    "clean": "npm run clean-lib && rm -rf node_modules package-lock.json",
     "reset": "npm run clean && npm install",
     "build": "lerna run build",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "dev": "storybook dev -p 6006",
+    "storybook:build": "storybook build",
     "lerna:version": "lerna version --no-git-tag-version",
     "lerna:publish": "lerna publish"
   },
@@ -20,7 +21,7 @@
   ],
   "homepage": "https://github.com/Ecolina05/erco-ui",
   "directories": {
-    "lib": "dist"
+    "lib": "lib"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
