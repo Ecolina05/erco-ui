@@ -1,8 +1,8 @@
 {
   "name": "@erco-ui/avatar",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "main": "./lib/index.js",
-  "types": "./lib/types/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "build": "NODE_ENV=development tsc"
   },

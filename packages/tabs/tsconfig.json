@@ -7,7 +7,9 @@
     "outDir": "lib",
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2022"
+    "target": "es2022",
+    "declaration": true,
+    "declarationDir": "lib"
   },
   "include": ["src/index.tsx", "src/types/index.ts"]
 }

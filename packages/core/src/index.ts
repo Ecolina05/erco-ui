@@ -9,4 +9,19 @@ import Select from '@erco-ui/select'
 import Spinner from '@erco-ui/spinner'
 import Switch from '@erco-ui/switch'
 import Tabs from '@erco-ui/tabs'
-import TextArea from '@erco-ui/textarea'
+import Textarea from '@erco-ui/textarea'
+
+export {
+  Accordion,
+  Avatar,
+  Button,
+  Card,
+  Checkbox,
+  Input,
+  Radio,
+  Select,
+  Spinner,
+  Switch,
+  Tabs,
+  Textarea
+}

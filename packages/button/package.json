@@ -1,8 +1,8 @@
 {
   "name": "@erco-ui/button",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0-alpha.2",
   "main": "./lib/index.js",
-  "types": "./lib/types/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
     "build": "NODE_ENV=development tsc"
   },
@@ -11,7 +11,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@erco-ui/spinner": "^1.0.0-alpha.1",
+    "@erco-ui/spinner": "^1.0.0-alpha.2",
     "clsx": "^2.1.1",
     "react": "^19.1.0"
   },
