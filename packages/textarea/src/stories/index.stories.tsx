@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import Textarea from '../index'
 
+import '../../../../lib/styles/globals.css'
+
 const meta: Meta<typeof Textarea> = {
   component: Textarea,
   title: 'Textarea'
@@ -15,12 +17,12 @@ export const Default: Story = {
     borderColor: 'purple',
     description: '',
     id: 'first_name',
-    inputClassNames: '',
     isRequired: true,
     label: 'First Name',
     labelClassNames: '',
     placeholder: 'Ernesto Colina',
-    radius: 'lg'
+    radius: 'lg',
+    textareaClassNames: ''
   },
   argTypes: {
     borderColor: {
@@ -34,10 +36,6 @@ export const Default: Story = {
     id: {
       control: 'text',
       description: 'Input id'
-    },
-    inputClassNames: {
-      control: 'text',
-      description: 'Custom input class name'
     },
     isRequired: {
       control: 'boolean',
@@ -58,6 +56,10 @@ export const Default: Story = {
     radius: {
       control: 'select',
       options: ['xs', 'sm', 'md', 'lg', 'full']
-    }
+    },
+    textareaClassNames: {
+      control: 'text',
+      description: 'Custom textarea class name'
+    } 
   }
 }

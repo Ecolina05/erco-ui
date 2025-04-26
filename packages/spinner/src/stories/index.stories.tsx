@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import Spinner from '../index'
 
+import '../../../../lib/styles/globals.css'
+
 const meta: Meta<typeof Spinner> = {
   component: Spinner,
   title: 'Spinner'

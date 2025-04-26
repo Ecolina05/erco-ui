@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import Switch from '../index'
 
+import '../../../../lib/styles/globals.css'
+
 const meta: Meta<typeof Switch> = {
   component: Switch,
   title: 'Switch'

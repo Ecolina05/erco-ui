@@ -3,6 +3,8 @@ import React from 'react'
 
 import Tabs from '../index'
 
+import '../../../../lib/styles/globals.css'
+
 const meta: Meta<typeof Tabs> = {
   component: Tabs,
   title: 'Tabs'

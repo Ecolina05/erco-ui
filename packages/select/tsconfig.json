@@ -1,15 +1,7 @@
 {
+  "extends": "../../tsconfig.base.json",
+  "include": ["src/index.tsx", "src/types/index.ts"],
   "compilerOptions": {
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
-    "module": "ESNext",
-    "outDir": "lib",
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "ES6",
-    "declaration": true,
-    "declarationDir": "lib"
-  },
-  "include": ["src/index.tsx", "src/types/index.ts"]
+    "outDir": "lib"
+  }
 }

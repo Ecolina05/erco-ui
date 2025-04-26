@@ -3,11 +3,11 @@
     "allowSyntheticDefaultImports": true,
     "declaration": true,
     "emitDeclarationOnly": false,
-    "jsx": "react-jsx",
+    "jsx": "react",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "outDir": "lib",
+    "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext"
+    "target": "ESNext",
   }
 }

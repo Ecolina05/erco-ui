@@ -5,8 +5,8 @@
   "scripts": {
     "clean-lib": "rm -rf packages/**/lib",
     "clean": "npm run clean-lib && rm -rf node_modules package-lock.json",
-    "reset": "npm run clean && npm install && npm run build",
-    "css:build": "rm -rf lib && postcss styles/globals.css -d lib/styles.css",
+    "reset": "npm run clean && npm install && npm run lerna:build",
+    "css:build": "rm -rf lib && postcss styles/globals.css -d lib/styles",
     "storybook:start": "storybook dev -p 6006",
     "storybook:build": "storybook build",
     "lerna:build": "npm run clean-lib && lerna run build",
