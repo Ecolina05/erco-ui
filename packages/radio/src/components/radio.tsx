@@ -1,11 +1,9 @@
-import type { RadioProps } from '../types'
+import type { RadioProps } from '../types/index'
 
 import React from 'react'
 import clsx from 'clsx'
 
 import { bgColors } from '../props/colors'
-
-import '../styles/index.css'
 
 export default function Radio({
   value,

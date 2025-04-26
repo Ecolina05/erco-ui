@@ -1,7 +1,4 @@
-@import 'tailwindcss';
-@import '../../../../globals.css';
-
-.avatar {
+.erco-avatar {
   @apply flex relative justify-center items-center box-border overflow-hidden align-middle outline-none;
 
   & .image {

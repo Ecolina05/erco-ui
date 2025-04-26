@@ -1,11 +1,9 @@
-import type { CardProps } from './types'
+import type { CardProps } from './types/index'
 import React, { forwardRef } from 'react'
 import clsx from 'clsx'
 
 import { radius as CardRadius } from './props/radius'
 import { shadow as CardShadow } from './props/shadow'
-
-import './styles/index.css'
 
 const Card = forwardRef<HTMLDivElement, CardProps>((
   {
@@ -26,7 +24,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>((
   const needsTabIndex = needsInteractiveRole && tabIndex === undefined;
   
   const cardClassNames = clsx(
-    'card',
+    'erco-card',
     CardRadius[radius],
     CardShadow[shadow],
     isBordered && 'border border-gray-200',

@@ -1,11 +1,9 @@
-import type { InputProps } from './types'
+import type { InputProps } from './types/index'
 import React, { useState } from 'react'
 import clsx from 'clsx'
 
 import { radius as InputRadius } from './props/radius'
 import { borderColor as InputBorderColor } from './props/border-colors'
-
-import './styles/index.css'
 
 export default function Input({
   borderColor = 'purple',
@@ -23,7 +21,7 @@ export default function Input({
   const [isFocused, setIsFocused] = useState(false)
 
   const inputClassName = clsx(
-    'input',
+    'erco-input',
     InputRadius[radius],
     isFocused && InputBorderColor[borderColor],
     inputClassNames

@@ -1,8 +1,6 @@
-import type { AccordionProps } from './types'
+import type { AccordionProps } from './types/index'
 
 import React, { useEffect, useState, useId } from 'react'
-
-import './styles/index.css'
 
 export default function Accordion({
   children,

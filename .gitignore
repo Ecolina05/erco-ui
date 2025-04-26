@@ -1,5 +1,6 @@
 node_modules/
 *storybook.log
+bun.lockb
 
 lerna-debug.log
 

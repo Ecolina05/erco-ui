@@ -1,11 +1,9 @@
-import type { CheckboxProps } from './types'
+import type { CheckboxProps } from './types/index'
 
 import React, { useState, useEffect } from 'react'
 import clsx from 'clsx'
 
 import { bgColors, contentColors } from './props/colors'
-
-import './styles/index.css'
 
 export default function Checkbox({
   color = 'primary',

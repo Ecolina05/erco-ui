@@ -1,4 +1,4 @@
-import type { ButtonProps } from './types'
+import type { ButtonProps } from './types/index'
 import React from 'react'
 
 import clsx from 'clsx'
@@ -6,9 +6,7 @@ import clsx from 'clsx'
 import { colors } from './props/colors'
 import { sizes } from './props/sizes'
 
-// import Spinner from '@erco-ui/spinner'
-
-import './styles/index.css'
+import Spinner from '@erco-ui/spinner'
 
 export default function Button({
   ariaLabel,
@@ -20,7 +18,7 @@ export default function Button({
   onClick = () => {},
   ...rest
 }: ButtonProps) {
-  const buttonClassName = clsx('button', colors[color], sizes[size], className)
+  const buttonClassName = clsx('erco-button', colors[color], sizes[size], className)
   const spinnerColor = ['purple', 'green', 'red', 'yellow', 'blue'].includes(color)
     ? 'white'
     : color
@@ -35,10 +33,10 @@ export default function Button({
     >
       {isLoading ? (
         <div className='flex items-center gap-2'>
-          {/* <Spinner
+          <Spinner
             color={spinnerColor as any}
             size={size}
-          /> */}
+          />
 
           {children}
         </div>

@@ -1,4 +1,4 @@
-import type { AvatarProps } from './types'
+import type { AvatarProps } from './types/index'
 
 import React, { useState } from 'react'
 import clsx from 'clsx'
@@ -6,8 +6,6 @@ import clsx from 'clsx'
 import { borderColors, bgColors } from './props/colors'
 import { radius as AvatarRadius } from './props/radius'
 import { sizes } from './props/sizes'
-
-import './styles/index.css'
 
 export default function Avatar({
   alt = 'Avatar',
@@ -43,7 +41,7 @@ export default function Avatar({
   const showText = !showImage && (displayText || name)
 
   const avatarClassName = clsx(
-    'avatar',
+    'erco-avatar',
     `${classNames} ${borderColors[color as keyof typeof borderColors]} ${AvatarRadius[radius]} ${
       sizes[size]
     } text-white font-medium`,

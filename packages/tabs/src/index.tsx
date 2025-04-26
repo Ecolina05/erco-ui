@@ -1,11 +1,9 @@
-import type { TabsProps } from './types'
+import type { TabsProps } from './types/index'
 
 import React, { useState, useEffect, useId } from 'react'
 import clsx from 'clsx'
 
 import { colors, textColors } from './props/colors'
-
-import './styles/index.css'
 
 export default function Tabs({
   tabs,
@@ -40,11 +38,11 @@ export default function Tabs({
 
   return (
     <div
-      className={clsx('tabs-container', isVertical ? 'flex flex-row' : 'flex flex-col', className)}
+      className={clsx('erco-tabs-container', isVertical ? 'flex flex-row' : 'flex flex-col', className)}
     >
       <div
         aria-orientation={orientation}
-        className={clsx('tabs', isVertical ? 'flex-col border-r' : 'flex-row border-b')}
+        className={clsx('erco-tabs', isVertical ? 'flex-col border-r' : 'flex-row border-b')}
         role='tablist'
       >
         {tabs.map(tab => (
@@ -68,7 +66,7 @@ export default function Tabs({
         ))}
       </div>
 
-      <div className={clsx('tab-content-container flex-1', isVertical ? 'pl-1 pt-1' : 'pt-2')}>
+      <div className={clsx('flex-1', isVertical ? 'pl-1 pt-1' : 'pt-2')}>
         {tabs.map((tab, index) =>
           content[index] ? (
             <div

@@ -1,11 +1,9 @@
-import type { TextareaProps } from './types'
+import type { TextareaProps } from './types/index'
 import React, { useState } from 'react'
 import clsx from 'clsx'
 
 import { radius as TextareaRadius } from './props/radius'
 import { borderColor as TextareaBorderColor } from './props/border-colors'
-
-import './styles/index.css'
 
 export default function Textarea({
   borderColor = 'purple',
@@ -22,7 +20,7 @@ export default function Textarea({
   const [isFocused, setIsFocused] = useState(false)
 
   const textareaClassName = clsx(
-    'textarea',
+    'erco-textarea',
     TextareaRadius[radius],
     isFocused && TextareaBorderColor[borderColor],
     textareaClassNames

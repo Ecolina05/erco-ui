@@ -5,9 +5,9 @@
     "emitDeclarationOnly": false,
     "jsx": "react-jsx",
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "nodenext",
     "outDir": "lib",
     "strict": true,
-    "target": "ESNext"
+    "target": "ES6",
   }
 }

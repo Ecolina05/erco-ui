@@ -1,11 +1,9 @@
-import type { SelectProps } from './types'
+import type { SelectProps } from './types/index'
 import React from 'react'
 import clsx from 'clsx'
 
 import { radius as SelectRadius } from './props/radius'
 import { borderColor as SelectBorderColor } from './props/border-colors'
-
-import './styles/index.css'
 
 export default function Select({
   options,
@@ -22,7 +20,7 @@ export default function Select({
   }
 
   const selectClassNames = clsx(
-    'select',
+    'erco-select',
     SelectRadius[radius],
     SelectBorderColor[borderColor],
     classNames

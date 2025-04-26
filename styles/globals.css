@@ -1,0 +1,20 @@
+@import 'tailwindcss';
+@import './font.css';
+
+@theme {
+  --color-primary: #9353d3;
+  --color-default: #3f3f46;
+  --color-success: #1ac964;
+  --color-error: #f31260;
+  --color-warning: #f5a525;
+  --color-info: #016fee;
+}
+
+@import '../packages/avatar/src/styles/index.css';
+@import '../packages/button/src/styles/index.css';
+@import '../packages/card/src/styles/index.css';
+@import '../packages/input/src/styles/index.css';
+@import '../packages/select/src/styles/index.css';
+@import '../packages/spinner/src/styles/index.css';
+@import '../packages/tabs/src/styles/index.css';
+@import '../packages/textarea/src/styles/index.css';

@@ -1,7 +1,4 @@
-@import 'tailwindcss';
-@import '../../../../globals.css';
-
-.spinner {
+.erco-spinner {
   border: 2px solid;
   border-radius: 50%;
   border-left-color: transparent;

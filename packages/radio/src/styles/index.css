@@ -1,6 +1,0 @@
-@import 'tailwindcss';
-@import '../../../../globals.css';
-
-.radio {
-  @apply flex items-center cursor-pointer;
-}

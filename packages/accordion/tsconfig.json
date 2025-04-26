@@ -4,11 +4,11 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "react",
-    "module": "commonjs",
+    "module": "ESNext",
     "outDir": "lib",
     "skipLibCheck": true,
     "strict": true,
-    "target": "es2022",
+    "target": "ES6",
     "declaration": true,
     "declarationDir": "lib"
   },

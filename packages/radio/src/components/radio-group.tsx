@@ -1,4 +1,4 @@
-import type { RadioGroupProps } from '../types'
+import type { RadioGroupProps } from '../types/index'
 
 import React, { useState } from 'react'
 import clsx from 'clsx'
