@@ -11,5 +11,5 @@ export type ButtonProps = {
   isIconOnly?: boolean
   isLoading?: boolean
   size?: keyof typeof sizes
-  variant?: 'solid' | 'outline'
+  variant?: 'flat' | 'outline' | 'solid'
 } & React.ButtonHTMLAttributes<HTMLButtonElement>
