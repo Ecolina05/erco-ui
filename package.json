@@ -1,6 +1,6 @@
 {
   "name": "erco-ui",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "main": "index.js",
   "scripts": {
     "clean-lib": "rm -rf packages/**/lib",
@@ -11,7 +11,8 @@
     "storybook:build": "storybook build",
     "lerna:build": "npm run clean-lib && lerna run build",
     "lerna:version": "lerna version --no-git-tag-version",
-    "lerna:publish": "lerna publish"
+    "lerna:publish": "lerna publish",
+    "postinstall": "mkdir -p styles && cp -R lib/styles/* styles/"
   },
   "keywords": [],
   "author": "Ernesto Colina",
@@ -24,6 +25,10 @@
   "directories": {
     "lib": "lib"
   },
+  "files": [
+    "lib",
+    "styles"
+  ],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
     "@storybook/addon-essentials": "^8.6.12",
@@ -46,7 +51,7 @@
     "vitest": "^3.1.2"
   },
   "dependencies": {
-    "@erco-ui/spinner": "^1.0.0-alpha.4",
+    "@erco-ui/spinner": "^1.0.0-alpha.5",
     "@tailwindcss/postcss": "^4.1.4",
     "clsx": "^2.1.1",
     "react": "^19.1.0",
