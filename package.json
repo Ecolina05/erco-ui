@@ -1,6 +1,6 @@
 {
   "name": "erco-ui",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "main": "index.js",
   "scripts": {
     "clean-lib": "rm -rf packages/**/lib",
@@ -12,6 +12,7 @@
     "lerna:build": "npm run clean-lib && lerna run build",
     "lerna:version": "lerna version --no-git-tag-version",
     "lerna:publish": "lerna publish",
+    "done": "npm run storybook:build && npm run lerna:build && npm run css:build && npm run lerna:publish",
     "postinstall": "mkdir -p styles && cp -R lib/styles/* styles/"
   },
   "keywords": [],
@@ -26,8 +27,7 @@
     "lib": "lib"
   },
   "files": [
-    "lib",
-    "styles"
+    "lib"
   ],
   "devDependencies": {
     "@chromatic-com/storybook": "^3.2.6",
@@ -51,7 +51,7 @@
     "vitest": "^3.1.2"
   },
   "dependencies": {
-    "@erco-ui/spinner": "^1.0.0-alpha.5",
+    "@erco-ui/spinner": "^1.0.0-alpha.6",
     "@tailwindcss/postcss": "^4.1.4",
     "clsx": "^2.1.1",
     "react": "^19.1.0",
