@@ -1,8 +1,8 @@
 export const borderColor = {
-  purple: '!border-primary',
+  purple: '!border-purple',
   default: '!border-gray-900',
-  green: '!border-success',
-  red: '!border-error',
-  yellow: '!border-warning',
-  blue: '!border-info'
+  green: '!border-green',
+  red: '!border-red',
+  yellow: '!border-yellow',
+  blue: '!border-blue'
 }

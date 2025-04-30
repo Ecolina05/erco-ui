@@ -1,8 +1,8 @@
 export const colors = {
-  purple: 'text-primary',
+  purple: 'text-purple',
   default: 'text-gray-900',
-  green: 'text-success',
-  red: 'text-error',
-  yellow: 'text-warning',
-  blue: 'text-info'
+  green: 'text-green',
+  red: 'text-red',
+  yellow: 'text-yellow',
+  blue: 'text-blue'
 }

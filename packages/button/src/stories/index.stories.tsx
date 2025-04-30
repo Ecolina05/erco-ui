@@ -18,8 +18,11 @@ export const Default: Story = {
     children: 'Button',
     className: '',
     color: 'purple',
+    isDisabled: false,
+    isIconOnly: false,
     isLoading: false,
     size: 'sm',
+    variant: 'solid',
     onClick: () => {}
   },
   argTypes: {
@@ -46,9 +49,23 @@ export const Default: Story = {
       description: 'Button size',
       options: ['sm', 'md', 'lg']
     },
+    isDisabled: {
+      control: 'boolean',
+      description: 'Button disabled state'
+    },
+    isIconOnly: {
+      control: 'boolean',
+      description: 'Button icon only state'
+    },
     isLoading: {
       control: 'boolean',
       description: 'Button loading state'
+    },
+    variant: {
+      control: 'radio',
+      defaultValue: 'solid',
+      description: 'Button variant',
+      options: ['flat', 'outline', 'solid']
     },
     onClick: {
       action: 'clicked',

@@ -22,7 +22,7 @@ A checkbox component.
 
 ```jsx
 <Checkbox
-  color='primary'
+  color='purple'
   id='my-checkbox'
   label='My checkbox'
   checked={true}

@@ -14,7 +14,7 @@ type Story = StoryObj<typeof Checkbox>
 
 export const Default: Story = {
   args: {
-    color: 'primary',
+    color: 'purple',
     id: 'checkbox-1',
     label: 'Label',
     checked: false,
@@ -24,9 +24,9 @@ export const Default: Story = {
   argTypes: {
     color: {
       control: 'select',
-      defaultValue: 'primary',
+      defaultValue: 'purple',
       description: 'Checkbox color',
-      options: ['primary', 'default', 'green', 'red', 'yellow', 'blue']
+      options: ['purple', 'default', 'green', 'red', 'yellow', 'blue']
     },
     id: {
       control: 'text',

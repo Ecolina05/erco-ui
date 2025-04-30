@@ -7,7 +7,7 @@ import { bgColors } from '../props/colors'
 
 export default function Radio({
   value,
-  color = 'primary',
+  color = 'purple',
   isDisabled = false,
   isSelected,
   text,

@@ -1,13 +1,7 @@
 {
+  "extends": "../../tsconfig.base.json",
+  "include": ["src/index.ts"],
   "compilerOptions": {
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
-    "module": "commonjs",
-    "outDir": "lib",
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "es2022"
-  },
-  "include": ["src/index.ts"]
+    "outDir": "lib"
+  }
 }

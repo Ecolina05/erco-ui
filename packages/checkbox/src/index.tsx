@@ -6,7 +6,7 @@ import clsx from 'clsx'
 import { bgColors, contentColors } from './props/colors'
 
 export default function Checkbox({
-  color = 'primary',
+  color = 'purple',
   id,
   label,
   checked = false,

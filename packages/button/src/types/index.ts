@@ -7,6 +7,9 @@ export type ButtonProps = {
   ariaLabel?: string
   className?: string
   color?: keyof typeof colors
+  isDisabled?: boolean
+  isIconOnly?: boolean
   isLoading?: boolean
   size?: keyof typeof sizes
+  variant?: 'solid' | 'outline'
 } & React.ButtonHTMLAttributes<HTMLButtonElement>

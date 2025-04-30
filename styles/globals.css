@@ -2,12 +2,12 @@
 @import './font.css';
 
 @theme {
-  --color-primary: #9353d3;
+  --color-purple: #9353d3;
   --color-default: #3f3f46;
-  --color-success: #1ac964;
-  --color-error: #f31260;
-  --color-warning: #f5a525;
-  --color-info: #016fee;
+  --color-green: #1ac964;
+  --color-red: #f31260;
+  --color-yellow: #f5a525;
+  --color-blue: #016fee;
 }
 
 @import '../packages/avatar/src/styles/index.css';

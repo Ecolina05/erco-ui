@@ -8,7 +8,7 @@ import { borderColor as SelectBorderColor } from './props/border-colors'
 export default function Select({
   options,
   classNames,
-  borderColor = 'purple',
+  borderColor = 'default',
   description,
   id,
   label,

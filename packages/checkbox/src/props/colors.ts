@@ -1,14 +1,14 @@
 export const bgColors = {
-  primary: 'bg-primary border-primary hover:bg-primary/90',
+  purple: 'bg-purple border-purple hover:bg-purple/90',
   default: 'bg-gray-200 border-gray-200 hover:bg-gray-200/90',
-  green: 'bg-success border-green-500 hover:bg-success/90',
-  red: 'bg-error border-red-500 hover:bg-error/90',
-  yellow: 'bg-warning border-yellow-500 hover:bg-warning/90',
-  blue: 'bg-info border-blue-500 hover:bg-info/90'
+  green: 'bg-green border-green-500 hover:bg-green/90',
+  red: 'bg-red border-red-500 hover:bg-red/90',
+  yellow: 'bg-yellow border-yellow-500 hover:bg-yellow/90',
+  blue: 'bg-blue border-blue-500 hover:bg-blue/90'
 }
 
 export const contentColors = {
-  primary: 'text-white',
+  purple: 'text-white',
   default: 'text-gray-900',
   green: 'text-black',
   red: 'text-white',

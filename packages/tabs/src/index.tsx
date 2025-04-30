@@ -50,7 +50,7 @@ export default function Tabs({
             aria-controls={`${tabsId}-panel-${tab.value}`}
             aria-selected={selectedTab === tab.value}
             className={clsx(
-              'tab px-4 py-2 focus:outline-none',
+              'erco-tab px-4 py-2 focus:outline-none',
               selectedTab === tab.value ? ['active', colors[color], textColors[color]] : null,
               tab.disabled && 'opacity-50 cursor-not-allowed'
             )}

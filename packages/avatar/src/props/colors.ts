@@ -1,17 +1,17 @@
 export const borderColors = {
-  purple: 'border-primary',
+  purple: 'border-purple',
   default: 'border-gray-900',
-  green: 'border-success',
-  red: 'border-error',
-  yellow: 'border-warning',
-  blue: 'border-info'
+  green: 'border-green',
+  red: 'border-red',
+  yellow: 'border-yellow',
+  blue: 'border-blue'
 }
 
 export const bgColors = {
-  purple: 'bg-primary',
+  purple: 'bg-purple',
   default: 'bg-gray-900',
-  green: 'bg-success',
-  red: 'bg-error',
-  yellow: 'bg-warning',
-  blue: 'bg-info'
+  green: 'bg-green',
+  red: 'bg-red',
+  yellow: 'bg-yellow',
+  blue: 'bg-blue'
 }

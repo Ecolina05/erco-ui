@@ -8,7 +8,7 @@ import { Radio } from '../index'
 export default function RadioGroup({
   options,
   classNames = '',
-  color = 'primary',
+  color = 'purple',
   label,
   orientation = 'vertical',
   onChange

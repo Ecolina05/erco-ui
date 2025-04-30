@@ -28,7 +28,7 @@ A radio group component.
     { value: 'option3', text: 'Option 3' }
   ]}
   classNames=''
-  color='primary'
+  color='purple'
   label='My radio'
   orientation='vertical'
 />

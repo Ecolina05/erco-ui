@@ -1,8 +1,8 @@
 export const colors = {
-  purple: 'bg-primary',
+  purple: 'bg-purple',
   default: 'bg-gray-900',
-  green: 'bg-success',
-  red: 'bg-error',
-  yellow: 'bg-warning',
-  blue: 'bg-info'
+  green: 'bg-green',
+  red: 'bg-red',
+  yellow: 'bg-yellow',
+  blue: '!bg-blue'
 }

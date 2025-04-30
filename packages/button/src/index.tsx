@@ -5,20 +5,26 @@ import clsx from 'clsx'
 
 import { colors } from './props/colors'
 import { sizes } from './props/sizes'
+import { variants } from './props/variants'
 
 import Spinner from '@erco-ui/spinner'
 
 export default function Button({
   ariaLabel,
-  color = 'purple',
   className = '',
+  color = 'purple',
   children,
+  isDisabled = false,
+  isIconOnly = false,
   isLoading = false,
   size = 'sm',
   onClick = () => {},
+  variant = 'solid',
   ...rest
 }: ButtonProps) {
-  const buttonClassName = clsx('erco-button', colors[color], sizes[size], className)
+  const buttonClassName = clsx('erco-button', sizes[size], className, variants[variant](color), {
+    'erco-button--icon': isIconOnly
+  })
   const spinnerColor = ['purple', 'green', 'red', 'yellow', 'blue'].includes(color)
     ? 'white'
     : color
@@ -27,7 +33,7 @@ export default function Button({
     <button
       aria-label={ariaLabel}
       className={buttonClassName}
-      disabled={isLoading}
+      disabled={isLoading || isDisabled}
       onClick={onClick}
       {...rest}
     >
@@ -35,7 +41,7 @@ export default function Button({
         <div className='flex items-center gap-2'>
           <Spinner
             color={spinnerColor as any}
-            size={size}
+            size={isIconOnly ? 'sm' : size}
           />
 
           {children}

@@ -24,7 +24,7 @@ A button component.
 ```jsx
 <Button
   ariaLabel='Click me'
-  color='primary'
+  color='purple'
   className='my-button'
   isLoading={false}
   onClick={() => {}}

@@ -20,7 +20,7 @@ export const Default: Story = {
       { value: '3', text: 'Option 3', isDisabled: true }
     ],
     classNames: '',
-    color: 'primary',
+    color: 'purple',
     label: 'Some title',
     orientation: 'vertical'
   },
@@ -35,9 +35,9 @@ export const Default: Story = {
     },
     color: {
       control: 'select',
-      defaultValue: 'primary',
+      defaultValue: 'purple',
       description: 'Radio color',
-      options: ['primary', 'default', 'green', 'red', 'yellow', 'blue']
+      options: ['purple', 'default', 'green', 'red', 'yellow', 'blue']
     },
     label: {
       control: 'text',
