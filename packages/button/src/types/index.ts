@@ -3,7 +3,6 @@ import { sizes } from '../props/sizes'
 
 export type ButtonProps = {
   children: React.ReactNode | string
-  onClick: () => void
   ariaLabel?: string
   className?: string
   color?: keyof typeof colors
@@ -11,5 +10,6 @@ export type ButtonProps = {
   isIconOnly?: boolean
   isLoading?: boolean
   size?: keyof typeof sizes
-  variant?: 'flat' | 'outline' | 'solid'
+  variant?: 'flat' | 'light' | 'outline' | 'solid'
+  onClick?: () => void
 } & React.ButtonHTMLAttributes<HTMLButtonElement>

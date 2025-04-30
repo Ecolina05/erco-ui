@@ -3,7 +3,6 @@ import React from 'react'
 
 import clsx from 'clsx'
 
-import { colors } from './props/colors'
 import { sizes } from './props/sizes'
 import { variants } from './props/variants'
 
@@ -18,8 +17,8 @@ export default function Button({
   isIconOnly = false,
   isLoading = false,
   size = 'sm',
-  onClick = () => {},
   variant = 'solid',
+  onClick,
   ...rest
 }: ButtonProps) {
   const buttonClassName = clsx('erco-button', sizes[size], className, variants[variant](color), {

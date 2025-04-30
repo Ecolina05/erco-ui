@@ -3,7 +3,13 @@ export const colors = {
     flat: {
       bg: 'bg-purple/10',
       text: 'text-purple',
-      border: 'border-purple'
+      border: 'border-transparent'
+    },
+    light: {
+      bg: 'bg-transparent',
+      hover: 'hover:bg-purple/20',
+      text: 'text-gray-900',
+      border: 'border-transparent'
     },
     outline: {
       bg: 'bg-transparent',
@@ -19,7 +25,13 @@ export const colors = {
     flat: {
       bg: 'bg-gray-200',
       text: 'text-gray-900',
-      border: 'border-gray-200'
+      border: 'border-transparent'
+    },
+    light: {
+      bg: 'bg-transparent',
+      hover: 'hover:bg-gray-200',
+      text: 'text-gray-900',
+      border: 'border-transparent'
     },
     outline: {
       bg: 'bg-transparent',
@@ -35,7 +47,13 @@ export const colors = {
     flat: {
       bg: 'bg-green/10',
       text: 'text-green',
-      border: 'border-green'
+      border: 'border-transparent'
+    },
+    light: {
+      bg: 'bg-transparent',
+      hover: 'hover:bg-green/20',
+      text: 'text-gray-900',
+      border: 'border-transparent'
     },
     outline: {
       bg: 'bg-transparent',
@@ -51,7 +69,13 @@ export const colors = {
     flat: {
       bg: 'bg-red/10',
       text: 'text-red',
-      border: 'border-red'
+      border: 'border-transparent'
+    },
+    light: {
+      bg: 'bg-transparent',
+      hover: 'hover:bg-red/20',
+      text: 'text-gray-900',
+      border: 'border-transparent'
     },
     outline: {
       bg: 'bg-transparent',
@@ -67,7 +91,13 @@ export const colors = {
     flat: {
       bg: 'bg-yellow/10',
       text: 'text-yellow',
-      border: 'border-yellow'
+      border: 'border-transparent'
+    },
+    light: {
+      bg: 'bg-transparent',
+      hover: 'hover:bg-yellow/20',
+      text: 'text-gray-900',
+      border: 'border-transparent'
     },
     outline: {
       bg: 'bg-transparent',
@@ -83,7 +113,13 @@ export const colors = {
     flat: {
       bg: 'bg-blue/10',
       text: 'text-blue',
-      border: 'border-blue'
+      border: 'border-transparent'
+    },
+    light: {
+      bg: 'bg-transparent',
+      hover: 'hover:bg-blue/20',
+      text: 'text-gray-900',
+      border: 'border-transparent'
     },
     outline: {
       bg: 'bg-transparent',

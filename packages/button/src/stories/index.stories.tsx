@@ -62,10 +62,10 @@ export const Default: Story = {
       description: 'Button loading state'
     },
     variant: {
-      control: 'radio',
+      control: 'select',
       defaultValue: 'solid',
       description: 'Button variant',
-      options: ['flat', 'outline', 'solid']
+      options: ['flat', 'light', 'outline', 'solid']
     },
     onClick: {
       action: 'clicked',

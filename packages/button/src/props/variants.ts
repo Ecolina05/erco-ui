@@ -11,6 +11,15 @@ export const variants = {
     `
   },
 
+  light: (color: ColorKey) => {
+    return `
+      ${colors[color].light.bg} 
+      ${colors[color].light.text} 
+      ${colors[color].light.hover}
+      transition-colors duration-200 ease-in-out
+    `
+  },
+
   outline: (color: ColorKey) => {
     return `
       bg-transparent 
