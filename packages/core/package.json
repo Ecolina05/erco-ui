@@ -1,6 +1,6 @@
 {
   "name": "@erco-ui/core",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "main": "./lib/index.js",
   "scripts": {
     "build": "NODE_ENV=development tsc"
@@ -10,18 +10,18 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@erco-ui/accordion": "^1.0.0-alpha.6",
-    "@erco-ui/avatar": "^1.0.0-alpha.6",
-    "@erco-ui/button": "^1.0.0-alpha.6",
-    "@erco-ui/card": "^1.0.0-alpha.6",
-    "@erco-ui/checkbox": "^1.0.0-alpha.6",
-    "@erco-ui/input": "^1.0.0-alpha.6",
-    "@erco-ui/radio": "^1.0.0-alpha.6",
-    "@erco-ui/select": "^1.0.0-alpha.6",
-    "@erco-ui/spinner": "^1.0.0-alpha.6",
-    "@erco-ui/switch": "^1.0.0-alpha.6",
-    "@erco-ui/tabs": "^1.0.0-alpha.6",
-    "@erco-ui/textarea": "^1.0.0-alpha.6",
+    "@erco-ui/accordion": "^1.0.0-alpha.7",
+    "@erco-ui/avatar": "^1.0.0-alpha.7",
+    "@erco-ui/button": "^1.0.0-alpha.7",
+    "@erco-ui/card": "^1.0.0-alpha.7",
+    "@erco-ui/checkbox": "^1.0.0-alpha.7",
+    "@erco-ui/input": "^1.0.0-alpha.7",
+    "@erco-ui/radio": "^1.0.0-alpha.7",
+    "@erco-ui/select": "^1.0.0-alpha.7",
+    "@erco-ui/spinner": "^1.0.0-alpha.7",
+    "@erco-ui/switch": "^1.0.0-alpha.7",
+    "@erco-ui/tabs": "^1.0.0-alpha.7",
+    "@erco-ui/textarea": "^1.0.0-alpha.7",
     "react": "^19.1.0"
   },
   "publishConfig": {
