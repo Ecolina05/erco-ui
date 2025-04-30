@@ -12,7 +12,7 @@
     "lerna:build": "npm run clean-lib && lerna run build",
     "lerna:version": "lerna version --no-git-tag-version",
     "lerna:publish": "lerna publish",
-    "done": "npm run storybook:build && npm run lerna:build && npm run css:build && npm run lerna:publish",
+    "build": "npm run storybook:build && npm run lerna:build && npm run css:build",
     "postinstall": "mkdir -p styles && cp -R lib/styles/* styles/"
   },
   "keywords": [],
