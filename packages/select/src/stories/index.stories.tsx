@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import Select from '../index'
 
-import '../../../../lib/styles/globals.css'
+import '../../../../lib/styles/index.css'
 
 const meta: Meta<typeof Select> = {
   component: Select,
@@ -14,7 +14,7 @@ type Story = StoryObj<typeof Select>
 
 export const Default: Story = {
   args: {
-    borderColor: 'purple',
+    borderColor: 'default',
     classNames: '',
     description: '',
     label: '',

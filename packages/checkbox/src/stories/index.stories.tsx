@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 
 import Checkbox from '../index'
 
-import '../../../../lib/styles/globals.css'
+import '../../../../lib/styles/index.css'
 
 const meta: Meta<typeof Checkbox> = {
   component: Checkbox,

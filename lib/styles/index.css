@@ -843,6 +843,11 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
   .transition-shadow {
     transition-property: box-shadow;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -952,6 +957,16 @@
       }
     }
   }
+  .hover\:bg-blue\/20 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #016fee 20%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-blue) 20%, transparent);
+        }
+      }
+    }
+  }
   .hover\:bg-blue\/90 {
     &:hover {
       @media (hover: hover) {
@@ -962,12 +977,29 @@
       }
     }
   }
+  .hover\:bg-gray-200 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-200);
+      }
+    }
+  }
   .hover\:bg-gray-200\/90 {
     &:hover {
       @media (hover: hover) {
         background-color: color-mix(in srgb, oklch(92.8% 0.006 264.531) 90%, transparent);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-gray-200) 90%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-green\/20 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #1ac964 20%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-green) 20%, transparent);
         }
       }
     }
@@ -982,6 +1014,16 @@
       }
     }
   }
+  .hover\:bg-purple\/20 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #9353d3 20%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-purple) 20%, transparent);
+        }
+      }
+    }
+  }
   .hover\:bg-purple\/90 {
     &:hover {
       @media (hover: hover) {
@@ -992,12 +1034,32 @@
       }
     }
   }
+  .hover\:bg-red\/20 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #f31260 20%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-red) 20%, transparent);
+        }
+      }
+    }
+  }
   .hover\:bg-red\/90 {
     &:hover {
       @media (hover: hover) {
         background-color: color-mix(in srgb, #f31260 90%, transparent);
         @supports (color: color-mix(in lab, red, red)) {
           background-color: color-mix(in oklab, var(--color-red) 90%, transparent);
+        }
+      }
+    }
+  }
+  .hover\:bg-yellow\/20 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: color-mix(in srgb, #f5a525 20%, transparent);
+        @supports (color: color-mix(in lab, red, red)) {
+          background-color: color-mix(in oklab, var(--color-yellow) 20%, transparent);
         }
       }
     }
@@ -1267,6 +1329,9 @@
   }
   height: 70px;
   resize: none;
+}
+body {
+  font-family: 'raleway', sans-serif;
 }
 @property --tw-rotate-x {
   syntax: "*";

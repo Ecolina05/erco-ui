@@ -1,0 +1,23 @@
+@import 'tailwindcss';
+@import './font.css';
+
+@import '../packages/avatar/src/styles/index.css';
+@import '../packages/button/src/styles/index.css';
+@import '../packages/card/src/styles/index.css';
+@import '../packages/input/src/styles/index.css';
+@import '../packages/select/src/styles/index.css';
+@import '../packages/spinner/src/styles/index.css';
+@import '../packages/tabs/src/styles/index.css';
+@import '../packages/textarea/src/styles/index.css';
+
+@theme {
+  --color-purple: #9353d3;
+  --color-green: #1ac964;
+  --color-red: #f31260;
+  --color-yellow: #f5a525;
+  --color-blue: #016fee;
+}
+
+body {
+  font-family: 'raleway', sans-serif;
+}

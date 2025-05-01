@@ -1,19 +1,19 @@
 {
   "name": "erco-ui",
-  "version": "1.0.0-alpha.8",
+  "version": "1.0.0-alpha.9",
   "main": "index.js",
   "scripts": {
     "clean-lib": "rm -rf packages/**/lib",
     "clean": "npm run clean-lib && rm -rf node_modules package-lock.json",
     "reset": "npm run clean && npm install && npm run lerna:build",
-    "css:build": "rm -rf lib && postcss styles/globals.css -d lib/styles",
+    "css:build": "rm -rf lib && postcss styles/index.css -d lib/styles",
     "storybook:start": "storybook dev -p 6006",
     "storybook:build": "storybook build",
     "lerna:build": "npm run clean-lib && lerna run build && npm run copy-styles-to-packages",
     "copy-styles-to-packages": "for pkg in packages/*; do mkdir -p $pkg/lib/styles && cp -R lib/styles/* $pkg/lib/styles/; done",
     "lerna:version": "lerna version --no-git-tag-version",
     "lerna:publish": "lerna publish",
-    "build": "npm run storybook:build && npm run css:build && npm run lerna:build",
+    "build": "npm run css:build && npm run storybook:build && npm run lerna:build",
     "postinstall": "mkdir -p styles && cp -R lib/styles/* styles/"
   },
   "keywords": [],
@@ -52,7 +52,7 @@
     "vitest": "^3.1.2"
   },
   "dependencies": {
-    "@erco-ui/spinner": "^1.0.0-alpha.8",
+    "@erco-ui/spinner": "^1.0.0-alpha.9",
     "@tailwindcss/postcss": "^4.1.4",
     "clsx": "^2.1.1",
     "react": "^19.1.0",
