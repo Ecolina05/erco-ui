@@ -28,12 +28,22 @@ export default function Button({
     ? 'white'
     : color
 
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    if (isLoading || isDisabled) {
+      return
+    }
+
+    event.preventDefault()
+
+    onClick?.()
+  }
+
   return (
     <button
       aria-label={ariaLabel}
       className={buttonClassName}
       disabled={isLoading || isDisabled}
-      onClick={onClick}
+      onClick={handleClick}
       {...rest}
     >
       {isLoading ? (

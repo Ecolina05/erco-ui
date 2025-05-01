@@ -1244,7 +1244,7 @@
 }
 .erco-select {
   display: block;
-  width: auto;
+  width: 100%;
   border-style: var(--tw-border-style);
   border-width: 2px;
   border-color: var(--color-gray-300);

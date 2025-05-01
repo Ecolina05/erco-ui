@@ -23,6 +23,7 @@ export const Default: Story = {
       { value: 'option2', label: 'Option 2' },
       { value: 'option3', label: 'Option 3' }
     ],
+    placeholder: 'Select an option',
     radius: 'md',
     onChange: () => {}
   },
@@ -45,6 +46,10 @@ export const Default: Story = {
     label: {
       control: 'text',
       description: 'Custom card label'
+    },
+    placeholder: {
+      control: 'text',
+      description: 'Custom card placeholder'
     },
     radius: {
       control: 'select',

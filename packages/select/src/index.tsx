@@ -12,6 +12,7 @@ export default function Select({
   description,
   id,
   label,
+  placeholder,
   radius = 'lg',
   onChange
 }: SelectProps) {
@@ -27,7 +28,7 @@ export default function Select({
   )
 
   return (
-    <>
+    <div className='w-full'>
       {label && (
         <label
           htmlFor={id}
@@ -41,6 +42,12 @@ export default function Select({
         id={id}
         onChange={handleSelectChange}
       >
+        <option
+          disabled
+          selected
+        >
+          {placeholder}
+        </option>
         {options.map(option => (
           <option
             key={option.value}
@@ -52,6 +59,6 @@ export default function Select({
       </select>
 
       {description && <p className='text-xs font-light text-gray-500 mt-1 italic'>{description}</p>}
-    </>
+    </div>
   )
 }
