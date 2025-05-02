@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Avatar>
 export const Default: Story = {
   args: {
     alt: 'Avatar',
-    classNames: '',
+    className: '',
     color: 'purple',
     isBordered: false,
     name: 'Ernesto Colina',
@@ -28,7 +28,7 @@ export const Default: Story = {
     alt: {
       control: 'text'
     },
-    classNames: {
+    className: {
       control: 'text'
     },
     color: {

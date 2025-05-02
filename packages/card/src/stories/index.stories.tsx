@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Card>
 export const Default: Story = {
   args: {
     children: 'Card Content',
-    classNames: '',
+    className: '',
     isBordered: false,
     isClickable: false,
     isHoverable: false,
@@ -28,7 +28,7 @@ export const Default: Story = {
     children: {
       description: 'Card children'
     },
-    classNames: {
+    className: {
       control: 'text',
       description: 'Custom card class name'
     },

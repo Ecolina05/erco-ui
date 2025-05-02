@@ -9,7 +9,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
   (
     {
       children,
-      classNames,
+      className,
       shadow = 'md',
       radius = 'md',
       isBordered = false,
@@ -26,17 +26,16 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
     const needsInteractiveRole = isClickable || isPressable || onClick
     const needsTabIndex = needsInteractiveRole && tabIndex === undefined
 
-    const baseClasses = clsx(
+    const cardClassNames = clsx(
       'erco-card',
       CardRadius[radius],
       CardShadow[shadow],
       isBordered && 'border border-gray-200',
       isHoverable && 'hover:shadow-lg transition-shadow duration-200',
       isClickable && 'cursor-pointer',
-      isPressable && 'active:scale-95 transition-transform duration-200'
+      isPressable && 'active:scale-95 transition-transform duration-200',
+      className
     )
-
-    const cardClassNames = clsx(baseClasses, classNames)
 
     return (
       <div

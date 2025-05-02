@@ -7,7 +7,7 @@ import { Radio } from '../index'
 
 export default function RadioGroup({
   options,
-  classNames = '',
+  className = '',
   color = 'purple',
   label,
   orientation = 'vertical',
@@ -21,7 +21,7 @@ export default function RadioGroup({
   }
 
   return (
-    <section className={clsx('flex flex-col gap-2', classNames)}>
+    <section className={clsx('flex flex-col gap-2', className)}>
       {label && <p className='text-sm'>{label}</p>}
 
       <section className={clsx('flex gap-2', orientation === 'vertical' && 'flex-col')}>

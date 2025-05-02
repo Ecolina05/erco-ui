@@ -2,7 +2,7 @@ import { bgColors } from '../props/colors'
 
 export type RadioGroupProps = {
   options: RadioProps[]
-  classNames?: string
+  className?: string
   color?: keyof typeof bgColors
   label?: string
   orientation?: 'horizontal' | 'vertical'

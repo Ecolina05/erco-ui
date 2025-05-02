@@ -15,7 +15,7 @@ type Story = StoryObj<typeof Select>
 export const Default: Story = {
   args: {
     borderColor: 'default',
-    classNames: '',
+    className: '',
     description: '',
     label: '',
     options: [
@@ -31,7 +31,7 @@ export const Default: Story = {
     options: {
       description: 'Select options'
     },
-    classNames: {
+    className: {
       control: 'text',
       description: 'Custom card class name'
     },

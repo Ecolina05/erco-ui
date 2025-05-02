@@ -9,7 +9,7 @@ import { sizes } from './props/sizes'
 
 export default function Avatar({
   alt = 'Avatar',
-  classNames = '',
+  className = '',
   color = 'purple',
   isBordered = false,
   name,
@@ -42,7 +42,7 @@ export default function Avatar({
 
   const avatarClassName = clsx(
     'erco-avatar',
-    `${classNames} ${borderColors[color as keyof typeof borderColors]} ${AvatarRadius[radius]} ${
+    `${className} ${borderColors[color as keyof typeof borderColors]} ${AvatarRadius[radius]} ${
       sizes[size]
     } text-white font-medium`,
     isBordered && 'border-2',

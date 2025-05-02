@@ -7,7 +7,7 @@ import { borderColor as SelectBorderColor } from './props/border-colors'
 
 export default function Select({
   options,
-  classNames,
+  className,
   borderColor = 'default',
   description,
   id,
@@ -25,7 +25,7 @@ export default function Select({
     'erco-select',
     SelectRadius[radius],
     SelectBorderColor[borderColor],
-    classNames
+    className
   )
 
   return (

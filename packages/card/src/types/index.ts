@@ -3,7 +3,7 @@ import { shadow } from '../props/shadow'
 
 export type CardProps = {
   children: React.ReactNode
-  classNames?: string
+  className?: string
   isBordered?: boolean
   isClickable?: boolean
   isHoverable?: boolean

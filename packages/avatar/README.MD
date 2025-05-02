@@ -7,7 +7,7 @@ An accessible avatar component with fallback support and customization options.
 | Name       | Type    | Description                                       |
 | ---------- | ------- | ------------------------------------------------- |
 | alt        | string  | Alt text for the image (accessibility)            |
-| classNames | string  | Additional class names                            |
+| className | string  | Additional class names                            |
 | color      | string  | Avatar background color                           |
 | isBordered | boolean | Whether the avatar has a border                   |
 | name       | string  | Full name (generates initials if no image/text)   |
@@ -22,7 +22,7 @@ An accessible avatar component with fallback support and customization options.
 <Avatar
   alt='Ernesto Colina'
   color='purple'
-  classNames='my-avatar'
+  className='my-avatar'
   isBordered={false}
   name='Ernesto Colina'
   radius='lg'

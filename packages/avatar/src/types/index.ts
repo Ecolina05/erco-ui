@@ -4,7 +4,7 @@ import { radius } from '../props/radius'
 
 export type AvatarProps = {
   alt?: string
-  classNames?: string
+  className?: string
   color?: keyof typeof bgColors
   isBordered?: boolean
   name?: string

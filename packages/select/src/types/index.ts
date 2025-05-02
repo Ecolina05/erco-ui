@@ -8,7 +8,7 @@ type Item = {
 
 export type SelectProps = {
   options: Item[]
-  classNames?: string
+  className?: string
   borderColor?: keyof typeof borderColor
   description?: string
   label?: string

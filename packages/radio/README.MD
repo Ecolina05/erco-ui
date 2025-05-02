@@ -7,7 +7,7 @@ A radio group component.
 | Name        | Type           | Description                         |
 | ----------- | -------------- | ----------------------------------- |
 | options     | `RadioProps[]` | The options for the radio group     |
-| classNames  | `string`       | The class names for the radio group |
+| className  | `string`       | The class names for the radio group |
 | color       | `string`       | The color for the radio group       |
 | label       | `string`       | The label for the radio group       |
 | orientation | `string`       | The orientation for the radio group |
@@ -27,7 +27,7 @@ A radio group component.
     { value: 'option2', text: 'Option 2' },
     { value: 'option3', text: 'Option 3' }
   ]}
-  classNames=''
+  className=''
   color='purple'
   label='My radio'
   orientation='vertical'

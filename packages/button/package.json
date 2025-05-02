@@ -1,6 +1,6 @@
 {
   "name": "@erco-ui/button",
-  "version": "1.0.0-alpha.15",
+  "version": "1.0.0-alpha.16",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "scripts": {
@@ -11,7 +11,7 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@erco-ui/spinner": "^1.0.0-alpha.15",
+    "@erco-ui/spinner": "^1.0.0-alpha.16",
     "clsx": "^2.1.1",
     "react": "^19.1.0"
   },

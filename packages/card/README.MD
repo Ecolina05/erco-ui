@@ -7,7 +7,7 @@ A card component.
 | Name        | Type              | Description                         |
 | ----------- | ----------------- | ----------------------------------- |
 | children    | `React.ReactNode` | The content of the card             |
-| classNames  | `string`          | Additional class names              |
+| className   | `string`          | Additional class names              |
 | isBordered  | `boolean`         | Whether the card has a border       |
 | isClickable | `boolean`         | Whether the card is clickable       |
 | isHoverable | `boolean`         | Whether the card has a hover effect |

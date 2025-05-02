@@ -7,7 +7,7 @@ A select component.
 | Name        | Type     | Description                              |
 | ----------- | -------- | ---------------------------------------- |
 | options     | `Item[]` | The options for the select component     |
-| classNames  | `string` | Additional class names                   |
+| className  | `string` | Additional class names                   |
 | borderColor | `string` | The border color of the select component |
 | description | `string` | The description of the select component  |
 | id          | `string` | The id of the select component           |
@@ -29,7 +29,7 @@ A select component.
     { value: 'option2', label: 'Option 2' },
     { value: 'option3', label: 'Option 3' }
   ]}
-  classNames=''
+  className=''
   borderColor='purple'
   description='Select description'
   radius='lg'
