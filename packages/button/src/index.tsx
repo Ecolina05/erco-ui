@@ -34,7 +34,9 @@ export default function Button({
       return
     }
 
-    event.preventDefault()
+    if (type !== 'submit') {
+      event.preventDefault()
+    }
 
     onClick?.()
   }
