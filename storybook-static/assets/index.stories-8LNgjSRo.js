@@ -1,0 +1,50 @@
+import{R as e}from"./index-D4lIrffr.js";import{c as C}from"./clsx-B-dksMZM.js";/* empty css              */const v={xs:"rounded-xs",sm:"rounded-sm",md:"rounded-md",lg:"rounded-lg",full:"rounded-full"},y={purple:"!border-purple",default:"!border-gray-300",green:"!border-green",red:"!border-red",yellow:"!border-yellow",blue:"!border-blue"};function h({options:i,classNames:p,borderColor:u="default",description:r,id:n,label:s,isRequired:m,placeholder:b,radius:x="lg",onChange:l}){const g=o=>{l==null||l(o)},f=C("erco-select",v[x],y[u],p);return e.createElement("div",{className:"w-full"},s&&e.createElement("label",{htmlFor:n,className:"block mb-1 text-xs text-gray-900"},s),e.createElement("select",{className:f,id:n,onChange:g,required:m},e.createElement("option",{disabled:!0,selected:!0},b),i.map(o=>e.createElement("option",{key:o.value,value:o.value},o.label))),r&&e.createElement("p",{className:"text-xs font-light text-gray-500 mt-1 italic"},r))}const O={component:h,title:"Select"},t={args:{borderColor:"default",classNames:"",description:"",label:"",options:[{value:"option1",label:"Option 1"},{value:"option2",label:"Option 2"},{value:"option3",label:"Option 3"}],placeholder:"Select an option",radius:"md",onChange:()=>{}},argTypes:{options:{description:"Select options"},classNames:{control:"text",description:"Custom card class name"},borderColor:{control:"select",options:["purple","default","green","red","yellow","blue"]},description:{control:"text",description:"Custom card description"},label:{control:"text",description:"Custom card label"},placeholder:{control:"text",description:"Custom card placeholder"},radius:{control:"select",options:["xs","sm","md","lg"]}}};var a,c,d;t.parameters={...t.parameters,docs:{...(a=t.parameters)==null?void 0:a.docs,source:{originalSource:`{
+  args: {
+    borderColor: 'default',
+    classNames: '',
+    description: '',
+    label: '',
+    options: [{
+      value: 'option1',
+      label: 'Option 1'
+    }, {
+      value: 'option2',
+      label: 'Option 2'
+    }, {
+      value: 'option3',
+      label: 'Option 3'
+    }],
+    placeholder: 'Select an option',
+    radius: 'md',
+    onChange: () => {}
+  },
+  argTypes: {
+    options: {
+      description: 'Select options'
+    },
+    classNames: {
+      control: 'text',
+      description: 'Custom card class name'
+    },
+    borderColor: {
+      control: 'select',
+      options: ['purple', 'default', 'green', 'red', 'yellow', 'blue']
+    },
+    description: {
+      control: 'text',
+      description: 'Custom card description'
+    },
+    label: {
+      control: 'text',
+      description: 'Custom card label'
+    },
+    placeholder: {
+      control: 'text',
+      description: 'Custom card placeholder'
+    },
+    radius: {
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg']
+    }
+  }
+}`,...(d=(c=t.parameters)==null?void 0:c.docs)==null?void 0:d.source}}};const w=["Default"];export{t as Default,w as __namedExportsOrder,O as default};

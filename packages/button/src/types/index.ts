@@ -10,6 +10,7 @@ export type ButtonProps = {
   isIconOnly?: boolean
   isLoading?: boolean
   size?: keyof typeof sizes
+  type?: React.ButtonHTMLAttributes<HTMLButtonElement>['type']
   variant?: 'flat' | 'light' | 'outline' | 'solid'
   onClick?: () => void
 } & React.ButtonHTMLAttributes<HTMLButtonElement>

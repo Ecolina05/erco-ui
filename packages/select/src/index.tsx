@@ -12,6 +12,7 @@ export default function Select({
   description,
   id,
   label,
+  isRequired,
   placeholder,
   radius = 'lg',
   onChange
@@ -41,6 +42,7 @@ export default function Select({
         className={selectClassNames}
         id={id}
         onChange={handleSelectChange}
+        required={isRequired}
       >
         <option
           disabled

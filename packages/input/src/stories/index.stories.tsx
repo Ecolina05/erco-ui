@@ -18,7 +18,7 @@ export const Default: Story = {
     description: '',
     id: 'first_name',
     inputClassNames: '',
-    isRequired: true,
+    isRequired: false,
     label: 'First Name',
     labelClassNames: '',
     placeholder: 'Ernesto Colina',

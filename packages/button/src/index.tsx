@@ -17,6 +17,7 @@ export default function Button({
   isIconOnly = false,
   isLoading = false,
   size = 'sm',
+  type = 'button',
   variant = 'solid',
   onClick,
   ...rest
@@ -44,6 +45,7 @@ export default function Button({
       className={buttonClassName}
       disabled={isLoading || isDisabled}
       onClick={handleClick}
+      type={type}
       {...rest}
     >
       {isLoading ? (
