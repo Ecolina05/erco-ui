@@ -20,6 +20,7 @@ export const Default: Story = {
     isClickable: false,
     isHoverable: false,
     isPressable: false,
+    padding: 'md',
     radius: 'md',
     shadow: 'sm',
     onClick: () => {}
@@ -47,6 +48,10 @@ export const Default: Story = {
     isPressable: {
       control: 'boolean',
       description: 'Add press effect to the card (slight scale animation)'
+    },
+    padding: {
+      control: 'select',
+      options: ['xs', 'sm', 'md', 'lg']
     },
     radius: {
       control: 'select',

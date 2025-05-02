@@ -1,22 +1,26 @@
+import React, { forwardRef } from 'react'
 import type { SelectProps } from './types/index'
-import React from 'react'
 import clsx from 'clsx'
 
 import { radius as SelectRadius } from './props/radius'
 import { borderColor as SelectBorderColor } from './props/border-colors'
 
-export default function Select({
-  options,
-  className,
-  borderColor = 'default',
-  description,
-  id,
-  label,
-  isRequired,
-  placeholder,
-  radius = 'lg',
-  onChange
-}: SelectProps) {
+const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select(
+  {
+    options,
+    className,
+    borderColor = 'default',
+    description,
+    id,
+    label,
+    isRequired,
+    placeholder,
+    radius = 'lg',
+    onChange,
+    ...rest
+  },
+  ref
+) {
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onChange?.(event)
   }
@@ -43,6 +47,8 @@ export default function Select({
         id={id}
         onChange={handleSelectChange}
         required={isRequired}
+        ref={ref}
+        {...rest}
       >
         <option
           disabled
@@ -64,4 +70,6 @@ export default function Select({
       {description && <p className='text-xs font-light text-gray-500 mt-1 italic'>{description}</p>}
     </div>
   )
-}
+})
+
+export default Select

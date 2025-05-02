@@ -4,18 +4,20 @@ import clsx from 'clsx'
 
 import { radius as CardRadius } from './props/radius'
 import { shadow as CardShadow } from './props/shadow'
+import { padding as CardPadding } from './props/padding'
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
   (
     {
       children,
       className,
-      shadow = 'md',
-      radius = 'md',
       isBordered = false,
-      isHoverable = false,
       isClickable = false,
+      isHoverable = false,
       isPressable = false,
+      padding = 'md',
+      radius = 'md',
+      shadow = 'md',
       onClick,
       role,
       tabIndex,
@@ -34,6 +36,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
       isHoverable && 'hover:shadow-lg transition-shadow duration-200',
       isClickable && 'cursor-pointer',
       isPressable && 'active:scale-95 transition-transform duration-200',
+      CardPadding[padding],
       className
     )
 

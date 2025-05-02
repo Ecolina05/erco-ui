@@ -1,18 +1,15 @@
 .erco-card {
-  @apply relative flex w-auto p-4 flex-auto flex-col h-auto break-words text-xs text-left overflow-y-auto;
+  @apply relative flex w-auto flex-auto flex-col h-auto break-words text-xs text-left overflow-y-auto;
 }
 
-/* Estilos para Cards focusables (interactivas) */
 .erco-card:focus-visible {
   @apply outline-none ring-2 ring-purple/50 ring-offset-2;
 }
 
-/* Card con efecto hover */
 .erco-card.hover\:shadow-lg {
   @apply transition-all duration-200 ease-in-out;
 }
 
-/* Card con efecto de presión */
 .erco-card.active\:scale-95:active {
   @apply transform scale-95 transition-transform;
 }
