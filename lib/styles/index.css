@@ -1182,7 +1182,7 @@
   position: relative;
   display: flex;
   height: auto;
-  width: 100%;
+  width: auto;
   flex: auto;
   flex-direction: column;
   overflow-y: auto;
