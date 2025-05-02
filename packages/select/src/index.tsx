@@ -47,6 +47,7 @@ export default function Select({
         <option
           disabled
           selected
+          value=''
         >
           {placeholder}
         </option>
