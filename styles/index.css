@@ -9,6 +9,7 @@
 @import '../packages/spinner/src/styles/index.css';
 @import '../packages/tabs/src/styles/index.css';
 @import '../packages/textarea/src/styles/index.css';
+@import '../packages/toast/src/styles/index.css';
 
 @theme {
   --color-purple: #9353d3;

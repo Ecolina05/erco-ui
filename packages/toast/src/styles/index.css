@@ -1,0 +1,11 @@
+.erco-toast {
+  @apply relative flex flex-col max-w-xs h-auto break-words text-xs text-left overflow-y-auto border py-4 px-5;
+}
+
+.erco-toast-title {
+  @apply mb-1 text-xs font-bold;
+}
+
+.erco-toast-description {
+  @apply mb-1 text-xs font-normal;
+}

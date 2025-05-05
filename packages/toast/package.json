@@ -1,0 +1,21 @@
+{
+  "name": "@erco-ui/toast",
+  "version": "1.0.0-alpha.17",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "build": "NODE_ENV=development tsc"
+  },
+  "files": [
+    "lib"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "react": "^19.1.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "543161a46e1b72dee807ddf9d122681453f2ca7f"
+}
