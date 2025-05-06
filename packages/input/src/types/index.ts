@@ -1,8 +1,8 @@
 import { radius } from '../props/radius'
-import { borderColor } from '../props/border-colors'
+import { colors } from '../props/colors'
 
 export type InputProps = {
-  borderColor?: keyof typeof borderColor
+  color?: keyof typeof colors
   description?: string
   id?: string
   className?: string

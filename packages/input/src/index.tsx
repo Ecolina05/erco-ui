@@ -1,14 +1,14 @@
 import type { InputProps } from './types/index'
-import React, { useState, useId } from 'react'
+import React, { useState, useRef } from 'react'
 import clsx from 'clsx'
 
 import { radius as InputRadius } from './props/radius'
-import { borderColor as InputBorderColor } from './props/border-colors'
+import { colors } from './props/colors'
 
 export default function Input({
-  borderColor = 'purple',
+  color = 'purple',
   description,
-  id: externalId,
+  id,
   className,
   isRequired,
   label,
@@ -16,27 +16,36 @@ export default function Input({
   placeholder,
   radius = 'lg',
   type = 'text',
+  onFocus,
+  onBlur,
   ...rest
 }: InputProps) {
   const [isFocused, setIsFocused] = useState(false)
-  const internalId = useId()
-  const id = externalId || `erco-input-${internalId}`
+  const inputRef = useRef<HTMLInputElement>(null)
 
   const inputClassName = clsx(
     'erco-input',
     InputRadius[radius],
-    isFocused ? InputBorderColor[borderColor] : 'border-gray-300',
+    isFocused ? colors[color] : 'border-gray-300',
     className
   )
 
   const labelClassNames = clsx('block mb-1 text-xs text-gray-900', labelClassName)
 
-  const handleFocus = () => {
+  const handleFocus = (e: React.FocusEvent<HTMLInputElement>) => {
     setIsFocused(true)
+
+    if (onFocus) {
+      onFocus(e)
+    }
   }
 
-  const handleBlur = () => {
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>) => {
     setIsFocused(false)
+
+    if (onBlur) {
+      onBlur(e)
+    }
   }
 
   return (
@@ -51,14 +60,15 @@ export default function Input({
       )}
 
       <input
+        ref={inputRef}
         className={inputClassName}
+        data-focused={isFocused ? 'true' : 'false'}
         id={id}
         onBlur={handleBlur}
         onFocus={handleFocus}
         placeholder={placeholder}
         required={isRequired}
         type={type}
-        data-focused={isFocused ? 'true' : 'false'}
         {...rest}
       />
 

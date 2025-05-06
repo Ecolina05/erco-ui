@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
+import React from 'react'
 
 import Input from '../index'
 
@@ -14,7 +15,7 @@ type Story = StoryObj<typeof Input>
 
 export const Default: Story = {
   args: {
-    borderColor: 'purple',
+    color: 'purple',
     description: '',
     id: 'first_name',
     className: '',
@@ -26,7 +27,7 @@ export const Default: Story = {
     type: 'text'
   },
   argTypes: {
-    borderColor: {
+    color: {
       control: 'select',
       options: ['purple', 'default', 'green', 'red', 'yellow', 'blue']
     },
@@ -67,4 +68,46 @@ export const Default: Story = {
       options: ['text', 'email', 'password', 'number', 'time', 'date', 'datetime-local']
     }
   }
+}
+
+export const FormInput: Story = {
+  render: () => (
+    <form className='flex flex-col gap-3'>
+      <Input
+        description=''
+        id='first_name'
+        className=''
+        isRequired={false}
+        label='First Name'
+        labelClassName=''
+        placeholder='Ernesto'
+        radius='lg'
+        type='text'
+      />
+
+      <Input
+        description=''
+        id='first_name'
+        className=''
+        isRequired={false}
+        label='Second Name'
+        labelClassName=''
+        placeholder='Colina'
+        radius='lg'
+        type='text'
+      />
+
+      <Input
+        color='purple'
+        description='Should be at least 8 characters long'
+        id='first_name'
+        className=''
+        isRequired={false}
+        labelClassName=''
+        placeholder='John'
+        radius='lg'
+        type='text'
+      />
+    </form>
+  )
 }

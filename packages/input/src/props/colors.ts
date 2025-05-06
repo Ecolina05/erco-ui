@@ -1,4 +1,4 @@
-export const borderColor = {
+export const colors = {
   purple: 'border-purple',
   default: 'border-gray-900',
   green: 'border-green',
