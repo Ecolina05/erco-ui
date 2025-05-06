@@ -5,10 +5,10 @@ export type InputProps = {
   borderColor?: keyof typeof borderColor
   description?: string
   id?: string
-  inputClassNames?: string
+  className?: string
   isRequired?: boolean
   label?: string
-  labelClassNames?: string
+  labelClassName?: string
   placeholder?: string
   radius?: keyof typeof radius
   type?: 'text' | 'email' | 'password' | 'number' | 'time' | 'date' | 'datetime-local'

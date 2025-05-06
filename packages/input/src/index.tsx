@@ -9,10 +9,10 @@ export default function Input({
   borderColor = 'purple',
   description,
   id: externalId,
-  inputClassNames,
+  className,
   isRequired,
   label,
-  labelClassNames,
+  labelClassName,
   placeholder,
   radius = 'lg',
   type = 'text',
@@ -25,11 +25,11 @@ export default function Input({
   const inputClassName = clsx(
     'erco-input',
     InputRadius[radius],
-    isFocused && InputBorderColor[borderColor],
-    inputClassNames
+    isFocused ? InputBorderColor[borderColor] : 'border-gray-300',
+    className
   )
 
-  const labelClassName = clsx('block mb-1 text-xs text-gray-900', labelClassNames)
+  const labelClassNames = clsx('block mb-1 text-xs text-gray-900', labelClassName)
 
   const handleFocus = () => {
     setIsFocused(true)
@@ -44,7 +44,7 @@ export default function Input({
       {label && (
         <label
           htmlFor={id}
-          className={labelClassName}
+          className={labelClassNames}
         >
           {label}
         </label>

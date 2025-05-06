@@ -17,10 +17,10 @@ export const Default: Story = {
     borderColor: 'purple',
     description: '',
     id: 'first_name',
-    inputClassNames: '',
+    className: '',
     isRequired: false,
     label: 'First Name',
-    labelClassNames: '',
+    labelClassName: '',
     placeholder: 'Ernesto Colina',
     radius: 'lg',
     type: 'text'
@@ -38,7 +38,7 @@ export const Default: Story = {
       control: 'text',
       description: 'Input id'
     },
-    inputClassNames: {
+    className: {
       control: 'text',
       description: 'Custom input class name'
     },
@@ -50,7 +50,7 @@ export const Default: Story = {
       control: 'text',
       description: 'Input label'
     },
-    labelClassNames: {
+    labelClassName: {
       control: 'text',
       description: 'Custom label class name'
     },

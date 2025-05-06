@@ -9,10 +9,10 @@ An input component.
 | borderColor     | string  | Border color of the input    |
 | description     | string  | Input description            |
 | id              | string  | Input id                     |
-| inputClassNames | string  | Additional class names       |
+| className       | string  | Additional class names       |
 | isRequired      | boolean | Input required               |
 | label           | string  | Input label                  |
-| labelClassNames | string  | Additional label class names |
+| labelClassName  | string  | Additional label class names |
 | placeholder     | string  | Input placeholder            |
 | radius          | string  | Input radius                 |
 | ...rest         | any     | Additional props             |
@@ -24,10 +24,10 @@ An input component.
   borderColor='purple'
   description=''
   id='first_name'
-  inputClassNames=''
+  className=''
   isRequired={true}
   label='First Name'
-  labelClassNames=''
+  labelClassName=''
   placeholder='Ernesto Colina'
   radius='lg'
 />

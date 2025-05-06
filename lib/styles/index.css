@@ -1291,7 +1291,6 @@
   width: 100%;
   border-style: var(--tw-border-style);
   border-width: 2px;
-  border-color: var(--color-gray-300);
   padding: calc(var(--spacing) * 2.5);
   font-size: var(--text-xs);
   line-height: var(--tw-leading, var(--text-xs--line-height));

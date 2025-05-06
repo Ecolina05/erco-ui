@@ -10,14 +10,14 @@ export default function Link({
   className,
   color = 'default',
   href = '#',
-  size = 'sm',
+  size = 'xs',
   target = '_blank',
   underline = false,
   onClick,
   ...rest
 }: LinkProps) {
   const linkClassName = clsx(
-    'erco-link',
+    'w-full',
     `${colors[color]} ${sizes[size]} ${underline ? 'underline' : ''}`,
     className
   )
