@@ -14,6 +14,21 @@ import {
 import { Checkbox } from "@/components/Checkbox"
 import { Input } from "@/components/Input"
 import { Loading } from "@/components/Loading"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/Select"
+import { Switch } from "@/components/Switch"
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/Tabs"
+import { Textarea } from "@/components/Textarea"
 
 import { InlineCode } from "../components/InlineCode"
 
@@ -40,6 +55,8 @@ export type ComponentCategory = {
   components: ComponentDefinition[]
 }
 
+// Single source of truth for docs navigation.
+// Add a component here to update the sidebar, All Components page, and routes.
 export const components: ComponentDefinition[] = [
   {
     id: "button",
@@ -306,6 +323,162 @@ export function InputDisabled() {
     ],
   },
   {
+    id: "textarea",
+    name: "Textarea",
+    categoryId: "forms",
+    categoryLabel: "Forms",
+    overviewPreview: (
+      <Textarea
+        className="pointer-events-none max-w-[220px] resize-none text-xs"
+        placeholder="Share an update..."
+        rows={3}
+      />
+    ),
+    variants: [
+      {
+        id: "textarea-default",
+        label: "Default",
+        description: "A multiline text input for longer content.",
+        preview: (
+          <Textarea
+            className="max-w-md"
+            placeholder="Share a quick project update..."
+          />
+        ),
+        code: `import { Textarea } from "erco-ui"
+
+export function TextareaDemo() {
+  return (
+    <Textarea placeholder="Share a quick project update..." />
+  )
+}`,
+      },
+      {
+        id: "textarea-disabled",
+        label: "Disabled",
+        description: (
+          <>
+            Use the <InlineCode>disabled</InlineCode> prop to disable the
+            textarea.
+          </>
+        ),
+        preview: (
+          <Textarea
+            className="max-w-md"
+            disabled
+            placeholder="Disabled textarea"
+          />
+        ),
+        code: `import { Textarea } from "erco-ui"
+
+export function TextareaDisabled() {
+  return <Textarea disabled placeholder="Disabled textarea" />
+}`,
+      },
+    ],
+  },
+  {
+    id: "select",
+    name: "Select",
+    categoryId: "forms",
+    categoryLabel: "Forms",
+    overviewPreview: (
+      <Select defaultValue="Florida">
+        <SelectTrigger className="pointer-events-none max-w-[180px] text-xs">
+          <SelectValue placeholder="Select one" />
+        </SelectTrigger>
+        <SelectContent>
+          <SelectItem value="Florida">Florida</SelectItem>
+          <SelectItem value="California">California</SelectItem>
+        </SelectContent>
+      </Select>
+    ),
+    variants: [
+      {
+        id: "select-default",
+        label: "Default",
+        description: "A dropdown for selecting a single option.",
+        preview: (
+          <div className="grid w-full max-w-xs gap-1.5">
+            <label className="text-sm font-medium leading-none">State</label>
+            <Select defaultValue="Florida">
+              <SelectTrigger>
+                <SelectValue placeholder="Select one" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="Florida">Florida</SelectItem>
+                <SelectItem value="Delaware">Delaware</SelectItem>
+                <SelectItem value="California">California</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        ),
+        code: `import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "erco-ui"
+
+export function SelectDemo() {
+  return (
+    <Select defaultValue="Florida">
+      <SelectTrigger>
+        <SelectValue placeholder="Select one" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="Florida">Florida</SelectItem>
+        <SelectItem value="Delaware">Delaware</SelectItem>
+        <SelectItem value="California">California</SelectItem>
+      </SelectContent>
+    </Select>
+  )
+}`,
+      },
+      {
+        id: "select-disabled",
+        label: "Disabled",
+        description: (
+          <>
+            Use the <InlineCode>disabled</InlineCode> prop to disable the
+            select.
+          </>
+        ),
+        preview: (
+          <Select disabled>
+            <SelectTrigger className="max-w-xs">
+              <SelectValue placeholder="Select one" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Florida">Florida</SelectItem>
+            </SelectContent>
+          </Select>
+        ),
+        code: `import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "erco-ui"
+
+export function SelectDisabled() {
+  return (
+    <Select disabled>
+      <SelectTrigger>
+        <SelectValue placeholder="Select one" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="Florida">Florida</SelectItem>
+      </SelectContent>
+    </Select>
+  )
+}`,
+      },
+    ],
+  },
+  {
     id: "checkbox",
     name: "Checkbox",
     categoryId: "forms",
@@ -355,6 +528,60 @@ export function CheckboxDisabled() {
       <Checkbox disabled defaultChecked>
         Accept terms and conditions
       </Checkbox>
+    </>
+  )
+}`,
+      },
+    ],
+  },
+  {
+    id: "switch",
+    name: "Switch",
+    categoryId: "forms",
+    categoryLabel: "Forms",
+    overviewPreview: (
+      <Switch defaultChecked className="pointer-events-none">
+        Notifications
+      </Switch>
+    ),
+    variants: [
+      {
+        id: "switch-default",
+        label: "Default",
+        description: "A toggle switch for boolean states.",
+        preview: <Switch defaultChecked>Enable notifications</Switch>,
+        code: `import { Switch } from "erco-ui"
+
+export function SwitchDemo() {
+  return <Switch defaultChecked>Enable notifications</Switch>
+}`,
+      },
+      {
+        id: "switch-disabled",
+        label: "Disabled",
+        description: (
+          <>
+            Use the <InlineCode>disabled</InlineCode> prop to disable the
+            switch.
+          </>
+        ),
+        preview: (
+          <div className="flex flex-col gap-3">
+            <Switch disabled>Enable notifications</Switch>
+            <Switch disabled defaultChecked>
+              Enable notifications
+            </Switch>
+          </div>
+        ),
+        code: `import { Switch } from "erco-ui"
+
+export function SwitchDisabled() {
+  return (
+    <>
+      <Switch disabled>Enable notifications</Switch>
+      <Switch disabled defaultChecked>
+        Enable notifications
+      </Switch>
     </>
   )
 }`,
@@ -643,6 +870,244 @@ export function LoadingSizes() {
       <Loading size={24} />
       <Loading size={32} />
     </div>
+  )
+}`,
+      },
+    ],
+  },
+  {
+    id: "tabs",
+    name: "Tabs",
+    categoryId: "navigation",
+    categoryLabel: "Navigation",
+    overviewPreview: (
+      <Tabs defaultValue="overview" className="pointer-events-none w-full max-w-[220px]">
+        <TabsList className="grid w-full grid-cols-2">
+          <TabsTrigger value="overview">Overview</TabsTrigger>
+          <TabsTrigger value="reports">Reports</TabsTrigger>
+        </TabsList>
+      </Tabs>
+    ),
+    variants: [
+      {
+        id: "tabs-default",
+        label: "Default",
+        description: "Segmented tabs for switching between related views.",
+        preview: (
+          <Tabs defaultValue="overview" className="w-full max-w-md">
+            <TabsList className="grid w-full grid-cols-3">
+              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="analytics">Analytics</TabsTrigger>
+              <TabsTrigger value="reports">Reports</TabsTrigger>
+            </TabsList>
+            <TabsContent value="overview">
+              View your project overview and recent activity.
+            </TabsContent>
+            <TabsContent value="analytics">
+              Explore analytics and performance metrics.
+            </TabsContent>
+            <TabsContent value="reports">
+              Download and review generated reports.
+            </TabsContent>
+          </Tabs>
+        ),
+        code: `import { Tabs, TabsContent, TabsList, TabsTrigger } from "erco-ui"
+
+export function TabsDemo() {
+  return (
+    <Tabs defaultValue="overview">
+      <TabsList>
+        <TabsTrigger value="overview">Overview</TabsTrigger>
+        <TabsTrigger value="analytics">Analytics</TabsTrigger>
+        <TabsTrigger value="reports">Reports</TabsTrigger>
+      </TabsList>
+      <TabsContent value="overview">
+        View your project overview and recent activity.
+      </TabsContent>
+      <TabsContent value="analytics">
+        Explore analytics and performance metrics.
+      </TabsContent>
+      <TabsContent value="reports">
+        Download and review generated reports.
+      </TabsContent>
+    </Tabs>
+  )
+}`,
+      },
+      {
+        id: "tabs-secondary",
+        label: "Secondary",
+        description: (
+          <>
+            Use <InlineCode>variant="secondary"</InlineCode> on{" "}
+            <InlineCode>TabsList</InlineCode> for underline tabs.
+          </>
+        ),
+        preview: (
+          <Tabs defaultValue="overview" className="w-full max-w-md">
+            <TabsList variant="secondary" className="w-full">
+              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="analytics">Analytics</TabsTrigger>
+              <TabsTrigger value="reports">Reports</TabsTrigger>
+            </TabsList>
+            <TabsContent value="overview">
+              View your project overview and recent activity.
+            </TabsContent>
+            <TabsContent value="analytics">
+              Explore analytics and performance metrics.
+            </TabsContent>
+            <TabsContent value="reports">
+              Download and review generated reports.
+            </TabsContent>
+          </Tabs>
+        ),
+        code: `import { Tabs, TabsContent, TabsList, TabsTrigger } from "erco-ui"
+
+export function TabsSecondary() {
+  return (
+    <Tabs defaultValue="overview">
+      <TabsList variant="secondary">
+        <TabsTrigger value="overview">Overview</TabsTrigger>
+        <TabsTrigger value="analytics">Analytics</TabsTrigger>
+        <TabsTrigger value="reports">Reports</TabsTrigger>
+      </TabsList>
+      <TabsContent value="overview">
+        View your project overview and recent activity.
+      </TabsContent>
+    </Tabs>
+  )
+}`,
+      },
+      {
+        id: "tabs-vertical",
+        label: "Vertical",
+        description: (
+          <>
+            Use <InlineCode>orientation="vertical"</InlineCode> for a vertical
+            tab layout with the default pill style.
+          </>
+        ),
+        preview: (
+          <Tabs
+            defaultValue="account"
+            orientation="vertical"
+            className="w-full max-w-lg"
+          >
+            <TabsList>
+              <TabsTrigger value="account">Account</TabsTrigger>
+              <TabsTrigger value="security">Security</TabsTrigger>
+              <TabsTrigger value="notifications">Notifications</TabsTrigger>
+              <TabsTrigger value="billing">Billing</TabsTrigger>
+            </TabsList>
+            <TabsContent value="account">
+              <p className="font-medium text-foreground">Account Settings</p>
+              <p className="mt-1">
+                Manage your account information and preferences.
+              </p>
+            </TabsContent>
+            <TabsContent value="security">
+              <p className="font-medium text-foreground">Security</p>
+              <p className="mt-1">
+                Update passwords and security preferences.
+              </p>
+            </TabsContent>
+            <TabsContent value="notifications">
+              <p className="font-medium text-foreground">Notifications</p>
+              <p className="mt-1">
+                Configure how and when you receive alerts.
+              </p>
+            </TabsContent>
+            <TabsContent value="billing">
+              <p className="font-medium text-foreground">Billing</p>
+              <p className="mt-1">
+                Manage your plan, invoices, and payment methods.
+              </p>
+            </TabsContent>
+          </Tabs>
+        ),
+        code: `import { Tabs, TabsContent, TabsList, TabsTrigger } from "erco-ui"
+
+export function TabsVertical() {
+  return (
+    <Tabs defaultValue="account" orientation="vertical">
+      <TabsList>
+        <TabsTrigger value="account">Account</TabsTrigger>
+        <TabsTrigger value="security">Security</TabsTrigger>
+      </TabsList>
+      <TabsContent value="account">
+        Manage your account information and preferences.
+      </TabsContent>
+      <TabsContent value="security">
+        Update passwords and security preferences.
+      </TabsContent>
+    </Tabs>
+  )
+}`,
+      },
+      {
+        id: "tabs-vertical-secondary",
+        label: "Vertical Secondary",
+        description: (
+          <>
+            Combine <InlineCode>orientation="vertical"</InlineCode> with{" "}
+            <InlineCode>variant="secondary"</InlineCode> for vertical underline
+            tabs.
+          </>
+        ),
+        preview: (
+          <Tabs
+            defaultValue="account"
+            orientation="vertical"
+            className="w-full max-w-lg"
+          >
+            <TabsList variant="secondary">
+              <TabsTrigger value="account">Account</TabsTrigger>
+              <TabsTrigger value="security">Security</TabsTrigger>
+              <TabsTrigger value="notifications">Notifications</TabsTrigger>
+              <TabsTrigger value="billing">Billing</TabsTrigger>
+            </TabsList>
+            <TabsContent value="account">
+              <p className="font-medium text-foreground">Account Settings</p>
+              <p className="mt-1">
+                Manage your account information and preferences.
+              </p>
+            </TabsContent>
+            <TabsContent value="security">
+              <p className="font-medium text-foreground">Security</p>
+              <p className="mt-1">
+                Update passwords and security preferences.
+              </p>
+            </TabsContent>
+            <TabsContent value="notifications">
+              <p className="font-medium text-foreground">Notifications</p>
+              <p className="mt-1">
+                Configure how and when you receive alerts.
+              </p>
+            </TabsContent>
+            <TabsContent value="billing">
+              <p className="font-medium text-foreground">Billing</p>
+              <p className="mt-1">
+                Manage your plan, invoices, and payment methods.
+              </p>
+            </TabsContent>
+          </Tabs>
+        ),
+        code: `import { Tabs, TabsContent, TabsList, TabsTrigger } from "erco-ui"
+
+export function TabsVerticalSecondary() {
+  return (
+    <Tabs defaultValue="account" orientation="vertical">
+      <TabsList variant="secondary">
+        <TabsTrigger value="account">Account</TabsTrigger>
+        <TabsTrigger value="security">Security</TabsTrigger>
+      </TabsList>
+      <TabsContent value="account">
+        Manage your account information and preferences.
+      </TabsContent>
+      <TabsContent value="security">
+        Update passwords and security preferences.
+      </TabsContent>
+    </Tabs>
   )
 }`,
       },

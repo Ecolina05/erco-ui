@@ -38,20 +38,26 @@ export function Sidebar({ activeId, onNavigate }: SidebarProps) {
             >
               All Components
             </SidebarLink>
-            <ul className="mt-1 space-y-0.5">
-              {categories.flatMap((category) =>
-                category.components.map((component) => (
-                  <li key={component.id}>
-                    <SidebarLink
-                      active={activeId === component.id}
-                      onClick={() => onNavigate(component.id)}
-                    >
-                      {component.name}
-                    </SidebarLink>
-                  </li>
-                ))
-              )}
-            </ul>
+
+            {categories.map((category) => (
+              <div key={category.id} className="mt-4">
+                <p className="mb-1 px-2 text-xs font-medium text-muted-foreground">
+                  {category.label}
+                </p>
+                <ul className="space-y-0.5">
+                  {category.components.map((component) => (
+                    <li key={component.id}>
+                      <SidebarLink
+                        active={activeId === component.id}
+                        onClick={() => onNavigate(component.id)}
+                      >
+                        {component.name}
+                      </SidebarLink>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
         </div>
       </div>

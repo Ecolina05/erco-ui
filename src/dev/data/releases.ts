@@ -14,23 +14,40 @@ export const releases: Release[] = [
   {
     version: "1.0.0",
     date: "2026-08-30",
-    summary: "Initial public release of erco-ui.",
+    summary:
+      "Initial release of erco-ui with 11 components, a docs playground, and Tailwind CSS v4 theming.",
     changes: [
       {
         type: "feature",
-        text: "Button component with default, outline, secondary, ghost, destructive, link, circle, and circle-outline variants.",
+        text: "Button with default, outline, secondary, ghost, destructive, link, circle, circle-outline variants, sizes, icon mode, and loading state.",
       },
       {
         type: "feature",
-        text: "Button loading state with built-in spinner that preserves button dimensions.",
+        text: "Form components: Input, Textarea, Select, Checkbox, and Switch.",
       },
       {
         type: "feature",
-        text: "Input, Card, Badge, and Loading components with shadcn-inspired styling.",
+        text: "Card with transparent, default, and secondary surface variants plus composable header, content, and footer sections.",
+      },
+      {
+        type: "feature",
+        text: "Badge with default, secondary, and outline variants.",
+      },
+      {
+        type: "feature",
+        text: "Loading spinner with configurable size.",
+      },
+      {
+        type: "feature",
+        text: "Tabs with default, secondary, vertical, and vertical secondary layouts.",
       },
       {
         type: "feature",
         text: "Tailwind CSS v4 theme with light and dark mode support via CSS variables.",
+      },
+      {
+        type: "feature",
+        text: "Docs playground with component previews, code snippets, Getting Started, Releases, and All Components overview.",
       },
       {
         type: "feature",
