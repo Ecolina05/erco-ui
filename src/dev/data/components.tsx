@@ -2,6 +2,7 @@ import type { ReactNode } from "react"
 import { Search } from "lucide-react"
 
 import { Badge } from "@/components/Badge"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/Avatar"
 import { Button } from "@/components/Button"
 import {
   Card,
@@ -773,6 +774,114 @@ export function CardDemo() {
         <Button size="sm">Continue</Button>
       </CardFooter>
     </Card>
+  )
+}`,
+      },
+    ],
+  },
+  {
+    id: "avatar",
+    name: "Avatar",
+    categoryId: "data-display",
+    categoryLabel: "Data Display",
+    overviewPreview: (
+      <div className="flex items-center gap-2">
+        <Avatar className="pointer-events-none">
+          <AvatarImage
+            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop"
+            alt="User"
+          />
+          <AvatarFallback>EC</AvatarFallback>
+        </Avatar>
+        <Avatar className="pointer-events-none">
+          <AvatarFallback>JR</AvatarFallback>
+        </Avatar>
+      </div>
+    ),
+    variants: [
+      {
+        id: "avatar-default",
+        label: "Default",
+        description:
+          "Display user profile images with customizable fallback content.",
+        preview: (
+          <div className="flex items-center gap-4">
+            <Avatar>
+              <AvatarImage
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&h=80&fit=crop"
+                alt="Colina"
+              />
+              <AvatarFallback>EC</AvatarFallback>
+            </Avatar>
+            <Avatar>
+              <AvatarImage
+                src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=80&h=80&fit=crop"
+                alt="Gradient"
+              />
+              <AvatarFallback>GD</AvatarFallback>
+            </Avatar>
+            <Avatar>
+              <AvatarFallback>JR</AvatarFallback>
+            </Avatar>
+          </div>
+        ),
+        code: `import { Avatar, AvatarFallback, AvatarImage } from "erco-ui"
+
+export function AvatarDemo() {
+  return (
+    <div className="flex items-center gap-4">
+      <Avatar>
+        <AvatarImage src="/avatars/user.jpg" alt="Colina" />
+        <AvatarFallback>EC</AvatarFallback>
+      </Avatar>
+      <Avatar>
+        <AvatarImage src="/avatars/gradient.jpg" alt="Gradient" />
+        <AvatarFallback>GD</AvatarFallback>
+      </Avatar>
+      <Avatar>
+        <AvatarFallback>JR</AvatarFallback>
+      </Avatar>
+    </div>
+  )
+}`,
+      },
+      {
+        id: "avatar-sizes",
+        label: "Size",
+        description: (
+          <>
+            Use the <InlineCode>size</InlineCode> prop for smaller or larger
+            avatars.
+          </>
+        ),
+        preview: (
+          <div className="flex items-center gap-4">
+            <Avatar size="sm">
+              <AvatarFallback>SM</AvatarFallback>
+            </Avatar>
+            <Avatar>
+              <AvatarFallback>MD</AvatarFallback>
+            </Avatar>
+            <Avatar size="lg">
+              <AvatarFallback>LG</AvatarFallback>
+            </Avatar>
+          </div>
+        ),
+        code: `import { Avatar, AvatarFallback } from "erco-ui"
+
+export function AvatarSizes() {
+  return (
+    <div className="flex items-center gap-4">
+      <Avatar size="sm">
+        <AvatarFallback>SM</AvatarFallback>
+      </Avatar>
+      <Avatar>
+        <AvatarFallback>MD</AvatarFallback>
+      </Avatar>
+      <Avatar size="lg">
+        <AvatarFallback>LG</AvatarFallback>
+      </Avatar>
+    </div>
   )
 }`,
       },

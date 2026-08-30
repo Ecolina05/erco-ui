@@ -12,6 +12,25 @@ export type Release = {
 
 export const releases: Release[] = [
   {
+    version: "1.1.0",
+    date: "2026-08-30",
+    summary: "Adds the Avatar component for profile images with fallback support.",
+    changes: [
+      {
+        type: "feature",
+        text: "Avatar component with AvatarImage, AvatarFallback, and sm, default, and lg sizes.",
+      },
+      {
+        type: "feature",
+        text: "Automatic fallback when the image fails to load or is not provided.",
+      },
+      {
+        type: "feature",
+        text: "Avatar docs, sidebar entry, and All Components overview card.",
+      },
+    ],
+  },
+  {
     version: "1.0.0",
     date: "2026-08-30",
     summary:
