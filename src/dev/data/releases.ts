@@ -12,29 +12,10 @@ export type Release = {
 
 export const releases: Release[] = [
   {
-    version: "1.1.0",
-    date: "2026-08-30",
-    summary: "Adds the Avatar component for profile images with fallback support.",
-    changes: [
-      {
-        type: "feature",
-        text: "Avatar component with AvatarImage, AvatarFallback, and sm, default, and lg sizes.",
-      },
-      {
-        type: "feature",
-        text: "Automatic fallback when the image fails to load or is not provided.",
-      },
-      {
-        type: "feature",
-        text: "Avatar docs, sidebar entry, and All Components overview card.",
-      },
-    ],
-  },
-  {
     version: "1.0.0",
     date: "2026-08-30",
     summary:
-      "Initial release of erco-ui with 11 components, a docs playground, and Tailwind CSS v4 theming.",
+      "Initial release of erco-ui with 12 components, a docs playground, and Tailwind CSS v4 theming.",
     changes: [
       {
         type: "feature",
@@ -47,6 +28,10 @@ export const releases: Release[] = [
       {
         type: "feature",
         text: "Card with transparent, default, and secondary surface variants plus composable header, content, and footer sections.",
+      },
+      {
+        type: "feature",
+        text: "Avatar with AvatarImage, AvatarFallback, and sm, default, and lg sizes.",
       },
       {
         type: "feature",
