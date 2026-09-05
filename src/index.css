@@ -31,9 +31,11 @@
   --color-surface: hsl(var(--surface));
   --color-surface-secondary: hsl(var(--surface-secondary));
 
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
+  --radius-2xl: var(--radius-2xl);
+  --radius-xl: var(--radius-xl);
+  --radius-lg: var(--radius-lg);
+  --radius-md: var(--radius-md);
+  --radius-sm: var(--radius-sm);
 
   --color-code-keyword: hsl(var(--code-keyword));
   --color-code-string: hsl(var(--code-string));
@@ -81,7 +83,12 @@
     --code-component: 271 48% 47%;
     --code-plain: 0 0% 15%;
 
-    --radius: 0.5rem;
+    --radius-sm: 0.75rem;
+    --radius-md: 1rem;
+    --radius-lg: 1.25rem;
+    --radius-xl: 1.5rem;
+    --radius-2xl: 2rem;
+    --radius: var(--radius-md);
   }
 
   .dark {

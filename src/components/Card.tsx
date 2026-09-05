@@ -1,10 +1,11 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
+import { Typography } from "@/components/Typography"
 import { cn } from "@/lib/utils"
 
 const cardVariants = cva(
-  "rounded-lg border text-card-foreground shadow-sm",
+  "rounded-3xl border text-card-foreground shadow-sm",
   {
     variants: {
       variant: {
@@ -44,12 +45,14 @@ const CardHeader = React.forwardRef<
 CardHeader.displayName = "CardHeader"
 
 const CardTitle = React.forwardRef<
-  HTMLParagraphElement,
+  HTMLHeadingElement,
   React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
-  <h3
+  <Typography
     ref={ref}
-    className={cn("font-semibold leading-none tracking-tight", className)}
+    as="h3"
+    variant="section"
+    className={cn("leading-none tracking-tight", className)}
     {...props}
   />
 ))
@@ -59,9 +62,11 @@ const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-  <p
+  <Typography
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    as="p"
+    variant="muted"
+    className={className}
     {...props}
   />
 ))

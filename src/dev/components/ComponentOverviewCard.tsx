@@ -28,7 +28,7 @@ export function ComponentOverviewCard({
       type="button"
       onClick={() => onSelect(component.id)}
       className={cn(
-        "group h-full w-full rounded-lg text-left",
+        "group h-full w-full rounded-3xl text-left",
         "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
       )}
     >

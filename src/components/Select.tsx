@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Check, ChevronDown } from "lucide-react"
 
+import { Label } from "@/components/Typography"
 import { cn } from "@/lib/utils"
 
 type SelectContextValue = {
@@ -24,6 +25,7 @@ function useSelectContext() {
 }
 
 export interface SelectProps {
+  id?: string
   value?: string
   defaultValue?: string
   onValueChange?: (value: string) => void
@@ -32,6 +34,7 @@ export interface SelectProps {
 }
 
 function Select({
+  id,
   value: valueProp,
   defaultValue,
   onValueChange,
@@ -40,7 +43,8 @@ function Select({
 }: SelectProps) {
   const [uncontrolledValue, setUncontrolledValue] = React.useState(defaultValue)
   const [open, setOpen] = React.useState(false)
-  const triggerId = React.useId()
+  const generatedId = React.useId()
+  const triggerId = id ?? generatedId
   const contentId = React.useId()
   const value = valueProp ?? uncontrolledValue
 
@@ -91,7 +95,7 @@ export interface SelectTriggerProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const SelectTrigger = React.forwardRef<HTMLButtonElement, SelectTriggerProps>(
-  ({ className, children, ...props }, ref) => {
+  ({ className, children, onClick, ...props }, ref) => {
     const { open, setOpen, disabled, triggerId, contentId } = useSelectContext()
 
     return (
@@ -103,9 +107,14 @@ const SelectTrigger = React.forwardRef<HTMLButtonElement, SelectTriggerProps>(
         aria-expanded={open}
         aria-controls={contentId}
         disabled={disabled}
-        onClick={() => setOpen(!open)}
+        onClick={(event) => {
+          onClick?.(event)
+          if (!event.defaultPrevented) {
+            setOpen(!open)
+          }
+        }}
         className={cn(
-          "flex h-9 w-full items-center justify-between gap-2 rounded-md border border-input bg-transparent px-3 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+          "flex h-9 w-full cursor-pointer items-center justify-between gap-2 rounded-2xl border border-input bg-transparent px-4 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
           className
         )}
         {...props}
@@ -124,6 +133,15 @@ const SelectTrigger = React.forwardRef<HTMLButtonElement, SelectTriggerProps>(
   }
 )
 SelectTrigger.displayName = "SelectTrigger"
+
+export interface SelectLabelProps
+  extends React.LabelHTMLAttributes<HTMLLabelElement> {}
+
+function SelectLabel({ className, ...props }: SelectLabelProps) {
+  const { triggerId } = useSelectContext()
+
+  return <Label htmlFor={triggerId} className={className} {...props} />
+}
 
 export interface SelectValueProps {
   placeholder?: string
@@ -162,7 +180,7 @@ function SelectContent({ className, children, ...props }: SelectContentProps) {
       role="listbox"
       aria-labelledby={triggerId}
       className={cn(
-        "absolute z-50 mt-1 max-h-60 w-full overflow-auto rounded-md border bg-popover p-1 text-popover-foreground shadow-md",
+        "absolute z-50 mt-1 max-h-60 w-full overflow-auto rounded-2xl border bg-popover p-1.5 text-popover-foreground shadow-md",
         className
       )}
       {...props}
@@ -193,7 +211,7 @@ function SelectItem({
       aria-selected={isSelected}
       onClick={() => onValueChange(value)}
       className={cn(
-        "relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pl-2 pr-8 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+        "relative flex w-full cursor-pointer select-none items-center rounded-xl py-1.5 pl-2 pr-8 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
         isSelected && "bg-accent text-accent-foreground",
         className
       )}
@@ -209,6 +227,7 @@ function SelectItem({
 
 export {
   Select,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
   SelectContent,

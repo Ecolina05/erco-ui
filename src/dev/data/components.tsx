@@ -30,6 +30,7 @@ import {
   TabsTrigger,
 } from "@/components/Tabs"
 import { Textarea } from "@/components/Textarea"
+import { Label, Typography } from "@/components/Typography"
 
 import { InlineCode } from "../components/InlineCode"
 
@@ -157,32 +158,6 @@ export function ButtonLink() {
 }`,
       },
       {
-        id: "button-circle",
-        label: "Circle",
-        description: (
-          <>
-            Use the <InlineCode>variant="circle"</InlineCode> prop for pill-shaped
-            buttons, like Apple marketing CTAs.
-          </>
-        ),
-        preview: (
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <Button variant="circle">Learn more</Button>
-            <Button variant="circle-outline">Buy now</Button>
-          </div>
-        ),
-        code: `import { Button } from "erco-ui"
-
-export function ButtonCircle() {
-  return (
-    <div className="flex flex-wrap items-center gap-3">
-      <Button variant="circle">Learn more</Button>
-      <Button variant="circle-outline">Buy now</Button>
-    </div>
-  )
-}`,
-      },
-      {
         id: "button-sizes",
         label: "Size",
         description: (
@@ -247,8 +222,8 @@ export function ButtonLoading() {
         label: "Icon",
         description: (
           <>
-            Use <InlineCode>size="icon"</InlineCode> for icon buttons. Combine with{" "}
-            <InlineCode>variant="circle"</InlineCode> for a perfect circle.
+            Use <InlineCode>size="icon"</InlineCode> for icon buttons with a
+            circular shape.
           </>
         ),
         preview: (
@@ -256,10 +231,10 @@ export function ButtonLoading() {
             <Button size="icon" aria-label="Search">
               <Search />
             </Button>
-            <Button variant="circle" size="icon" aria-label="Search">
+            <Button variant="outline" size="icon" aria-label="Search">
               <Search />
             </Button>
-            <Button variant="circle-outline" size="icon" aria-label="Search">
+            <Button variant="secondary" size="icon" aria-label="Search">
               <Search />
             </Button>
           </div>
@@ -273,10 +248,10 @@ export function ButtonIcon() {
       <Button size="icon" aria-label="Search">
         <Search />
       </Button>
-      <Button variant="circle" size="icon" aria-label="Search">
+      <Button variant="outline" size="icon" aria-label="Search">
         <Search />
       </Button>
-      <Button variant="circle-outline" size="icon" aria-label="Search">
+      <Button variant="secondary" size="icon" aria-label="Search">
         <Search />
       </Button>
     </div>
@@ -302,6 +277,33 @@ export function ButtonIcon() {
 
 export function InputDemo() {
   return <Input type="email" placeholder="Enter your email" />
+}`,
+      },
+      {
+        id: "input-with-label",
+        label: "With Label",
+        description: (
+          <>
+            Pair <InlineCode>Input</InlineCode> with{" "}
+            <InlineCode>Label</InlineCode> using matching{" "}
+            <InlineCode>id</InlineCode> and <InlineCode>htmlFor</InlineCode>.
+          </>
+        ),
+        preview: (
+          <div className="max-w-sm space-y-2">
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" placeholder="you@example.com" type="email" />
+          </div>
+        ),
+        code: `import { Input, Label } from "erco-ui"
+
+export function InputWithLabel() {
+  return (
+    <div className="space-y-2">
+      <Label htmlFor="email">Email</Label>
+      <Input id="email" type="email" placeholder="you@example.com" />
+    </div>
+  )
 }`,
       },
       {
@@ -355,6 +357,35 @@ export function TextareaDemo() {
 }`,
       },
       {
+        id: "textarea-with-label",
+        label: "With Label",
+        description: (
+          <>
+            Pair <InlineCode>Textarea</InlineCode> with{" "}
+            <InlineCode>Label</InlineCode> for accessible form fields.
+          </>
+        ),
+        preview: (
+          <div className="max-w-md space-y-2">
+            <Label htmlFor="bio">Bio</Label>
+            <Textarea
+              id="bio"
+              placeholder="Share a quick project update..."
+            />
+          </div>
+        ),
+        code: `import { Label, Textarea } from "erco-ui"
+
+export function TextareaWithLabel() {
+  return (
+    <div className="space-y-2">
+      <Label htmlFor="bio">Bio</Label>
+      <Textarea id="bio" placeholder="Share a quick project update..." />
+    </div>
+  )
+}`,
+      },
+      {
         id: "textarea-disabled",
         label: "Disabled",
         description: (
@@ -401,8 +432,8 @@ export function TextareaDisabled() {
         description: "A dropdown for selecting a single option.",
         preview: (
           <div className="grid w-full max-w-xs gap-1.5">
-            <label className="text-sm font-medium leading-none">State</label>
-            <Select defaultValue="Florida">
+            <Select id="state">
+              <Label htmlFor="state">State</Label>
               <SelectTrigger>
                 <SelectValue placeholder="Select one" />
               </SelectTrigger>
@@ -415,6 +446,7 @@ export function TextareaDisabled() {
           </div>
         ),
         code: `import {
+  Label,
   Select,
   SelectContent,
   SelectItem,
@@ -424,7 +456,8 @@ export function TextareaDisabled() {
 
 export function SelectDemo() {
   return (
-    <Select defaultValue="Florida">
+    <Select id="state">
+      <Label htmlFor="state">State</Label>
       <SelectTrigger>
         <SelectValue placeholder="Select one" />
       </SelectTrigger>
@@ -598,12 +631,12 @@ export function SwitchDisabled() {
       <Card className="w-full max-w-[240px] shadow-none">
         <CardHeader className="p-4 pb-2">
           <CardTitle className="text-sm">Create project</CardTitle>
-          <CardDescription className="text-xs">
+          <CardDescription>
             Deploy your new project in one click.
           </CardDescription>
         </CardHeader>
         <CardContent className="p-4 pt-0">
-          <div className="h-9 rounded-md border border-input bg-background" />
+          <div className="h-9 rounded-2xl border border-input bg-background" />
         </CardContent>
       </Card>
     ),
@@ -620,7 +653,7 @@ export function SwitchDisabled() {
         preview: (
           <Card variant="transparent" className="w-full max-w-md shadow-none">
             <CardHeader className="p-4 pb-2">
-              <CardTitle className="text-base">Transparent Variant</CardTitle>
+              <CardTitle>Transparent Variant</CardTitle>
               <CardDescription>
                 Minimal prominence with transparent background.
               </CardDescription>
@@ -664,7 +697,7 @@ export function CardTransparent() {
         preview: (
           <Card className="w-full max-w-md shadow-none">
             <CardHeader className="p-4 pb-2">
-              <CardTitle className="text-base">Default Variant</CardTitle>
+              <CardTitle>Default Variant</CardTitle>
               <CardDescription>Standard card appearance.</CardDescription>
             </CardHeader>
             <CardContent className="p-4 pt-0">
@@ -704,7 +737,7 @@ export function CardDefault() {
         preview: (
           <Card variant="secondary" className="w-full max-w-md shadow-none">
             <CardHeader className="p-4 pb-2">
-              <CardTitle className="text-base">Secondary Variant</CardTitle>
+              <CardTitle>Secondary Variant</CardTitle>
               <CardDescription>Medium prominence.</CardDescription>
             </CardHeader>
             <CardContent className="p-4 pt-0">
@@ -882,6 +915,185 @@ export function AvatarSizes() {
         <AvatarFallback>LG</AvatarFallback>
       </Avatar>
     </div>
+  )
+}`,
+      },
+    ],
+  },
+  {
+    id: "typography",
+    name: "Typography",
+    categoryId: "typography",
+    categoryLabel: "Typography",
+    overviewPreview: (
+      <div className="space-y-1">
+        <Typography variant="section">Heading</Typography>
+        <Typography variant="muted">Body text at text-xs.</Typography>
+      </div>
+    ),
+    variants: [
+      {
+        id: "typography-headings",
+        label: "Headings",
+        description: (
+          <>
+            Use <InlineCode>variant="title"</InlineCode>,{" "}
+            <InlineCode>heading</InlineCode>, <InlineCode>subheading</InlineCode>,
+            and <InlineCode>section</InlineCode> for page hierarchy.
+          </>
+        ),
+        preview: (
+          <div className="space-y-3">
+            <Typography variant="title">Page title</Typography>
+            <Typography variant="heading">Section heading</Typography>
+            <Typography variant="subheading">Subheading</Typography>
+            <Typography variant="section">Card or block title</Typography>
+          </div>
+        ),
+        code: `import { Typography } from "erco-ui"
+
+export function TypographyHeadings() {
+  return (
+    <div className="space-y-3">
+      <Typography variant="title">Page title</Typography>
+      <Typography variant="heading">Section heading</Typography>
+      <Typography variant="subheading">Subheading</Typography>
+      <Typography variant="section">Card or block title</Typography>
+    </div>
+  )
+}`,
+      },
+      {
+        id: "typography-subtitle",
+        label: "Subtitle",
+        description: (
+          <>
+            Use <InlineCode>variant="subtitle"</InlineCode> for supporting text
+            below a heading.
+          </>
+        ),
+        preview: (
+          <div className="space-y-1">
+            <Typography variant="heading">Account settings</Typography>
+            <Typography variant="subtitle">
+              Manage your profile and notification preferences.
+            </Typography>
+          </div>
+        ),
+        code: `import { Typography } from "erco-ui"
+
+export function TypographySubtitle() {
+  return (
+    <div className="space-y-1">
+      <Typography variant="heading">Account settings</Typography>
+      <Typography variant="subtitle">
+        Manage your profile and notification preferences.
+      </Typography>
+    </div>
+  )
+}`,
+      },
+      {
+        id: "typography-body",
+        label: "Body & Muted",
+        description: (
+          <>
+            Use <InlineCode>variant="body"</InlineCode> for default copy and{" "}
+            <InlineCode>muted</InlineCode> or <InlineCode>caption</InlineCode> for
+            secondary details.
+          </>
+        ),
+        preview: (
+          <div className="max-w-md space-y-2">
+            <Typography variant="body">
+              erco-ui uses text-xs as the default body size across form fields
+              and documentation.
+            </Typography>
+            <Typography variant="muted">
+              Muted text works well for helper copy and descriptions.
+            </Typography>
+            <Typography variant="caption">Last updated 2 hours ago</Typography>
+          </div>
+        ),
+        code: `import { Typography } from "erco-ui"
+
+export function TypographyBody() {
+  return (
+    <div className="space-y-2">
+      <Typography variant="body">
+        erco-ui uses text-xs as the default body size.
+      </Typography>
+      <Typography variant="muted">
+        Muted text for helper copy and descriptions.
+      </Typography>
+      <Typography variant="caption">Last updated 2 hours ago</Typography>
+    </div>
+  )
+}`,
+      },
+      {
+        id: "typography-label",
+        label: "Label",
+        description: (
+          <>
+            Use the <InlineCode>Label</InlineCode> component for form field names.
+            It renders a native <InlineCode>label</InlineCode> with{" "}
+            <InlineCode>text-xs font-medium</InlineCode> styling.
+          </>
+        ),
+        preview: (
+          <div className="max-w-sm space-y-2">
+            <Label htmlFor="email-demo">Email</Label>
+            <Input id="email-demo" placeholder="you@example.com" type="email" />
+          </div>
+        ),
+        code: `import { Input, Label } from "erco-ui"
+
+export function TypographyLabel() {
+  return (
+    <div className="space-y-2">
+      <Label htmlFor="email">Email</Label>
+      <Input id="email" type="email" placeholder="you@example.com" />
+    </div>
+  )
+}`,
+      },
+      {
+        id: "typography-composition",
+        label: "Composition",
+        description: "Combine variants to build readable content blocks.",
+        preview: (
+          <article className="max-w-md space-y-3">
+            <Typography variant="title">Design system</Typography>
+            <Typography variant="subtitle">
+              Consistent typography across components and docs.
+            </Typography>
+            <Typography variant="body">
+              Typography standardizes headings, body copy, and labels so every
+              screen shares the same rhythm and hierarchy.
+            </Typography>
+            <Typography variant="muted">
+              Override the rendered element with the as prop when semantic HTML
+              matters.
+            </Typography>
+          </article>
+        ),
+        code: `import { Typography } from "erco-ui"
+
+export function TypographyComposition() {
+  return (
+    <article className="space-y-3">
+      <Typography variant="title">Design system</Typography>
+      <Typography variant="subtitle">
+        Consistent typography across components and docs.
+      </Typography>
+      <Typography variant="body">
+        Typography standardizes headings, body copy, and labels.
+      </Typography>
+      <Typography variant="muted">
+        Override the element with the as prop when needed.
+      </Typography>
+    </article>
   )
 }`,
       },

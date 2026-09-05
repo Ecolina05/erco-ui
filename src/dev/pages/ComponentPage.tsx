@@ -1,6 +1,8 @@
 import { Button } from "@/components/Button"
 
+import { ComponentApiReference } from "../components/ComponentApiReference"
 import { ComponentExample } from "../components/ComponentExample"
+import { getComponentApi } from "../data/component-api"
 import type { ComponentDefinition } from "../data/components"
 
 type ComponentPageProps = {
@@ -9,6 +11,8 @@ type ComponentPageProps = {
 }
 
 export function ComponentPage({ component, onBack }: ComponentPageProps) {
+  const api = getComponentApi(component.id)
+
   return (
     <div className="mx-auto max-w-3xl">
       <section>
@@ -24,8 +28,8 @@ export function ComponentPage({ component, onBack }: ComponentPageProps) {
           {component.name}
         </h1>
         <p className="mt-2 text-muted-foreground">
-          Displays a {component.name.toLowerCase()} or a component that looks like
-          a {component.name.toLowerCase()}.
+          {api?.description ??
+            `Displays a ${component.name.toLowerCase()} or a component that looks like a ${component.name.toLowerCase()}.`}
         </p>
       </section>
 
@@ -34,6 +38,8 @@ export function ComponentPage({ component, onBack }: ComponentPageProps) {
           <ComponentExample key={variant.id} variant={variant} />
         ))}
       </div>
+
+      {api ? <ComponentApiReference api={api} /> : null}
     </div>
   )
 }

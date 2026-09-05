@@ -81,12 +81,12 @@ const tabsListVariants = cva("inline-flex items-center text-muted-foreground", {
     {
       variant: "default",
       orientation: "horizontal",
-      className: "h-9 justify-center rounded-lg bg-muted p-1",
+      className: "h-10 justify-center rounded-full bg-muted p-1",
     },
     {
       variant: "default",
       orientation: "vertical",
-      className: "w-48 rounded-lg bg-muted p-1",
+      className: "w-48 rounded-3xl bg-muted p-1",
     },
     {
       variant: "secondary",
@@ -155,9 +155,9 @@ function TabsTrigger({
       data-state={isActive ? "active" : "inactive"}
       onClick={() => onValueChange(value)}
       className={cn(
-        "inline-flex items-center justify-center whitespace-nowrap rounded-md px-3 py-1 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+        "inline-flex items-center justify-center whitespace-nowrap px-3 py-1.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
         variant === "default" &&
-          "text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm",
+          "rounded-full text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm",
         variant === "secondary" &&
           orientation === "horizontal" &&
           "rounded-none border-b-2 border-transparent px-1 pb-2 text-muted-foreground data-[state=active]:border-primary data-[state=active]:text-foreground",

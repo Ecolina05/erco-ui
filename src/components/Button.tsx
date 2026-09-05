@@ -5,7 +5,7 @@ import { Loading } from "@/components/Loading";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md border border-transparent text-xs font-medium backdrop-blur-md backdrop-saturate-150 transition-all duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-full border border-transparent text-xs font-medium backdrop-blur-md backdrop-saturate-150 transition-all duration-200 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
@@ -19,41 +19,15 @@ const buttonVariants = cva(
           "border-border/70 bg-secondary/95 text-secondary-foreground hover:border-border hover:bg-secondary",
         ghost:
           "border-transparent bg-transparent hover:border-border/50 hover:bg-foreground/5",
-        link: "border-transparent bg-transparent text-primary underline-offset-4 backdrop-blur-none hover:underline",
-        circle:
-          "rounded-full border-primary/15 bg-primary/95 px-6 text-primary-foreground hover:border-primary/30 hover:bg-primary",
-        "circle-outline":
-          "rounded-full border-primary/50 bg-background/90 px-6 text-primary hover:border-primary hover:bg-background",
+        link: "rounded-none border-transparent bg-transparent text-primary underline-offset-4 backdrop-blur-none hover:underline",
       },
       size: {
         default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3",
-        lg: "h-10 rounded-md px-8 text-sm",
-        icon: "h-9 w-9",
+        sm: "h-8 px-4",
+        lg: "h-10 px-8 text-sm",
+        icon: "size-9 rounded-full",
       },
     },
-    compoundVariants: [
-      {
-        variant: ["circle", "circle-outline"],
-        size: "sm",
-        className: "h-8 px-5",
-      },
-      {
-        variant: ["circle", "circle-outline"],
-        size: "lg",
-        className: "h-10 px-8 text-sm",
-      },
-      {
-        variant: ["circle", "circle-outline"],
-        size: "default",
-        className: "px-6",
-      },
-      {
-        variant: ["circle", "circle-outline"],
-        size: "icon",
-        className: "size-9 p-0",
-      },
-    ],
     defaultVariants: {
       variant: "default",
       size: "default",
@@ -72,7 +46,6 @@ export interface ButtonProps
   extends
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
   loading?: boolean;
   isLoading?: boolean;
 }
@@ -83,10 +56,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       className,
       variant,
       size,
-      asChild = false,
       loading,
       isLoading,
       disabled,
+      onClick,
       children,
       ...props
     },
@@ -97,25 +70,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const resolvedSize = size ?? "default";
     const loaderSize = loadingIconSizes[resolvedSize];
 
-    if (asChild) {
-      const Comp = "span";
-      return (
-        <Comp
-          className={cn(buttonVariants({ variant, size, className }))}
-          ref={ref as React.Ref<HTMLButtonElement>}
-          {...props}
-        >
-          {children}
-        </Comp>
-      );
-    }
-
     return (
       <button
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         disabled={isDisabled}
         aria-busy={isBusy}
+        onClick={onClick}
         {...props}
       >
         <span className="relative inline-flex items-center justify-center">

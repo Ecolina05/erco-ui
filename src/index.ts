@@ -9,6 +9,7 @@ export * from "./components/Switch"
 export * from "./components/Textarea"
 export * from "./components/Tabs"
 export * from "./components/Select"
+export * from "./components/Typography"
 export * from "./lib/utils"
 
 // Explicitly export style if needed, though usually the user imports it directly

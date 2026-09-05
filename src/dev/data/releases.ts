@@ -19,7 +19,7 @@ export const releases: Release[] = [
     changes: [
       {
         type: "feature",
-        text: "Button with default, outline, secondary, ghost, destructive, link, circle, circle-outline variants, sizes, icon mode, and loading state.",
+        text: "Button with default, outline, secondary, ghost, destructive, and link variants, pill shape, sizes, icon mode, and loading state.",
       },
       {
         type: "feature",

@@ -52,9 +52,7 @@ export function GettingStartedPage({ onViewComponents }: GettingStartedPageProps
             <Card key={option.title} className="shadow-none">
               <CardHeader className="p-4">
                 <CardTitle className="text-sm">{option.title}</CardTitle>
-                <CardDescription className="text-xs leading-relaxed">
-                  {option.description}
-                </CardDescription>
+                <CardDescription>{option.description}</CardDescription>
               </CardHeader>
             </Card>
           ))}
