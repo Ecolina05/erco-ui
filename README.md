@@ -40,15 +40,14 @@ export function App() {
 }
 ```
 
-You do **not** need to configure Tailwind CSS in the host project for erco-ui components to look correct, as long as you import `erco-ui/style.css`.
+You do **not** need to configure Tailwind CSS in the host project for components to look correct, as long as you import `erco-ui/style.css`.
 
 ## Publish to npm (maintainers)
 
 1. Log in: `npm login`
-2. Ensure the package name `erco-ui` is available or use a scope (`@your-org/erco-ui`).
-3. Bump version in `package.json` when releasing.
-4. Run `pnpm build` (also runs on `npm publish` via `prepublishOnly`).
-5. Publish: `npm publish --access public` (required for scoped packages).
+2. Bump `version` in `package.json` when releasing.
+3. Run `pnpm build` (also runs on `npm publish` via `prepublishOnly`).
+4. Publish: `npm publish`
 
 ## Development
 
