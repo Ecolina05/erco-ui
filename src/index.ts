@@ -11,7 +11,3 @@ export * from "./components/Tabs"
 export * from "./components/Select"
 export * from "./components/Typography"
 export * from "./lib/utils"
-
-// Explicitly export style if needed, though usually the user imports it directly
-// e.g. import 'erco-ui/style.css'
-import "./index.css"

@@ -7,6 +7,7 @@ import {
 } from "@/components/Card"
 
 import { CodeBlock } from "../components/CodeBlock"
+import { InlineCode } from "../components/InlineCode"
 
 const setupOptions = [
   {
@@ -115,8 +116,9 @@ export function App() {
           Existing Project
         </h2>
         <p className="text-sm leading-relaxed text-muted-foreground">
-          If you already have a React app with Tailwind CSS v4 configured, install
-          erco-ui, import the stylesheet, and start using the components.
+          Install erco-ui, import <InlineCode>erco-ui/style.css</InlineCode> once,
+          and use the components. You do not need Tailwind CSS in the host app unless
+          you use your own utility classes alongside erco-ui.
         </p>
       </section>
 
