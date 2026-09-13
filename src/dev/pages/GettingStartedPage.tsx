@@ -118,7 +118,10 @@ export function App() {
         <p className="text-sm leading-relaxed text-muted-foreground">
           Install erco-ui, import <InlineCode>erco-ui/style.css</InlineCode> once,
           and use the components. You do not need Tailwind CSS in the host app unless
-          you use your own utility classes alongside erco-ui.
+          you use your own utility classes alongside erco-ui. If the host keeps its
+          own tokens and skips <InlineCode>style.css</InlineCode>, import{" "}
+          <InlineCode>erco-ui/dialog.css</InlineCode> so Modal stays centered with
+          its backdrop.
         </p>
       </section>
 

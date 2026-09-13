@@ -12,6 +12,18 @@ export type Release = {
 
 export const releases: Release[] = [
   {
+    version: "1.1.4",
+    date: "2026-09-13",
+    summary:
+      "Hosts that skip style.css can import erco-ui/dialog.css for Modal centering and backdrop.",
+    changes: [
+      {
+        type: "fix",
+        text: "Exports dialog.css with the native dialog layout and ::backdrop rules so apps with their own tokens still get a centered, blurred Modal.",
+      },
+    ],
+  },
+  {
     version: "1.1.3",
     date: "2026-09-13",
     summary:

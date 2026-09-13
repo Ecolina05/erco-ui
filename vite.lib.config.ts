@@ -1,12 +1,26 @@
+import { copyFileSync } from 'node:fs';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { resolve } from 'path';
 
+function copyDialogCss() {
+  return {
+    name: 'copy-dialog-css',
+    closeBundle() {
+      copyFileSync(
+        resolve(import.meta.dirname, 'src/dialog.css'),
+        resolve(import.meta.dirname, 'dist/dialog.css'),
+      );
+    },
+  };
+}
+
 export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
+    copyDialogCss(),
   ],
   build: {
     lib: {

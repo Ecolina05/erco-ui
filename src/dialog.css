@@ -1,0 +1,31 @@
+/*
+  Unlayered so host Tailwind preflight/utilities cannot un-center the dialog.
+  `position: relative` (or margin resets) on <dialog> otherwise pins showModal()
+  to the top-left of the viewport instead of the native centered overlay.
+
+  Hosts that skip `erco-ui/style.css` (custom tokens) should import this file:
+  `@import "erco-ui/dialog.css";`
+*/
+dialog.erco-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  height: fit-content;
+  max-height: min(90dvh, calc(100% - 2rem));
+  overflow: auto;
+}
+
+dialog.erco-modal::backdrop {
+  background-color: hsl(0 0% 0% / 0.55);
+}
+
+dialog.erco-modal-backdrop-blur::backdrop {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+dialog.erco-modal-backdrop-dim::backdrop {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  background-color: hsl(0 0% 0% / 0.78);
+}
