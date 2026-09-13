@@ -53,8 +53,9 @@ You do **not** need to configure Tailwind CSS in the host project for components
 
 ```bash
 pnpm install
-pnpm dev      # docs playground
-pnpm build    # dist/ for npm
+pnpm dev         # docs playground
+pnpm build       # dist/ for npm
+pnpm build:site  # static site for Vercel
 ```
 
 ## License
