@@ -1,4 +1,4 @@
-import { Moon, Sun } from "lucide-react"
+import { SunMoon } from "lucide-react"
 
 import { Brand } from "@/components/Brand"
 import { Button } from "@/components/Button"
@@ -8,7 +8,6 @@ import { ErcoMark } from "./ErcoMark"
 import { getNavActiveLink } from "../lib/routes"
 
 type NavbarProps = {
-  dark: boolean
   activeId: string
   onToggleTheme: () => void
   onNavigate: (id: string) => void
@@ -21,7 +20,6 @@ const navLinks = [
 ]
 
 export function Navbar({
-  dark,
   activeId,
   onToggleTheme,
   onNavigate,
@@ -67,7 +65,7 @@ export function Navbar({
             aria-label="Toggle theme"
             onClick={onToggleTheme}
           >
-            {dark ? <Sun size={16} /> : <Moon size={16} />}
+            <SunMoon size={16} />
           </Button>
         </div>
       </div>

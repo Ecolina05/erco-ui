@@ -47,7 +47,6 @@ export function App() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar
-        dark={dark}
         activeId={activeId}
         onToggleTheme={() => setDark((value) => !value)}
         onNavigate={navigateTo}
