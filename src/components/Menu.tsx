@@ -1,4 +1,5 @@
 import * as React from "react"
+import { createPortal } from "react-dom"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
@@ -35,9 +36,11 @@ function Menu({ children }: MenuProps) {
       const root = document
         .getElementById(triggerId)
         ?.closest("[data-menu-root]")
-      if (root && !root.contains(target)) {
-        setOpen(false)
+      const content = document.getElementById(contentId)
+      if (root?.contains(target) || content?.contains(target)) {
+        return
       }
+      setOpen(false)
     }
 
     function handleKeyDown(event: KeyboardEvent) {
@@ -55,7 +58,7 @@ function Menu({ children }: MenuProps) {
       document.removeEventListener("mousedown", handlePointerDown)
       document.removeEventListener("keydown", handleKeyDown)
     }
-  }, [open, triggerId])
+  }, [open, triggerId, contentId])
 
   return (
     <MenuContext.Provider value={{ open, setOpen, triggerId, contentId }}>
@@ -108,25 +111,65 @@ function MenuContent({
   ...props
 }: MenuContentProps) {
   const { open, contentId, triggerId } = useMenuContext()
+  const [coords, setCoords] = React.useState<{
+    top: number
+    left?: number
+    right?: number
+  } | null>(null)
 
-  if (!open) {
+  React.useLayoutEffect(() => {
+    if (!open) {
+      setCoords(null)
+      return
+    }
+
+    function updatePosition() {
+      const trigger = document.getElementById(triggerId)
+      if (!trigger) return
+
+      const rect = trigger.getBoundingClientRect()
+      setCoords({
+        top: rect.bottom + 4,
+        ...(align === "end"
+          ? { right: window.innerWidth - rect.right }
+          : { left: rect.left }),
+      })
+    }
+
+    updatePosition()
+    window.addEventListener("resize", updatePosition)
+    window.addEventListener("scroll", updatePosition, true)
+
+    return () => {
+      window.removeEventListener("resize", updatePosition)
+      window.removeEventListener("scroll", updatePosition, true)
+    }
+  }, [align, open, triggerId])
+
+  if (!open || !coords || typeof document === "undefined") {
     return null
   }
 
-  return (
+  return createPortal(
     <div
       id={contentId}
       role="menu"
       aria-labelledby={triggerId}
+      style={{
+        position: "fixed",
+        top: coords.top,
+        left: coords.left,
+        right: coords.right,
+      }}
       className={cn(
-        "absolute z-50 mt-1 min-w-[10rem] overflow-hidden rounded-2xl border border-border bg-popover p-1.5 text-popover-foreground shadow-md",
-        align === "end" ? "right-0" : "left-0",
+        "z-50 min-w-[10rem] overflow-hidden rounded-2xl border border-border bg-popover p-1.5 text-popover-foreground shadow-md",
         className
       )}
       {...props}
     >
       {children}
-    </div>
+    </div>,
+    document.body
   )
 }
 

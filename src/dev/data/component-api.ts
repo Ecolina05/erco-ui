@@ -299,7 +299,7 @@ export const componentApi: Record<string, ComponentApiDefinition> = {
   },
   menu: {
     description:
-      "Dropdown menu for actions and navigation. Compose MenuTrigger, MenuContent, and MenuItem.",
+      "Dropdown menu for actions and navigation. Compose MenuTrigger, MenuContent, and MenuItem. MenuContent portals to the document body so it is not clipped by overflow.",
     props: [
       { component: "Menu", name: "children", type: "React.ReactNode" },
       { component: "MenuTrigger", name: "children", type: "React.ReactNode" },

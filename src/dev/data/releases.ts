@@ -12,6 +12,18 @@ export type Release = {
 
 export const releases: Release[] = [
   {
+    version: "1.1.2",
+    date: "2026-09-13",
+    summary:
+      "Menu dropdowns now render in a portal so they stay above overflow containers like tables.",
+    changes: [
+      {
+        type: "fix",
+        text: "MenuContent portals to document.body with fixed positioning so action menus are no longer clipped by parent overflow.",
+      },
+    ],
+  },
+  {
     version: "1.1.1",
     date: "2026-09-13",
     summary:
