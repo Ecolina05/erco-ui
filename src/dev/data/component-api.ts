@@ -48,6 +48,48 @@ export const componentApi: Record<string, ComponentApiDefinition> = {
       { component: "Input", name: "className", type: "string" },
     ],
   },
+  "input-otp": {
+    description:
+      "One-time password input with joined slots, auto-advance, backspace navigation, and paste support.",
+    props: [
+      { component: "InputOTP", name: "length", type: "number", default: "6" },
+      { component: "InputOTP", name: "value", type: "string" },
+      { component: "InputOTP", name: "defaultValue", type: "string" },
+      { component: "InputOTP", name: "onChange", type: "(value: string) => void" },
+      { component: "InputOTP", name: "disabled", type: "boolean", default: "false" },
+      { component: "InputOTP", name: "className", type: "string" },
+      { component: "InputOTP", name: "slotClassName", type: "string" },
+    ],
+  },
+  "date-input": {
+    description:
+      "Labeled date field with fixed DD/MM/YYYY mask. Slashes are inserted automatically and cannot be removed.",
+    props: [
+      { component: "DateInput", name: "label", type: "string", default: '"Date"' },
+      { component: "DateInput", name: "value", type: "string" },
+      { component: "DateInput", name: "defaultValue", type: "string" },
+      { component: "DateInput", name: "onValueChange", type: "(value: string) => void" },
+      { component: "DateInput", name: "placeholder", type: "string", default: '"dd/mm/aaaa"' },
+      { component: "DateInput", name: "labelClassName", type: "string" },
+      { component: "DateInput", name: "wrapperClassName", type: "string" },
+      { component: "DateInput", name: "className", type: "string" },
+      { component: "DateInput", name: "id", type: "string" },
+      { component: "DateInput", name: "onChange", type: "(event: React.ChangeEvent<HTMLInputElement>) => void" },
+    ],
+  },
+  "date-picker": {
+    description:
+      "Single-date calendar popover with month navigation and compound trigger/content components.",
+    props: [
+      { component: "DatePicker", name: "value", type: "Date" },
+      { component: "DatePicker", name: "defaultValue", type: "Date" },
+      { component: "DatePicker", name: "onValueChange", type: "(date: Date | undefined) => void" },
+      { component: "DatePicker", name: "disabled", type: "boolean", default: "false" },
+      { component: "DatePickerTrigger", name: "placeholder", type: "string", default: '"Pick a date"' },
+      { component: "DatePickerTrigger", name: "className", type: "string" },
+      { component: "DatePickerContent", name: "className", type: "string" },
+    ],
+  },
   textarea: {
     description:
       "Multiline text input. Extends TextareaHTMLAttributes and forwards all native textarea props.",
@@ -185,6 +227,82 @@ export const componentApi: Record<string, ComponentApiDefinition> = {
     props: [
       { component: "Loading", name: "size", type: "number", default: "24" },
       { component: "Loading", name: "className", type: "string" },
+    ],
+  },
+  toast: {
+    description:
+      "Imperative toast notifications with Lucide icons and white text on a dark surface. Mount one Toaster; call toast.success, toast.error, or toast.info.",
+    props: [
+      {
+        component: "Toaster",
+        name: "position",
+        type: '"top-left" | "top-center" | "top-right" | "bottom-left" | "bottom-center" | "bottom-right"',
+        default: '"top-right"',
+      },
+      { component: "Toaster", name: "duration", type: "number", default: "4000" },
+      { component: "Toaster", name: "className", type: "string" },
+      { component: "Toaster", name: "toastClassName", type: "string" },
+      { component: "toast", name: "success", type: "(message: string, options?: ToastOptions) => string" },
+      { component: "toast", name: "error", type: "(message: string, options?: ToastOptions) => string" },
+      { component: "toast", name: "info", type: "(message: string, options?: ToastOptions) => string" },
+      { component: "toast", name: "dismiss", type: "(id: string) => void" },
+      { component: "ToastOptions", name: "description", type: "string" },
+      { component: "ToastOptions", name: "duration", type: "number" },
+      { component: "ToastOptions", name: "id", type: "string" },
+    ],
+  },
+  modal: {
+    description:
+      "Accessible modal built on the native HTML dialog element with showModal, optional blurred backdrop, and compound layout parts.",
+    props: [
+      { component: "Modal", name: "open", type: "boolean" },
+      { component: "Modal", name: "defaultOpen", type: "boolean", default: "false" },
+      { component: "Modal", name: "onOpenChange", type: "(open: boolean) => void" },
+      { component: "Modal", name: "children", type: "React.ReactNode" },
+      { component: "ModalTrigger", name: "children", type: "React.ReactNode" },
+      { component: "ModalTrigger", name: "className", type: "string" },
+      { component: "ModalTrigger", name: "onClick", type: "(event: React.MouseEvent<HTMLButtonElement>) => void" },
+      {
+        component: "ModalContent",
+        name: "size",
+        type: '"xs" | "sm" | "md" | "lg"',
+        default: '"md"',
+      },
+      {
+        component: "ModalContent",
+        name: "backdrop",
+        type: '"blur" | "dim"',
+        default: '"blur"',
+      },
+      { component: "ModalContent", name: "showClose", type: "boolean", default: "true" },
+      { component: "ModalContent", name: "className", type: "string" },
+      { component: "ModalClose", name: "aria-label", type: "string", default: '"Close"' },
+      { component: "ModalClose", name: "className", type: "string" },
+      { component: "ModalHeader", name: "className", type: "string" },
+      { component: "ModalIcon", name: "className", type: "string" },
+      { component: "ModalTitle", name: "children", type: "React.ReactNode" },
+      { component: "ModalDescription", name: "children", type: "React.ReactNode" },
+      { component: "ModalBody", name: "className", type: "string" },
+      { component: "ModalFooter", name: "className", type: "string" },
+    ],
+  },
+  menu: {
+    description:
+      "Dropdown menu for actions and navigation. Compose MenuTrigger, MenuContent, and MenuItem.",
+    props: [
+      { component: "Menu", name: "children", type: "React.ReactNode" },
+      { component: "MenuTrigger", name: "children", type: "React.ReactNode" },
+      { component: "MenuTrigger", name: "onClick", type: "(event: React.MouseEvent<HTMLButtonElement>) => void" },
+      { component: "MenuTrigger", name: "className", type: "string" },
+      { component: "MenuContent", name: "align", type: '"start" | "end"', default: '"start"' },
+      { component: "MenuContent", name: "className", type: "string" },
+      { component: "MenuItem", name: "variant", type: '"default" | "destructive"', default: '"default"' },
+      { component: "MenuItem", name: "children", type: "React.ReactNode" },
+      { component: "MenuItem", name: "onClick", type: "(event: React.MouseEvent<HTMLButtonElement>) => void" },
+      { component: "MenuItem", name: "className", type: "string" },
+      { component: "MenuSeparator", name: "className", type: "string" },
+      { component: "MenuShortcut", name: "children", type: "React.ReactNode" },
+      { component: "MenuShortcut", name: "className", type: "string" },
     ],
   },
   tabs: {

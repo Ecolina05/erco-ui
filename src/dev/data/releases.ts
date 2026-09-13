@@ -12,6 +12,42 @@ export type Release = {
 
 export const releases: Release[] = [
   {
+    version: "1.1.0",
+    date: "2026-09-13",
+    summary:
+      "Adds Toast, Menu, Modal, and date/OTP inputs, plus expanded docs and API reference for every exported component.",
+    changes: [
+      {
+        type: "feature",
+        text: "Toast notifications with Toaster, success/error/info variants, optional description, configurable position, and duration.",
+      },
+      {
+        type: "feature",
+        text: "Menu dropdown with MenuTrigger, MenuContent, MenuItem, MenuSeparator, and MenuShortcut.",
+      },
+      {
+        type: "feature",
+        text: "Modal built on the native HTML dialog element with blurred or dim backdrop and xs–lg sizes.",
+      },
+      {
+        type: "feature",
+        text: "DatePicker calendar popover, DateInput with fixed DD/MM/YYYY mask, and InputOTP for one-time codes.",
+      },
+      {
+        type: "feature",
+        text: "Typography and Label components for consistent headings and accessible form labels.",
+      },
+      {
+        type: "feature",
+        text: "Docs playground updates: new component pages, live examples, and unified API Reference tables.",
+      },
+      {
+        type: "fix",
+        text: "Modal no longer scrolls the page to the top when closed; scroll position and focus are restored.",
+      },
+    ],
+  },
+  {
     version: "1.0.0",
     date: "2026-08-30",
     summary:

@@ -2,6 +2,7 @@ import { Button } from "@/components/Button"
 
 import { ComponentApiReference } from "../components/ComponentApiReference"
 import { ComponentExample } from "../components/ComponentExample"
+import { ToastPageProvider } from "../components/ToastPageProvider"
 import { getComponentApi } from "../data/component-api"
 import type { ComponentDefinition } from "../data/components"
 
@@ -12,8 +13,9 @@ type ComponentPageProps = {
 
 export function ComponentPage({ component, onBack }: ComponentPageProps) {
   const api = getComponentApi(component.id)
+  const isToastPage = component.id === "toast"
 
-  return (
+  const content = (
     <div className="mx-auto max-w-3xl">
       <section>
         <Button
@@ -42,4 +44,10 @@ export function ComponentPage({ component, onBack }: ComponentPageProps) {
       {api ? <ComponentApiReference api={api} /> : null}
     </div>
   )
+
+  if (isToastPage) {
+    return <ToastPageProvider>{content}</ToastPageProvider>
+  }
+
+  return content
 }

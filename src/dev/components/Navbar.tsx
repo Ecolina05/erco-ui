@@ -3,6 +3,7 @@ import { Moon, Sun } from "lucide-react"
 import { Button } from "@/components/Button"
 import { cn } from "@/lib/utils"
 
+import { ErcoMark } from "./ErcoMark"
 import { getNavActiveLink } from "../lib/routes"
 
 type NavbarProps = {
@@ -29,13 +30,14 @@ export function Navbar({
   return (
     <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto flex h-14 max-w-7xl items-center gap-6 px-4 lg:px-8">
-        <Button
-          variant="ghost"
-          className="h-auto px-0 font-semibold hover:bg-transparent"
+        <button
+          type="button"
           onClick={() => onNavigate("overview")}
+          className="inline-flex shrink-0 cursor-pointer items-center gap-2 border-0 bg-transparent p-0 text-sm font-semibold text-foreground transition-colors hover:text-foreground/80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
         >
-          erco-ui
-        </Button>
+          <ErcoMark size={22} />
+          <span className="leading-none">erco-ui</span>
+        </button>
 
         <nav className="hidden items-center gap-1 md:flex">
           {navLinks.map((link) => (

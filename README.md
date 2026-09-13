@@ -18,7 +18,7 @@ Runtime helpers used by TypeScript definitions (`clsx`, `class-variance-authorit
 
 ## Setup
 
-1. Import the stylesheet once (layout, main, or `_app`):
+1. Import the stylesheet once (layout, main, or `_app`). This loads the design tokens, **Raleway** from Google Fonts, and component styles:
 
 ```ts
 import "erco-ui/style.css"

@@ -1,6 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
 @import "tailwindcss";
 
 @theme {
+  --font-sans: "Raleway", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -136,7 +140,35 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background font-sans text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  dialog.erco-modal {
+    border: none;
+    padding: 0;
+    margin: auto;
+    max-height: min(90vh, 100%);
+    overflow: auto;
+  }
+
+  dialog.erco-modal::backdrop {
+    background-color: hsl(0 0% 0% / 0.55);
+  }
+
+  dialog.erco-modal-backdrop-blur::backdrop {
+    backdrop-filter: blur(12px);
+  }
+
+  dialog.erco-modal-backdrop-dim::backdrop {
+    backdrop-filter: none;
+    background-color: hsl(0 0% 0% / 0.78);
   }
 }

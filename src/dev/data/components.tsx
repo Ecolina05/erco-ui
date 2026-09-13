@@ -1,9 +1,9 @@
 import type { ReactNode } from "react"
-import { Search } from "lucide-react"
+import { ChevronRight, CircleCheck, MoreVertical, Rocket, Search } from "lucide-react"
 
 import { Badge } from "@/components/Badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/Avatar"
-import { Button } from "@/components/Button"
+import { Button, buttonVariants } from "@/components/Button"
 import {
   Card,
   CardContent,
@@ -13,8 +13,34 @@ import {
   CardTitle,
 } from "@/components/Card"
 import { Checkbox } from "@/components/Checkbox"
+import { DateInput } from "@/components/DateInput"
+import {
+  DatePicker,
+  DatePickerContent,
+  DatePickerTrigger,
+} from "@/components/DatePicker"
 import { Input } from "@/components/Input"
+import { InputOTP } from "@/components/InputOTP"
 import { Loading } from "@/components/Loading"
+import {
+  Menu,
+  MenuContent,
+  MenuItem,
+  MenuSeparator,
+  MenuShortcut,
+  MenuTrigger,
+} from "@/components/Menu"
+import {
+  Modal,
+  ModalContent,
+  ModalDescription,
+  ModalFooter,
+  ModalHeader,
+  ModalIcon,
+  ModalTitle,
+  ModalTrigger,
+} from "@/components/Modal"
+import { toast } from "@/components/Toast"
 import {
   Select,
   SelectContent,
@@ -31,8 +57,11 @@ import {
 } from "@/components/Tabs"
 import { Textarea } from "@/components/Textarea"
 import { Label, Typography } from "@/components/Typography"
+import { cn } from "@/lib/utils"
 
 import { InlineCode } from "../components/InlineCode"
+import { ModalSizePlayground } from "../components/ModalSizePlayground"
+import { ToastPositionPlayground } from "../components/ToastPositionPlayground"
 
 export type ComponentVariant = {
   id: string
@@ -321,6 +350,203 @@ export function InputWithLabel() {
 
 export function InputDisabled() {
   return <Input disabled placeholder="Disabled input" />
+}`,
+      },
+      {
+        id: "input-date-mask",
+        label: "Date mask",
+        description: (
+          <>
+            Use <InlineCode>DateInput</InlineCode> for a masked{" "}
+            <InlineCode>DD/MM/YYYY</InlineCode> field — slashes stay fixed while
+            typing.
+          </>
+        ),
+        preview: <DateInput className="max-w-xs" defaultValue="13091990" />,
+        code: `import { DateInput } from "erco-ui"
+
+export function InputDateMask() {
+  return (
+    <DateInput
+      defaultValue="13091990"
+      onValueChange={(value) => console.log(value)}
+    />
+  )
+}`,
+      },
+    ],
+  },
+  {
+    id: "input-otp",
+    name: "Input OTP",
+    categoryId: "forms",
+    categoryLabel: "Forms",
+    overviewPreview: (
+      <InputOTP
+        defaultValue="123456"
+        className="pointer-events-none max-w-[220px]"
+      />
+    ),
+    variants: [
+      {
+        id: "input-otp-default",
+        label: "Default",
+        description:
+          "One-time code input with joined slots, paste support, and keyboard navigation.",
+        preview: <InputOTP defaultValue="123456" />,
+        code: `import { InputOTP } from "erco-ui"
+
+export function InputOTPDemo() {
+  return <InputOTP defaultValue="123456" onChange={(value) => console.log(value)} />
+}`,
+      },
+      {
+        id: "input-otp-length",
+        label: "Length",
+        description: (
+          <>
+            Use the <InlineCode>length</InlineCode> prop to change the number of
+            slots.
+          </>
+        ),
+        preview: <InputOTP length={4} defaultValue="1234" />,
+        code: `import { InputOTP } from "erco-ui"
+
+export function InputOTPFourDigits() {
+  return <InputOTP length={4} />
+}`,
+      },
+    ],
+  },
+  {
+    id: "date-input",
+    name: "Date Input",
+    categoryId: "forms",
+    categoryLabel: "Forms",
+    overviewPreview: (
+      <DateInput
+        className="pointer-events-none max-w-[180px]"
+        defaultValue="13091990"
+      />
+    ),
+    variants: [
+      {
+        id: "date-input-default",
+        label: "Default",
+        description: (
+          <>
+            Masked date field. The value is always formatted as{" "}
+            <InlineCode>DD/MM/YYYY</InlineCode>; slashes cannot be deleted.
+          </>
+        ),
+        preview: <DateInput className="max-w-xs" defaultValue="13091990" />,
+        code: `import { DateInput } from "erco-ui"
+
+export function DateInputDemo() {
+  return (
+    <DateInput
+      defaultValue="13091990"
+      onValueChange={(value) => console.log(value)}
+    />
+  )
+}`,
+      },
+      {
+        id: "date-input-custom",
+        label: "Custom label",
+        description: (
+          <>
+            Override <InlineCode>label</InlineCode>. The mask format stays{" "}
+            <InlineCode>DD/MM/YYYY</InlineCode>.
+          </>
+        ),
+        preview: (
+          <DateInput
+            className="max-w-xs"
+            label="Birth date"
+            defaultValue="01012000"
+          />
+        ),
+        code: `import { DateInput } from "erco-ui"
+
+export function DateInputCustom() {
+  return (
+    <DateInput
+      label="Birth date"
+      onValueChange={(value) => console.log(value)}
+    />
+  )
+}`,
+      },
+    ],
+  },
+  {
+    id: "date-picker",
+    name: "Date Picker",
+    categoryId: "forms",
+    categoryLabel: "Forms",
+    overviewPreview: (
+      <DatePicker defaultValue={new Date(2026, 8, 13)}>
+        <DatePickerTrigger className="pointer-events-none max-w-[180px]" />
+      </DatePicker>
+    ),
+    variants: [
+      {
+        id: "date-picker-default",
+        label: "Default",
+        description: "Calendar popover for picking a single date.",
+        preview: (
+          <DatePicker defaultValue={new Date(2026, 8, 13)}>
+            <DatePickerTrigger />
+            <DatePickerContent />
+          </DatePicker>
+        ),
+        code: `import {
+  DatePicker,
+  DatePickerContent,
+  DatePickerTrigger,
+} from "erco-ui"
+
+export function DatePickerDemo() {
+  return (
+    <DatePicker>
+      <DatePickerTrigger placeholder="Pick a date" />
+      <DatePickerContent />
+    </DatePicker>
+  )
+}`,
+      },
+      {
+        id: "date-picker-controlled",
+        label: "Controlled",
+        description: (
+          <>
+            Use <InlineCode>value</InlineCode> and{" "}
+            <InlineCode>onValueChange</InlineCode> for controlled selection.
+          </>
+        ),
+        preview: (
+          <DatePicker>
+            <DatePickerTrigger placeholder="Pick a date" />
+            <DatePickerContent />
+          </DatePicker>
+        ),
+        code: `import { useState } from "react"
+import {
+  DatePicker,
+  DatePickerContent,
+  DatePickerTrigger,
+} from "erco-ui"
+
+export function DatePickerControlled() {
+  const [value, setValue] = useState<Date>()
+
+  return (
+    <DatePicker value={value} onValueChange={setValue}>
+      <DatePickerTrigger />
+      <DatePickerContent />
+    </DatePicker>
+  )
 }`,
       },
     ],
@@ -1191,6 +1417,503 @@ export function LoadingSizes() {
       <Loading size={24} />
       <Loading size={32} />
     </div>
+  )
+}`,
+      },
+    ],
+  },
+  {
+    id: "modal",
+    name: "Modal",
+    categoryId: "feedback",
+    categoryLabel: "Feedback",
+    overviewPreview: (
+      <div className="pointer-events-none max-w-[200px] rounded-3xl border border-border bg-surface p-4 shadow-lg">
+        <div className="mb-2 inline-flex size-8 items-center justify-center rounded-full border border-border bg-secondary">
+          <Rocket className="size-4" aria-hidden />
+        </div>
+        <p className="text-xs font-semibold text-foreground">Backdrop: Blur</p>
+        <p className="mt-1 text-[11px] text-muted-foreground">
+          Native dialog with a frosted overlay.
+        </p>
+      </div>
+    ),
+    variants: [
+      {
+        id: "modal-blur",
+        label: "Backdrop blur",
+        description: (
+          <>
+            Uses the native <InlineCode>&lt;dialog&gt;</InlineCode> element with{" "}
+            <InlineCode>showModal()</InlineCode> and a blurred{" "}
+            <InlineCode>::backdrop</InlineCode>.
+          </>
+        ),
+        preview: (
+          <Modal>
+            <ModalTrigger className="inline-flex h-9 cursor-pointer items-center rounded-full border border-primary/15 bg-primary/95 px-4 text-xs font-medium text-primary-foreground">
+              Open modal
+            </ModalTrigger>
+            <ModalContent size="sm" backdrop="blur">
+              <ModalHeader>
+                <ModalIcon>
+                  <Rocket aria-hidden />
+                </ModalIcon>
+                <ModalTitle>Backdrop: Blur</ModalTitle>
+                <ModalDescription>
+                  The background is dimmed and blurred while this dialog is open.
+                  Press Escape or click outside to dismiss.
+                </ModalDescription>
+              </ModalHeader>
+              <ModalFooter>
+                <form method="dialog">
+                  <Button
+                    type="submit"
+                    className="w-full border-blue-500/20 bg-blue-600 text-white hover:border-blue-400/30 hover:bg-blue-500"
+                  >
+                    Continue
+                  </Button>
+                </form>
+              </ModalFooter>
+            </ModalContent>
+          </Modal>
+        ),
+        code: `import { Rocket } from "lucide-react"
+import {
+  Button,
+  Modal,
+  ModalContent,
+  ModalDescription,
+  ModalFooter,
+  ModalHeader,
+  ModalIcon,
+  ModalTitle,
+  ModalTrigger,
+} from "erco-ui"
+
+export function ModalBlurDemo() {
+  return (
+    <Modal>
+      <ModalTrigger>Open modal</ModalTrigger>
+      <ModalContent size="sm" backdrop="blur">
+        <ModalHeader>
+          <ModalIcon>
+            <Rocket aria-hidden />
+          </ModalIcon>
+          <ModalTitle>Backdrop: Blur</ModalTitle>
+          <ModalDescription>
+            The background is dimmed and blurred while this dialog is open.
+          </ModalDescription>
+        </ModalHeader>
+        <ModalFooter>
+          <form method="dialog">
+            <Button type="submit" className="w-full">
+              Continue
+            </Button>
+          </form>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+  )
+}`,
+      },
+      {
+        id: "modal-sizes",
+        label: "Sizes",
+        description: (
+          <>
+            Set <InlineCode>size</InlineCode> on{" "}
+            <InlineCode>ModalContent</InlineCode> to{" "}
+            <InlineCode>xs</InlineCode>, <InlineCode>sm</InlineCode>,{" "}
+            <InlineCode>md</InlineCode>, or <InlineCode>lg</InlineCode>.
+          </>
+        ),
+        preview: <ModalSizePlayground />,
+        code: `import {
+  Modal,
+  ModalContent,
+  ModalDescription,
+  ModalHeader,
+  ModalTitle,
+  ModalTrigger,
+  type ModalSize,
+} from "erco-ui"
+
+export function ModalSizesDemo() {
+  const size: ModalSize = "md"
+
+  return (
+    <Modal>
+      <ModalTrigger>Open modal</ModalTrigger>
+      <ModalContent size={size} backdrop="blur">
+        <ModalHeader>
+          <ModalTitle>Responsive width</ModalTitle>
+          <ModalDescription>
+            Adjust the size prop to change max-width.
+          </ModalDescription>
+        </ModalHeader>
+      </ModalContent>
+    </Modal>
+  )
+}`,
+      },
+      {
+        id: "modal-controlled",
+        label: "Controlled",
+        description: (
+          <>
+            Use <InlineCode>open</InlineCode> and{" "}
+            <InlineCode>onOpenChange</InlineCode> when state lives outside the
+            trigger.
+          </>
+        ),
+        preview: (
+          <Modal>
+            <ModalTrigger className="inline-flex h-9 cursor-pointer items-center rounded-full border border-input bg-background px-4 text-xs font-medium">
+              Open controlled
+            </ModalTrigger>
+            <ModalContent size="md" backdrop="blur">
+              <ModalHeader>
+                <ModalTitle>Controlled modal</ModalTitle>
+                <ModalDescription>
+                  Pair with React state via open and onOpenChange on Modal.
+                </ModalDescription>
+              </ModalHeader>
+            </ModalContent>
+          </Modal>
+        ),
+        code: `import { useState } from "react"
+import {
+  Modal,
+  ModalContent,
+  ModalDescription,
+  ModalHeader,
+  ModalTitle,
+  ModalTrigger,
+} from "erco-ui"
+
+export function ModalControlled() {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <Modal open={open} onOpenChange={setOpen}>
+      <ModalTrigger>Open</ModalTrigger>
+      <ModalContent backdrop="blur">
+        <ModalHeader>
+          <ModalTitle>Controlled modal</ModalTitle>
+          <ModalDescription>
+            open and onOpenChange sync with showModal and close.
+          </ModalDescription>
+        </ModalHeader>
+      </ModalContent>
+    </Modal>
+  )
+}`,
+      },
+    ],
+  },
+  {
+    id: "toast",
+    name: "Toast",
+    categoryId: "feedback",
+    categoryLabel: "Feedback",
+    overviewPreview: (
+      <div className="flex max-w-[220px] items-center gap-2 rounded-lg border border-white/10 bg-zinc-900 px-3 py-2 text-xs font-semibold text-white shadow-lg">
+        <CircleCheck className="size-4 shrink-0 text-green-500" aria-hidden />
+        Successfully toasted!
+      </div>
+    ),
+    variants: [
+      {
+        id: "toast-types",
+        label: "Types",
+        description: (
+          <>
+            Call <InlineCode>toast.success</InlineCode>,{" "}
+            <InlineCode>toast.error</InlineCode>, or <InlineCode>toast.info</InlineCode>.
+            Mount a single <InlineCode>Toaster</InlineCode> in your app root.
+          </>
+        ),
+        preview: (
+          <div className="flex flex-wrap gap-2">
+            <Button
+              type="button"
+              onClick={() => toast.success("Successfully toasted!")}
+            >
+              Success
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              onClick={() => toast.error("This is an error!")}
+            >
+              Error
+            </Button>
+            <Button
+              type="button"
+              variant="secondary"
+              onClick={() => toast.info("Here is some information.")}
+            >
+              Info
+            </Button>
+          </div>
+        ),
+        code: `import { Toaster, toast } from "erco-ui"
+
+export function ToastDemo() {
+  return (
+    <>
+      <Toaster />
+      <button type="button" onClick={() => toast.success("Successfully toasted!")}>
+        Success
+      </button>
+      <button type="button" onClick={() => toast.error("This is an error!")}>
+        Error
+      </button>
+      <button type="button" onClick={() => toast.info("Here is some information.")}>
+        Info
+      </button>
+    </>
+  )
+}`,
+      },
+      {
+        id: "toast-position",
+        label: "Position",
+        description: (
+          <>
+            Use the <InlineCode>position</InlineCode> prop on{" "}
+            <InlineCode>Toaster</InlineCode>. Try each slot below and trigger a
+            toast to preview placement.
+          </>
+        ),
+        preview: <ToastPositionPlayground />,
+        code: `import { useState } from "react"
+import { Toaster, toast, type ToastPosition } from "erco-ui"
+
+const positions: ToastPosition[] = [
+  "top-left",
+  "top-center",
+  "top-right",
+  "bottom-left",
+  "bottom-center",
+  "bottom-right",
+]
+
+export function ToastPositionDemo() {
+  const [position, setPosition] = useState<ToastPosition>("top-right")
+
+  return (
+    <>
+      <Toaster position={position} />
+      <div className="grid grid-cols-3 gap-2">
+        {positions.map((slot) => (
+          <button
+            key={slot}
+            type="button"
+            onClick={() => setPosition(slot)}
+          >
+            {slot}
+          </button>
+        ))}
+      </div>
+      <button type="button" onClick={() => toast.success(\`Shown at \${position}\`)}>
+        Show toast
+      </button>
+    </>
+  )
+}`,
+      },
+      {
+        id: "toast-description",
+        label: "Description",
+        description: (
+          <>
+            Pass <InlineCode>description</InlineCode> in the options object for
+            supporting text under the title.
+          </>
+        ),
+        preview: (
+          <Button
+            type="button"
+            onClick={() =>
+              toast.success("Profile updated", {
+                description: "Your changes were saved and synced across devices.",
+              })
+            }
+          >
+            Toast with description
+          </Button>
+        ),
+        code: `import { Toaster, toast } from "erco-ui"
+
+export function ToastDescription() {
+  return (
+    <>
+      <Toaster />
+      <button
+        type="button"
+        onClick={() =>
+          toast.success("Profile updated", {
+            description: "Your changes were saved and synced across devices.",
+          })
+        }
+      >
+        Show toast
+      </button>
+    </>
+  )
+}`,
+      },
+      {
+        id: "toast-duration",
+        label: "Duration",
+        description: (
+          <>
+            Default visibility is 4 seconds. Override per toast with{" "}
+            <InlineCode>duration</InlineCode> (ms) or set a default on{" "}
+            <InlineCode>Toaster</InlineCode>.
+          </>
+        ),
+        preview: (
+          <Button
+            type="button"
+            variant="outline"
+            onClick={() => toast.success("Gone in 2 seconds", { duration: 2000 })}
+          >
+            Short toast (2s)
+          </Button>
+        ),
+        code: `import { Toaster, toast } from "erco-ui"
+
+export function ToastDuration() {
+  return (
+    <>
+      <Toaster duration={4000} />
+      <button
+        type="button"
+        onClick={() => toast.success("Quick message", { duration: 2000 })}
+      >
+        Short toast
+      </button>
+    </>
+  )
+}`,
+      },
+    ],
+  },
+  {
+    id: "menu",
+    name: "Menu",
+    categoryId: "navigation",
+    categoryLabel: "Navigation",
+    overviewPreview: (
+      <Menu>
+        <MenuTrigger className="inline-flex h-8 items-center rounded-full border border-input bg-background px-4 text-xs font-medium">
+          Open
+        </MenuTrigger>
+        <MenuContent className="pointer-events-none w-44">
+          <MenuItem>First item</MenuItem>
+          <MenuItem>Second item</MenuItem>
+        </MenuContent>
+      </Menu>
+    ),
+    variants: [
+      {
+        id: "menu-default",
+        label: "Default",
+        description: "Dropdown menu for actions, navigation, or commands.",
+        preview: (
+          <Menu>
+            <MenuTrigger
+              className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+            >
+              Open
+            </MenuTrigger>
+            <MenuContent className="w-48">
+              <MenuItem>First item</MenuItem>
+              <MenuItem className="justify-between">
+                Second item
+                <ChevronRight className="size-4 text-muted-foreground" aria-hidden />
+              </MenuItem>
+              <MenuItem className="justify-between">
+                Third item
+                <MenuShortcut>⌘ K</MenuShortcut>
+              </MenuItem>
+            </MenuContent>
+          </Menu>
+        ),
+        code: `import { buttonVariants } from "erco-ui"
+import {
+  Menu,
+  MenuContent,
+  MenuItem,
+  MenuShortcut,
+  MenuTrigger,
+} from "erco-ui"
+import { cn } from "erco-ui"
+
+export function MenuDemo() {
+  return (
+    <Menu>
+      <MenuTrigger className={cn(buttonVariants({ variant: "outline", size: "sm" }))}>
+        Open
+      </MenuTrigger>
+      <MenuContent className="w-48">
+        <MenuItem>First item</MenuItem>
+        <MenuItem>Second item</MenuItem>
+        <MenuItem>
+          Third item
+          <MenuShortcut>⌘ K</MenuShortcut>
+        </MenuItem>
+      </MenuContent>
+    </Menu>
+  )
+}`,
+      },
+      {
+        id: "menu-actions",
+        label: "Actions",
+        description: (
+          <>
+            Use <InlineCode>variant="destructive"</InlineCode> on{" "}
+            <InlineCode>MenuItem</InlineCode> for dangerous actions.
+          </>
+        ),
+        preview: (
+          <Menu>
+            <MenuTrigger className="inline-flex size-8 cursor-pointer items-center justify-center rounded-full border border-input bg-background text-foreground transition-colors hover:bg-accent">
+              <MoreVertical className="size-4" aria-hidden />
+              <span className="sr-only">Open menu</span>
+            </MenuTrigger>
+            <MenuContent align="end" className="w-44">
+              <MenuItem>Option one</MenuItem>
+              <MenuItem>Option two</MenuItem>
+              <MenuItem>Option three</MenuItem>
+              <MenuSeparator />
+              <MenuItem variant="destructive">Remove</MenuItem>
+            </MenuContent>
+          </Menu>
+        ),
+        code: `import {
+  Menu,
+  MenuContent,
+  MenuItem,
+  MenuSeparator,
+  MenuTrigger,
+} from "erco-ui"
+
+export function MenuActions() {
+  return (
+    <Menu>
+      <MenuTrigger aria-label="Open menu">⋯</MenuTrigger>
+      <MenuContent align="end" className="w-44">
+        <MenuItem>Option one</MenuItem>
+        <MenuItem>Option two</MenuItem>
+        <MenuSeparator />
+        <MenuItem variant="destructive">Remove</MenuItem>
+      </MenuContent>
+    </Menu>
   )
 }`,
       },
