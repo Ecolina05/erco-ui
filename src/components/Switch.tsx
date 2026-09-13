@@ -42,7 +42,7 @@ const Switch = React.forwardRef<HTMLInputElement, SwitchProps>(
           <span className="pointer-events-none block size-4 translate-x-0.5 rounded-full bg-background shadow-sm transition-transform" />
         </span>
         {children ? (
-          <span className={cn("text-sm font-normal", labelClassName)}>
+          <span className={cn("text-xs font-normal", labelClassName)}>
             {children}
           </span>
         ) : null}

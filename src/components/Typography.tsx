@@ -10,7 +10,7 @@ const typographyVariants = cva("", {
       heading: "scroll-m-20 text-2xl font-semibold tracking-tight",
       subheading: "scroll-m-20 text-xl font-semibold tracking-tight",
       section: "text-lg font-semibold leading-snug",
-      subtitle: "text-sm text-muted-foreground",
+      subtitle: "text-xs text-muted-foreground",
       body: "text-xs leading-relaxed",
       muted: "text-xs leading-relaxed text-muted-foreground",
       label: "text-xs font-medium leading-none",

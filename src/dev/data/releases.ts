@@ -12,6 +12,18 @@ export type Release = {
 
 export const releases: Release[] = [
   {
+    version: "1.1.5",
+    date: "2026-09-13",
+    summary:
+      "Control and body text now defaults to 12px (text-xs) across the library.",
+    changes: [
+      {
+        type: "fix",
+        text: "Select, Tabs, Checkbox, Switch, Button lg, CardTitle, ModalTitle, Avatar fallback, and Typography subtitle use text-xs so they match Input.",
+      },
+    ],
+  },
+  {
     version: "1.1.4",
     date: "2026-09-13",
     summary:

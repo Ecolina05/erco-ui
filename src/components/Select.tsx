@@ -114,7 +114,7 @@ const SelectTrigger = React.forwardRef<HTMLButtonElement, SelectTriggerProps>(
           }
         }}
         className={cn(
-          "flex h-9 w-full cursor-pointer items-center justify-between gap-2 rounded-2xl border border-input bg-transparent px-4 py-2 text-sm shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+          "flex h-9 w-full cursor-pointer items-center justify-between gap-2 rounded-2xl border border-input bg-transparent px-4 py-2 text-xs shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
           className
         )}
         {...props}
@@ -211,7 +211,7 @@ function SelectItem({
       aria-selected={isSelected}
       onClick={() => onValueChange(value)}
       className={cn(
-        "relative flex w-full cursor-pointer select-none items-center rounded-xl py-1.5 pl-2 pr-8 text-sm outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+        "relative flex w-full cursor-pointer select-none items-center rounded-xl py-1.5 pl-2 pr-8 text-xs outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
         isSelected && "bg-accent text-accent-foreground",
         className
       )}

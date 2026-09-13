@@ -278,7 +278,7 @@ const ModalTitle = React.forwardRef<HTMLHeadingElement, ModalTitleProps>(
       ref={ref}
       as="h2"
       variant="section"
-      className={cn("text-base font-semibold", className)}
+      className={cn("text-xs font-semibold", className)}
       {...props}
     />
   )

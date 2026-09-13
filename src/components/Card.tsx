@@ -52,7 +52,7 @@ const CardTitle = React.forwardRef<
     ref={ref}
     as="h3"
     variant="section"
-    className={cn("leading-none tracking-tight", className)}
+    className={cn("text-xs leading-none tracking-tight", className)}
     {...props}
   />
 ))

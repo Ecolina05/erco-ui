@@ -43,7 +43,7 @@ const Checkbox = React.forwardRef<HTMLInputElement, CheckboxProps>(
           <Check className="size-3 opacity-0 transition-opacity" strokeWidth={3} />
         </span>
         {children ? (
-          <span className={cn("text-sm font-normal", labelClassName)}>
+          <span className={cn("text-xs font-normal", labelClassName)}>
             {children}
           </span>
         ) : null}

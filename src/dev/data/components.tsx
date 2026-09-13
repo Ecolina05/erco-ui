@@ -644,7 +644,7 @@ export function TextareaDisabled() {
     categoryLabel: "Forms",
     overviewPreview: (
       <Select defaultValue="Florida">
-        <SelectTrigger className="pointer-events-none max-w-[180px] text-xs">
+        <SelectTrigger className="pointer-events-none max-w-[180px]">
           <SelectValue placeholder="Select one" />
         </SelectTrigger>
         <SelectContent>

@@ -155,7 +155,7 @@ function TabsTrigger({
       data-state={isActive ? "active" : "inactive"}
       onClick={() => onValueChange(value)}
       className={cn(
-        "inline-flex items-center justify-center whitespace-nowrap px-3 py-1.5 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
+        "inline-flex items-center justify-center whitespace-nowrap px-3 py-1.5 text-xs font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
         variant === "default" &&
           "rounded-full text-muted-foreground data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm",
         variant === "secondary" &&
@@ -189,7 +189,7 @@ function TabsContent({ className, value, ...props }: TabsContentProps) {
     <div
       role="tabpanel"
       className={cn(
-        "mt-4 text-sm text-muted-foreground focus-visible:outline-none",
+        "mt-4 text-xs text-muted-foreground focus-visible:outline-none",
         orientation === "vertical" && "mt-0 min-w-0 flex-1",
         className
       )}
