@@ -183,6 +183,16 @@ export const componentApi: Record<string, ComponentApiDefinition> = {
       { component: "CardFooter", name: "className", type: "string" },
     ],
   },
+  brand: {
+    description:
+      "Product lockup that takes a logo as children and renders the name to the right with Label typography.",
+    props: [
+      { component: "Brand", name: "name", type: "string" },
+      { component: "Brand", name: "size", type: '"sm" | "default" | "lg"', default: '"default"' },
+      { component: "Brand", name: "children", type: "React.ReactNode" },
+      { component: "Brand", name: "className", type: "string" },
+    ],
+  },
   avatar: {
     description:
       "Profile image with fallback content when the image is missing or fails to load.",
@@ -218,6 +228,7 @@ export const componentApi: Record<string, ComponentApiDefinition> = {
       { component: "Typography", name: "children", type: "React.ReactNode" },
       { component: "Typography", name: "className", type: "string" },
       { component: "Label", name: "htmlFor", type: "string" },
+      { component: "Label", name: "as", type: "React.ElementType", default: '"label"' },
       { component: "Label", name: "children", type: "React.ReactNode" },
       { component: "Label", name: "className", type: "string" },
     ],

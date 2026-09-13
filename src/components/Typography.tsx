@@ -63,16 +63,22 @@ const Typography = React.forwardRef<HTMLElement, TypographyProps>(
 Typography.displayName = "Typography"
 
 export interface LabelProps
-  extends React.LabelHTMLAttributes<HTMLLabelElement> {}
+  extends React.LabelHTMLAttributes<HTMLLabelElement> {
+  as?: React.ElementType
+}
 
-const Label = React.forwardRef<HTMLLabelElement, LabelProps>(
-  ({ className, ...props }, ref) => (
-    <label
-      ref={ref}
-      className={cn(typographyVariants({ variant: "label" }), className)}
-      {...props}
-    />
-  )
+const Label = React.forwardRef<HTMLElement, LabelProps>(
+  ({ className, as, ...props }, ref) => {
+    const Component = as ?? "label"
+
+    return (
+      <Component
+        ref={ref}
+        className={cn(typographyVariants({ variant: "label" }), className)}
+        {...props}
+      />
+    )
+  }
 )
 Label.displayName = "Label"
 

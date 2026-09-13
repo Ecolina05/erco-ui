@@ -12,6 +12,26 @@ export type Release = {
 
 export const releases: Release[] = [
   {
+    version: "1.1.1",
+    date: "2026-09-13",
+    summary:
+      "Adds Brand lockups for product logos and names, and rounds the erco-ui mark in the docs navbar.",
+    changes: [
+      {
+        type: "feature",
+        text: "Brand component: pass the logo as children and the product name with the name prop; the name is rendered to the right with Label typography.",
+      },
+      {
+        type: "feature",
+        text: "Brand sizes sm, default, and lg to scale the gap and name label across product lockups.",
+      },
+      {
+        type: "fix",
+        text: "erco-ui mark in the playground uses a CSS circle so the logo stays fully round at small sizes.",
+      },
+    ],
+  },
+  {
     version: "1.1.0",
     date: "2026-09-13",
     summary:

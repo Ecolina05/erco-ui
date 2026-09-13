@@ -1,5 +1,6 @@
 import { Moon, Sun } from "lucide-react"
 
+import { Brand } from "@/components/Brand"
 import { Button } from "@/components/Button"
 import { cn } from "@/lib/utils"
 
@@ -33,10 +34,11 @@ export function Navbar({
         <button
           type="button"
           onClick={() => onNavigate("overview")}
-          className="inline-flex shrink-0 cursor-pointer items-center gap-2 border-0 bg-transparent p-0 text-sm font-semibold text-foreground transition-colors hover:text-foreground/80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+          className="inline-flex shrink-0 cursor-pointer items-center border-0 bg-transparent p-0 text-foreground transition-colors hover:text-foreground/80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
         >
-          <ErcoMark size={22} />
-          <span className="leading-none">erco-ui</span>
+          <Brand name="erco-ui" size="sm">
+            <ErcoMark size={22} />
+          </Brand>
         </button>
 
         <nav className="hidden items-center gap-1 md:flex">

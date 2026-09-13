@@ -3,6 +3,7 @@ import { ChevronRight, CircleCheck, MoreVertical, Rocket, Search } from "lucide-
 
 import { Badge } from "@/components/Badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/Avatar"
+import { Brand } from "@/components/Brand"
 import { Button, buttonVariants } from "@/components/Button"
 import {
   Card,
@@ -59,6 +60,7 @@ import { Textarea } from "@/components/Textarea"
 import { Label, Typography } from "@/components/Typography"
 import { cn } from "@/lib/utils"
 
+import { ErcoMark } from "../components/ErcoMark"
 import { InlineCode } from "../components/InlineCode"
 import { ModalSizePlayground } from "../components/ModalSizePlayground"
 import { ToastPositionPlayground } from "../components/ToastPositionPlayground"
@@ -1140,6 +1142,84 @@ export function AvatarSizes() {
       <Avatar size="lg">
         <AvatarFallback>LG</AvatarFallback>
       </Avatar>
+    </div>
+  )
+}`,
+      },
+    ],
+  },
+  {
+    id: "brand",
+    name: "Brand",
+    categoryId: "data-display",
+    categoryLabel: "Data Display",
+    overviewPreview: (
+      <Brand name="erco-ui">
+        <ErcoMark size={28} />
+      </Brand>
+    ),
+    variants: [
+      {
+        id: "brand-default",
+        label: "Default",
+        description: (
+          <>
+            Pass the mark as <InlineCode>children</InlineCode> and the product
+            name with <InlineCode>name</InlineCode>. Brand places a label to the
+            right of the logo.
+          </>
+        ),
+        preview: (
+          <Brand name="erco-ui">
+            <ErcoMark size={32} />
+          </Brand>
+        ),
+        code: `import { Brand } from "erco-ui"
+
+export function BrandDemo() {
+  return (
+    <Brand name="erco-ui">
+      <img src="/marks/erco-ui.svg" alt="" />
+    </Brand>
+  )
+}`,
+      },
+      {
+        id: "brand-sizes",
+        label: "Size",
+        description: (
+          <>
+            Use the <InlineCode>size</InlineCode> prop to scale the gap and the
+            name label. Size the mark yourself so circular logos stay round.
+          </>
+        ),
+        preview: (
+          <div className="flex flex-col items-start gap-5">
+            <Brand name="erco-ui" size="sm">
+              <ErcoMark size={22} />
+            </Brand>
+            <Brand name="erco-ui">
+              <ErcoMark size={32} />
+            </Brand>
+            <Brand name="erco-ui" size="lg">
+              <ErcoMark size={40} />
+            </Brand>
+          </div>
+        ),
+        code: `import { Brand } from "erco-ui"
+
+export function BrandSizes() {
+  return (
+    <div className="flex flex-col gap-5">
+      <Brand name="erco-ui" size="sm">
+        <img src="/marks/erco-ui.svg" alt="" width={22} height={22} />
+      </Brand>
+      <Brand name="erco-ui">
+        <img src="/marks/erco-ui.svg" alt="" width={32} height={32} />
+      </Brand>
+      <Brand name="erco-ui" size="lg">
+        <img src="/marks/erco-ui.svg" alt="" width={40} height={40} />
+      </Brand>
     </div>
   )
 }`,
