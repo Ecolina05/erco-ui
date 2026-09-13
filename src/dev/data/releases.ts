@@ -12,6 +12,18 @@ export type Release = {
 
 export const releases: Release[] = [
   {
+    version: "1.1.3",
+    date: "2026-09-13",
+    summary:
+      "Modal now always opens centered in the viewport without host CSS overrides.",
+    changes: [
+      {
+        type: "fix",
+        text: "Modal dialog uses unlayered fixed centering so Tailwind relative/preflight no longer pins it to the top-left.",
+      },
+    ],
+  },
+  {
     version: "1.1.2",
     date: "2026-09-13",
     summary:

@@ -133,7 +133,7 @@ const ModalTrigger = React.forwardRef<HTMLButtonElement, ModalTriggerProps>(
 ModalTrigger.displayName = "ModalTrigger"
 
 const modalContentVariants = cva(
-  "erco-modal relative w-full rounded-3xl border border-border bg-surface p-6 text-foreground shadow-lg",
+  "erco-modal w-full rounded-3xl border border-border bg-surface p-6 text-foreground shadow-lg",
   {
     variants: {
       size: {
